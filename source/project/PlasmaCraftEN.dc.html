@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project 03 — PlasmaCraft</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F2F2EE}
+a{color:#111412}a:hover{color:#474D49}
+</style>
+</helmet>
+<div style="container-type: inline-size; min-height: 100vh; background: #F2F2EE; color: #111412; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility">
+<header style="position: sticky; top: 0; z-index: 30; background: #F2F2EE; border-bottom: 1px solid #D5D7D1">
+<div style="max-width: 1312px; margin: 0 auto; padding: 8px clamp(20px, 4.5cqi, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px">
+<a href="MainEN.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #111412; text-decoration: none"><span aria-hidden="true" style="position: relative; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #111412; color: #F2F2EE; font-weight: 800; font-stretch: 125%; font-size: 11.5px; letter-spacing: 0.02em">BR<span style="position: absolute; right: -4px; bottom: -4px; width: 9px; height: 9px; background: #FCCA21; border: 2px solid #F2F2EE"></span></span><span style="font-weight: 700; font-stretch: 108%; font-size: 16px; white-space: nowrap">Brice Rigourd</span><span style="font-size: 14px; font-weight: 500; color: #5C625E; white-space: nowrap">← Home</span></a>
+<div role="group" aria-label="Language" style="display: inline-flex; border: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em"><a href="PlasmaCraft.dc.html" hreflang="fr" lang="fr" aria-label="Version française" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #111412; text-decoration: none">FR</a><span aria-current="true" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; background: #111412; color: #F2F2EE">EN</span></div>
+</div>
+</header>
+<div style="max-width: 1312px; margin: 0 auto; padding: clamp(56px, 6.5cqi, 96px) clamp(20px, 4.5cqi, 64px) clamp(64px, 6.5cqi, 96px)">
+
+<article id="plasmacraft" aria-labelledby="pc-title">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-top: 16px; border-top: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #111412; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21; outline: 1.5px solid #111412"></span>Project 03</span>
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; background: #111412; color: #F2F2EE; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FCCA21" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg>May – August 2023</span>
+<span>Ezio Industrial Consulting, Biarritz</span>
+<span style="margin-left: auto">Business application built end to end</span>
+</div>
+
+<h2 id="pc-title" style="margin: 36px 0 0; max-width: 22ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2rem, 3.9cqi, 3.5rem); line-height: 1.03; letter-spacing: -0.03em; text-wrap: balance">PlasmaCraft, recipe-authoring software</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; margin-top: clamp(32px, 3.4cqi, 48px)">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The context</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">A medical device manufacturer was developing a cold-plasma sterilization machine driven by a PLC. Its teams had to program cycle recipes sequence by sequence, with no room for error.</p>
+</div>
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">What I built</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">I designed and delivered the application, from the requirements specification to the user manual.</p>
+</div>
+</div>
+<dl style="flex: 1 1 340px; max-width: 480px; margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 2px solid #111412; font-size: 15px; line-height: 1.45">
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Company</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Ezio Industrial Consulting</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Client</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Medical device manufacturer (cold-plasma sterilization)</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Role</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Designer-developer, second-year engineering internship</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Period</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">May – August 2023</dd>
+<dt style="padding: 13px 16px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Size</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; font-weight: 500">53 VBA modules, ≈ 4,750 lines, 115 procedures</dd>
+</dl>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">How the project ran</p>
+<ol aria-label="How the project ran" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 28px 0">
+<li style="min-width: 0; padding-right: 24px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">01</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Needs</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Nine functional requirements from the client, from parameter control to secure transfer.</p>
+</li>
+<li style="min-width: 0; padding-right: 24px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">02</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Mockups</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Two iterations in Balsamiq, approved by my supervisor and the client.</p>
+</li>
+<li style="min-width: 0; padding-right: 24px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">03</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Flowcharts</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Every function described before it was coded.</p>
+</li>
+<li style="min-width: 0; padding-right: 24px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">04</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Architecture</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Two workbooks: the interface on one side, the recipe database on the other.</p>
+</li>
+<li style="min-width: 0; padding-right: 24px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">05</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Development</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Forms, input checks, algorithms, dynamic chart.</p>
+</li>
+<li style="min-width: 0; padding-right: 24px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #111412; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">06</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Documentation</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">A 33-page user manual and an installation guide.</p>
+</li>
+</ol>
+</div>
+
+<figure style="margin: clamp(56px, 5cqi, 72px) 0 0">
+<div style="background: #FFFFFF; border: 1.5px solid #111412; box-shadow: 14px 14px 0 #FCCA21; margin: 0 14px 14px 0; overflow: hidden"><img src="/_blob/e3e6e4f33cb4134ce6757c882da888d1" alt="Recipe creation sheet: sequence table, action buttons and recipe chart." style="display: block; width: 100%; height: auto; aspect-ratio: 1600 / 645"></div>
+<figcaption style="margin-top: 10px; max-width: 80ch; font-size: 14px; line-height: 1.5; color: #5C625E">The “Recipe creation” sheet (interface in French): sequence table on the left, chart built live on the right. The client's parameter names are hidden.</figcaption>
+</figure>
+
+<div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 24px; margin-top: 28px">
+<figure style="flex: 3 1 480px; min-width: 0; margin: 0; display: flex; flex-direction: column">
+<div style="background: #FFFFFF; border: 1px solid #D5D7D1; overflow: hidden"><img src="/_blob/27bd80f46079e8c9521b06363e43a4a6" alt="VBA editor: module tree and the sequence-creation form." style="display: block; width: 100%; height: auto; aspect-ratio: 1362 / 702"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">The VBA project: one module per function, and the form for entering a sequence (“progressive” or “all-or-nothing” smoothing).</figcaption>
+</figure>
+<figure style="flex: 2 1 320px; min-width: 0; margin: 0; display: flex; flex-direction: column">
+<div style="flex: 1 1 auto; min-height: 220px; display: flex; align-items: center; justify-content: center; padding: 28px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="/_blob/ecb8367834da76610a2fd0d6aa156deb" alt="PlasmaCraft logo, recipe creation." style="display: block; width: 100%; max-width: 440px; height: auto; aspect-ratio: 900 / 404"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">I also designed the application's name and logo, which the client approved.</figcaption>
+</figure>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Four key features</p>
+<div style="margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<section aria-labelledby="pA" style="min-width: 0; background: #FFFFFF; padding: 26px 26px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">A</span><h3 id="pA" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2; letter-spacing: -0.01em">Error-proof input</h3></div>
+<ul style="list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5; color: #474D49">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span>Recipes of up to <strong style="color: #111412; font-weight: 700">100 sequences</strong>, with four parameters controlled over time: RF power, two gas flows and the magnetic field.</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span>Checks against the machine's limits and step size (0 to 3,600 s per sequence, 0 to 500 W in 1 W steps, 0 to 5 sccm and 0 to 22 G in 0.1 steps), with a precise message on the faulty field.</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span>A unique ID, name, author and date for each recipe.</span></li>
+</ul>
+</section>
+<section aria-labelledby="pB" style="min-width: 0; background: #FFFFFF; padding: 26px 26px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">B</span><h3 id="pB" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2; letter-spacing: -0.01em">Ramps and chart</h3></div>
+<ul style="list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5; color: #474D49">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span>“Progressive” option: a setpoint change split into <strong style="color: #111412; font-weight: 700">5 to 25 steps</strong> that add up exactly; refused when there are more steps than seconds or than units of change.</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span>A dynamic curve using <strong style="color: #111412; font-weight: 700">linear interpolation</strong>, sampled every 1 s under 1,000 s of recipe, then every 2 s, 3 s and finally 5 s beyond 6,000 s to stay smooth.</span></li>
+</ul>
+</section>
+<section aria-labelledby="pC" style="min-width: 0; background: #FFFFFF; padding: 26px 26px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">C</span><h3 id="pC" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2; letter-spacing: -0.01em">Batch editing</h3></div>
+<ul style="list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5; color: #474D49">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span>Selection through auto-generated checkboxes: delete, swap (durations trade places, cumulative times stay right), <strong style="color: #111412; font-weight: 700">duplicate as a block</strong> (indexed copies, refused beyond 100 sequences), edit in place with the same checks.</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span>A unique index per sequence, to move rows around without breaking the formatting.</span></li>
+</ul>
+</section>
+<section aria-labelledby="pD" style="min-width: 0; background: #FFFFFF; padding: 26px 26px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">D</span><h3 id="pD" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2; letter-spacing: -0.01em">Secure transfer</h3></div>
+<ul style="list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5; color: #474D49">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span><strong style="color: #111412; font-weight: 700">TXT export for the PLC</strong>, and import of XLSM recipes created on another workstation.</span></li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 8px; height: 2px; margin-top: 11px; background: #111412"></span><span>Recipes saved as XLSM files <strong style="color: #111412; font-weight: 700">locked with a password</strong>, unique name checked against the database, automatic PDF capture.</span></li>
+</ul>
+</section>
+</div>
+</div>
+
+<section aria-labelledby="ramp-title" style="margin-top: clamp(56px, 5cqi, 72px); background: #111412; color: #F2F2EE">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 48px; padding: clamp(24px, 2.5cqi, 36px); border-bottom: 1px solid #2C312D">
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21"></span>Demo · algorithm rewritten in JavaScript</p>
+<h3 id="ramp-title" style="margin: 12px 0 0; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.5cqi, 36px); line-height: 1.08; letter-spacing: -0.025em">The step problem</h3>
+</div>
+<p style="flex: 2 1 520px; margin: 0; font-size: 15px; line-height: 1.55; color: #A9B0AA">The PLC can only do “all or nothing”. To simulate a ramp, the change has to be split into steps at the machine's resolution (1 W for power, 0.1 for gas flow and field), and the steps have to add up exactly. Dividing then rounding is not enough: that is the bug I had to fix. This demo was rewritten in JavaScript from the principle of the algorithm.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1px; background: #2C312D">
+<div style="flex: 1 1 440px; min-width: 0; background: #111412; padding: clamp(20px, 2cqi, 28px)">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 14px 16px">
+<label style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 100%; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Parameter<select value="{{param}}" onChange="{{onParam}}" style="min-height: 42px; padding: 0 10px; border: 1px solid #5C625E; background: #1A1E1B; color: #F2F2EE; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 14.5px; letter-spacing: 0; text-transform: none"><option value="field">Magnetic field (0 to 22 G, step 0.1)</option><option value="flow">Gas flow (0 to 5 sccm, step 0.1)</option><option value="power">Power (0 to 500 W, step 1)</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; width: 104px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Start ({{unit}})<input type="text" inputmode="decimal" value="{{fromText}}" onChange="{{onFrom}}" aria-invalid="{{fromInvalid}}" style="min-height: 42px; box-sizing: border-box; width: 100%; padding: 0 10px; border: 1px solid {{fromBorder}}; background: #1A1E1B; color: #F2F2EE; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 14.5px; letter-spacing: 0"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; width: 104px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">End ({{unit}})<input type="text" inputmode="decimal" value="{{toText}}" onChange="{{onTo}}" aria-invalid="{{toInvalid}}" style="min-height: 42px; box-sizing: border-box; width: 100%; padding: 0 10px; border: 1px solid {{toBorder}}; background: #1A1E1B; color: #F2F2EE; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 14.5px; letter-spacing: 0"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; width: 104px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Duration (s)<input type="text" inputmode="numeric" value="{{durText}}" onChange="{{onDur}}" aria-invalid="{{durInvalid}}" style="min-height: 42px; box-sizing: border-box; width: 100%; padding: 0 10px; border: 1px solid {{durBorder}}; background: #1A1E1B; color: #F2F2EE; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 14.5px; letter-spacing: 0"></label>
+</div>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Number of steps</p>
+<div role="group" aria-label="Number of steps" style="margin-top: 6px; display: inline-flex; border: 1.5px solid #5C625E">
+<sc-for list="{{stepChoices}}" as="c" hint-placeholder-count="5"><button type="button" aria-pressed="{{c.pressed}}" disabled="{{c.disabled}}" title="{{c.title}}" onClick="{{c.pick}}" style="min-width: 48px; min-height: 42px; padding: 0 12px; border: 0; background: {{c.bg}}; color: {{c.fg}}; font: inherit; font-size: 14.5px; font-weight: 700; cursor: {{c.cursor}}; text-decoration: {{c.strike}}">{{c.n}}</button></sc-for>
+</div>
+<sc-if value="{{hasErrors}}" hint-placeholder-val="{{false}}">
+<div role="alert" style="margin: 18px 0 0; padding: 14px 16px; border: 1.5px solid #FF8A70; background: #2A1B17">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-weight: 700; color: #FF8A70"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M12 3 2 21h20L12 3z"></path><path d="M12 10v5M12 18v.5"></path></svg>This ramp cannot be sized</p>
+<ul style="margin: 8px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.5; color: #F2F2EE">
+<sc-for list="{{errors}}" as="e" hint-placeholder-count="1"><li style="margin-top: 4px">{{e.text}}</li></sc-for>
+</ul>
+</div>
+</sc-if>
+<sc-if value="{{ok}}" hint-placeholder-val="{{true}}">
+<dl style="margin: 18px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: #2C312D; border: 1px solid #2C312D">
+<div style="background: #111412; padding: 12px 14px">
+<dt style="font-size: 13px; color: #8C938D">Divide then round</dt>
+<dd style="margin: 4px 0 0; font-weight: 700; font-variant-numeric: tabular-nums">{{naiveLine}}<span style="display: block; margin-top: 2px; font-size: 14px; color: {{naiveColor}}">{{naiveErr}}</span></dd>
+</div>
+<div style="background: #111412; padding: 12px 14px">
+<dt style="font-size: 13px; color: #8C938D">Exact split</dt>
+<dd style="margin: 4px 0 0; font-weight: 700; font-variant-numeric: tabular-nums">{{exactLine}}<span style="display: block; margin-top: 2px; font-size: 14px; color: #5CCB91">off by 0</span></dd>
+</div>
+</dl>
+<div style="margin-top: 14px; max-height: 236px; overflow: auto; border: 1px solid #2C312D; font-size: 13px; font-variant-numeric: tabular-nums">
+<div style="position: sticky; top: 0; display: grid; grid-template-columns: 0.8fr 1fr 1fr 1fr 1.2fr; gap: 8px; padding: 8px 12px; background: #1A1E1B; border-bottom: 1px solid #2C312D; color: #8C938D; font-weight: 500"><span>Step</span><span style="text-align: right">Start (s)</span><span style="text-align: right">Duration (s)</span><span style="text-align: right">Increment</span><span style="text-align: right">Setpoint</span></div>
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="5"><div style="display: grid; grid-template-columns: 0.8fr 1fr 1fr 1fr 1.2fr; gap: 8px; padding: 6px 12px; border-bottom: 1px solid #1F2420"><span>{{s.i}}</span><span style="text-align: right">{{s.t}}</span><span style="text-align: right">{{s.d}}</span><span style="text-align: right">{{s.inc}}</span><span style="text-align: right; font-weight: 600">{{s.v}}</span></div></sc-for>
+</div>
+</sc-if>
+</div>
+
+<div style="flex: 1.2 1 480px; min-width: 0; background: #111412; padding: clamp(20px, 2cqi, 28px)">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px">
+<h4 style="margin: 0; font-size: 17px; font-weight: 700">Setpoint sent to the PLC</h4>
+<span style="font-size: 12.5px; color: #8C938D">Steps, with the ideal ramp dashed</span>
+</div>
+<ul aria-label="Legend" style="list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; color: #A9B0AA">
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 3px; background: #FCCA21"></span>exact split</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 0; border-top: 2px dashed #FF8A70"></span>divide then round</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 0; border-top: 2px dashed #8C938D"></span>ideal ramp</li>
+</ul>
+<svg viewBox="0 0 640 300" role="img" aria-label="Setpoint staircase over time" style="display: block; width: 100%; height: auto; margin-top: 10px; overflow: visible">
+<line x1="52" x2="624" y1="{{yt0.y}}" y2="{{yt0.y}}" stroke="#2C312D" stroke-width="1"></line>
+<text x="44" y="{{yt0.ty}}" text-anchor="end" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{yt0.label}}</text>
+<line x1="52" x2="624" y1="{{yt1.y}}" y2="{{yt1.y}}" stroke="#2C312D" stroke-width="1"></line>
+<text x="44" y="{{yt1.ty}}" text-anchor="end" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{yt1.label}}</text>
+<line x1="52" x2="624" y1="{{yt2.y}}" y2="{{yt2.y}}" stroke="#2C312D" stroke-width="1"></line>
+<text x="44" y="{{yt2.ty}}" text-anchor="end" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{yt2.label}}</text>
+<line x1="52" x2="624" y1="{{yt3.y}}" y2="{{yt3.y}}" stroke="#2C312D" stroke-width="1"></line>
+<text x="44" y="{{yt3.ty}}" text-anchor="end" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{yt3.label}}</text>
+<line x1="52" x2="624" y1="{{yt4.y}}" y2="{{yt4.y}}" stroke="#2C312D" stroke-width="1"></line>
+<text x="44" y="{{yt4.ty}}" text-anchor="end" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{yt4.label}}</text>
+<text x="44" y="12" text-anchor="end" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{unit}}</text>
+<line x1="52" x2="624" y1="264" y2="264" stroke="#8C938D" stroke-width="1"></line>
+<line x1="{{xt0.x}}" x2="{{xt0.x}}" y1="264" y2="268" stroke="#8C938D" stroke-width="1"></line>
+<text x="{{xt0.x}}" y="284" text-anchor="{{xt0.anchor}}" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{xt0.label}}</text>
+<line x1="{{xt1.x}}" x2="{{xt1.x}}" y1="264" y2="268" stroke="#8C938D" stroke-width="1"></line>
+<text x="{{xt1.x}}" y="284" text-anchor="{{xt1.anchor}}" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{xt1.label}}</text>
+<line x1="{{xt2.x}}" x2="{{xt2.x}}" y1="264" y2="268" stroke="#8C938D" stroke-width="1"></line>
+<text x="{{xt2.x}}" y="284" text-anchor="{{xt2.anchor}}" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{xt2.label}}</text>
+<line x1="{{xt3.x}}" x2="{{xt3.x}}" y1="264" y2="268" stroke="#8C938D" stroke-width="1"></line>
+<text x="{{xt3.x}}" y="284" text-anchor="{{xt3.anchor}}" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{xt3.label}}</text>
+<line x1="{{xt4.x}}" x2="{{xt4.x}}" y1="264" y2="268" stroke="#8C938D" stroke-width="1"></line>
+<text x="{{xt4.x}}" y="284" text-anchor="{{xt4.anchor}}" fill="#8C938D" font-size="12" font-family="JetBrains Mono, ui-monospace, monospace">{{xt4.label}}</text>
+<path d="{{idealD}}" fill="none" stroke="#8C938D" stroke-width="1.4" stroke-dasharray="5 5"></path>
+<path d="{{naiveD}}" fill="none" stroke="#FF8A70" stroke-width="1.8" stroke-dasharray="2 4"></path>
+<path d="{{exactD}}" fill="none" stroke="#FCCA21" stroke-width="2.6" stroke-linejoin="round"></path>
+<path d="{{dotsD}}" fill="#FCCA21" stroke="#111412" stroke-width="1.5"></path>
+<text x="624" y="{{finalY}}" text-anchor="end" fill="#D2D6D1" stroke="#111412" stroke-width="4" paint-order="stroke" font-size="13" font-family="Archivo, Arial, sans-serif">{{finalLabel}}</text>
+<text x="338" y="150" text-anchor="middle" display="{{errDisplay}}" fill="#FF8A70" font-size="15" font-weight="700" font-family="Archivo, Arial, sans-serif">Parameters need fixing</text>
+</svg>
+<p style="margin: 14px 0 0; font-size: 13.5px; line-height: 1.55; color: #A9B0AA">An example from the internship report: with the first version, 19.2 G in 5 steps gave 3.7 + 3.9 + 3.9 + 3.9 + 3.9 = 19.3. The exact split gives 3.8 + 3.8 + 3.8 + 3.9 + 3.9 = 19.2. In the delivered version, parameters with a 0.1 step rely on a precomputed table that gives, for every change and every number of steps, increments that add up exactly.</p>
+</div>
+</div>
+</section>
+
+<details style="margin-top: 28px; border-top: 1px solid #D5D7D1; border-bottom: 1px solid #D5D7D1">
+<summary style="display: flex; align-items: center; gap: 12px; min-height: 56px; cursor: pointer; font-size: 16px; font-weight: 700"><span aria-hidden="true" style="display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 15px; line-height: 1">+</span>See the requirements → features matrix<span style="margin-left: auto; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: #5C625E">9 requirements</span></summary>
+<div style="overflow-x: auto; margin: 4px 0 20px; background: #FFFFFF; border: 1px solid #D5D7D1">
+<table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 14.5px; line-height: 1.45">
+<thead><tr><th style="text-align: left; padding: 10px 14px; border-bottom: 1px solid #D5D7D1; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Requirement</th><th style="text-align: left; padding: 10px 14px; border-bottom: 1px solid #D5D7D1; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Client need</th><th style="text-align: left; padding: 10px 14px; border-bottom: 1px solid #D5D7D1; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">How PlasmaCraft meets it</th></tr></thead>
+<tbody>
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#01</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0">Set every parameter at every moment</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; color: #474D49">Sequence table and a chart per parameter</td></tr>
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#02</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0">Recipes long enough for a full cycle</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; color: #474D49">Up to 100 sequences, a margin beyond the 60 requested</td></tr>
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#03</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0">Identify each recipe</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; color: #474D49">Name, author, date and an automatic unique ID</td></tr>
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#04</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0">Unambiguous reading</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; color: #474D49">Explicit labels and a color code per parameter</td></tr>
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#05</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0">Understandable units</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; color: #474D49">Seconds, watts, sccm and gauss shown everywhere</td></tr>
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#06</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0">Limits and resolution</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; color: #474D49">Input checks at the machine's step size</td></tr>
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#07</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0">Load, duplicate, delete, program a slope, visualize</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; color: #474D49">All of these, plus swapping and in-place editing</td></tr>
+<tr><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#08</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0">Workstations independent of the machine</td><td style="padding: 10px 14px; border-bottom: 1px solid #E4E5E0; color: #474D49">An Excel/VBA workbook, with nothing to install</td></tr>
+<tr><td style="padding: 10px 14px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; white-space: nowrap">FS-RS#09</td><td style="padding: 10px 14px">Compatible transfer and locked recipes</td><td style="padding: 10px 14px; color: #474D49">TXT export for the PLC, protected XLSM, PDF capture</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+
+<div style="margin-top: 36px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Technologies</p>
+<ul aria-label="Technologies" style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #111412">
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Excel</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">VBA</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">UserForms</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Dynamic formulas (OFFSET)</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Linear interpolation</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Balsamiq</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Flowcharts</li>
+</ul>
+</div>
+</article>
+
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const L = {
+      dec: (s) => s,
+      from: 'Start', to: 'End',
+      and: ' and ', off: 'off by', stepsOf: 'steps of', final: 'final setpoint',
+      notNumber: (l) => l + ': enter a number.',
+      range: (l, min, max, u) => l + ' out of range: the machine accepts ' + min + ' to ' + max + ' ' + u + '.',
+      grid: (l, res, u) => l + " must land on the machine's resolution (" + res + ' ' + u + ').',
+      duration: 'Duration: enter a whole number of seconds, from 1 to 3,600 (the machine limit).',
+      same: 'Start and end are equal: there is no ramp to split.',
+      tooManyRange: (n, delta, u, res, max) => n + ' steps impossible: a change of ' + delta + ' ' + u + ' at a resolution of ' + res + ' ' + u + ' allows at most ' + max + (max > 1 ? ' steps.' : ' step.'),
+      tooManyTime: (n, t) => n + ' steps impossible in ' + t + ' s: each step lasts at least 1 s.',
+      cannot: (n) => n + ' steps: impossible with these values'
+    };
+    const PARAMS = {
+      field: { unit: 'G', min: 0, max: 22, res: 0.1, from: '0', to: L.dec('19.2') },
+      flow: { unit: 'sccm', min: 0, max: 5, res: 0.1, from: '0', to: L.dec('3.5') },
+      power: { unit: 'W', min: 0, max: 500, res: 1, from: '0', to: '350' }
+    };
+    const st = Object.assign({ param: 'field', from: '0', to: L.dec('19.2'), dur: '120', n: 5 }, this.state || {});
+    const P = PARAMS[st.param] || PARAMS.field;
+    const digits = P.res < 1 ? 1 : 0;
+    const fmt = (v) => {
+      const k = Math.pow(10, digits);
+      const x = Math.round(v * k) / k;
+      const s = L.dec(Math.abs(x).toFixed(digits));
+      return x < 0 ? '−' + s : s;
+    };
+    const signed = (v) => (v > 0 ? '+' : '') + fmt(v);
+    const axis = (v) => {
+      const x = Math.round(v * 100) / 100;
+      const s = L.dec(String(Math.abs(x)));
+      return x < 0 ? '−' + s : s;
+    };
+
+    // Saisie : nombres au pas de la machine, dans ses bornes ; durée en secondes entières.
+    const parse = (text) => {
+      const t = String(text == null ? '' : text).trim().replace(',', '.');
+      return /^-?\d+(\.\d+)?$/.test(t) ? Number(t) : NaN;
+    };
+    const errors = [];
+    const invalid = { from: false, to: false, dur: false };
+    const value = (key, label) => {
+      const v = parse(st[key]);
+      if (isNaN(v)) { invalid[key] = true; errors.push(L.notNumber(label)); return NaN; }
+      if (v < P.min || v > P.max) { invalid[key] = true; errors.push(L.range(label, axis(P.min), axis(P.max), P.unit)); return NaN; }
+      if (Math.abs(v / P.res - Math.round(v / P.res)) > 1e-6) { invalid[key] = true; errors.push(L.grid(label, axis(P.res), P.unit)); return NaN; }
+      return v;
+    };
+    const a = value('from', L.from);
+    const b = value('to', L.to);
+    let T = parse(st.dur);
+    if (isNaN(T) || T < 1 || T > 3600 || T !== Math.floor(T)) { invalid.dur = true; errors.push(L.duration); T = NaN; }
+    const Np = st.n;
+    const U = !isNaN(a) && !isNaN(b) ? Math.abs(Math.round((b - a) / P.res)) : NaN;
+    if (U === 0) errors.push(L.same);
+    else if (U < Np) errors.push(L.tooManyRange(Np, fmt(U * P.res), P.unit, axis(P.res), U));
+    if (T < Np) errors.push(L.tooManyTime(Np, T));
+    const ok = errors.length === 0;
+
+    const stepChoices = [5, 10, 15, 20, 25].map((n) => {
+      const on = n === Np;
+      const fits = !(U > 0 && U < n) && !(T < n);
+      return {
+        n: String(n),
+        pressed: on ? 'true' : 'false',
+        disabled: !fits && !on,
+        title: fits ? undefined : L.cannot(n),
+        bg: on ? (fits ? '#F2F2EE' : '#FF8A70') : 'transparent',
+        fg: on ? '#111412' : fits ? '#A9B0AA' : '#5C625E',
+        cursor: fits ? 'pointer' : 'not-allowed',
+        strike: fits || on ? 'none' : 'line-through',
+        pick: () => this.setState({ n: n })
+      };
+    });
+
+    // Répartition exacte en unités entières de la machine : la somme tombe juste.
+    const sign = b < a ? -1 : 1;
+    const a0 = ok ? Math.round(a / P.res) : 0;
+    const steps = [];
+    let nUnits = 0, naiveEnd = 0;
+    if (ok) {
+      const q = Math.floor(U / Np), r = U - q * Np;
+      const tq = Math.floor(T / Np), tr = T - tq * Np;
+      let acc = 0, t = 0;
+      for (let i = 0; i < Np; i++) {
+        const inc = i < Np - r ? q : q + 1;
+        const d = i < Np - tr ? tq : tq + 1;
+        acc += inc;
+        steps.push({ i: i + 1, t: t, d: d, units: inc, v: (a0 + sign * acc) * P.res });
+        t += d;
+      }
+      nUnits = Math.round(U / Np);
+      naiveEnd = (a0 + sign * nUnits * Np) * P.res;
+    }
+
+    const W = 640, H = 300, ml = 52, mr = 16, mt = 16, mb = 36;
+    const Tx = ok ? T : isNaN(T) ? 120 : T;
+    const tickLo = ok ? Math.min(a, b) : P.min;
+    const tickHi = ok ? Math.max(a, b) : P.max;
+    const lo = ok ? Math.min(tickLo, naiveEnd) : tickLo;
+    const hi = ok ? Math.max(tickHi, naiveEnd) : tickHi;
+    const pad = (hi - lo) * 0.08;
+    const y0 = lo - pad, y1 = hi + pad;
+    const X = (tt) => ml + (W - ml - mr) * tt / Tx;
+    const Y = (v) => mt + (H - mt - mb) * (1 - (v - y0) / (y1 - y0));
+    const f1 = (v) => v.toFixed(1);
+    const yTick = (k) => {
+      const v = tickLo + (tickHi - tickLo) * k / 4;
+      return { y: f1(Y(v)), ty: f1(Y(v) + 4), label: axis(v) };
+    };
+    const xTick = (k) => ({ x: f1(X(Tx * k / 4)), anchor: k === 0 ? 'start' : k === 4 ? 'end' : 'middle', label: axis(Tx * k / 4) + ' s' });
+
+    const out = {
+      stepChoices: stepChoices,
+      param: st.param in PARAMS ? st.param : 'field',
+      unit: P.unit,
+      fromText: st.from, toText: st.to, durText: st.dur,
+      fromInvalid: invalid.from ? 'true' : 'false',
+      toInvalid: invalid.to ? 'true' : 'false',
+      durInvalid: invalid.dur ? 'true' : 'false',
+      fromBorder: invalid.from ? '#FF8A70' : '#5C625E',
+      toBorder: invalid.to ? '#FF8A70' : '#5C625E',
+      durBorder: invalid.dur ? '#FF8A70' : '#5C625E',
+      ok: ok,
+      hasErrors: !ok,
+      errors: errors.map((text) => ({ text: text })),
+      errDisplay: ok ? 'none' : 'inline',
+      yt0: yTick(0), yt1: yTick(1), yt2: yTick(2), yt3: yTick(3), yt4: yTick(4),
+      xt0: xTick(0), xt1: xTick(1), xt2: xTick(2), xt3: xTick(3), xt4: xTick(4),
+      idealD: '', naiveD: '', exactD: '', dotsD: '',
+      naiveLine: '', naiveErr: '', naiveColor: '#5CCB91', exactLine: '',
+      finalLabel: '', finalY: '25',
+      steps: [],
+      onParam: (e) => {
+        const p = PARAMS[e.target.value] ? e.target.value : 'field';
+        this.setState({ param: p, from: PARAMS[p].from, to: PARAMS[p].to });
+      },
+      onFrom: (e) => this.setState({ from: e.target.value }),
+      onTo: (e) => this.setState({ to: e.target.value }),
+      onDur: (e) => this.setState({ dur: e.target.value })
+    };
+    if (!ok) return out;
+
+    const start = 'M' + f1(X(0)) + ' ' + f1(Y(a));
+    let naiveD = start, exactD = start, dotsD = '', vn = a0;
+    steps.forEach((s) => {
+      vn += sign * nUnits;
+      naiveD += 'V' + f1(Y(vn * P.res)) + 'H' + f1(X(s.t + s.d));
+      exactD += 'V' + f1(Y(s.v)) + 'H' + f1(X(s.t + s.d));
+      const cx = X(s.t), cy = Y(s.v);
+      dotsD += 'M' + f1(cx - 3.2) + ' ' + f1(cy) + 'a3.2 3.2 0 1 0 6.4 0a3.2 3.2 0 1 0 -6.4 0';
+    });
+    const err = naiveEnd - b;
+    const bad = Math.abs(err) > P.res / 2;
+    const distinct = Array.from(new Set(steps.map((s) => s.units))).sort((x, y) => x - y).map((u) => fmt(sign * u * P.res)).join(L.and);
+    return Object.assign(out, {
+      idealD: start + 'L' + f1(X(T)) + ' ' + f1(Y(b)),
+      naiveD: naiveD, exactD: exactD, dotsD: dotsD,
+      naiveLine: Np + ' × ' + fmt(sign * nUnits * P.res) + ' ' + P.unit + ' → ' + fmt(naiveEnd) + ' ' + P.unit,
+      naiveErr: L.off + ' ' + (bad ? signed(err) + ' ' + P.unit : '0'),
+      naiveColor: bad ? '#FF8A70' : '#5CCB91',
+      exactLine: L.stepsOf + ' ' + distinct + ' ' + P.unit + ' → ' + fmt(b) + ' ' + P.unit,
+      finalLabel: L.final + ' ' + fmt(b) + ' ' + P.unit,
+      // Rampe montante : au-dessus du point final. Descendante : au-dessus de la rampe idéale
+      // à l'aplomb du début du libellé (~150 px), là où l'escalier ne passe pas.
+      finalY: f1(sign > 0 ? Y(b) - 8 : Y(a + (b - a) * Math.max(0, (W - mr - 150 - ml) / (W - ml - mr))) - 8),
+      steps: steps.map((s) => ({ i: String(s.i), t: String(s.t), d: String(s.d), inc: signed(sign * s.units * P.res), v: fmt(s.v) + ' ' + P.unit }))
+    });
+  }
+}
+</script>
+</body>
+</html>

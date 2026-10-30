@@ -1,0 +1,260 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Amarenco.dc.html": {
+      "expand": "fill",
+      "h": 5850,
+      "is_interactive": true,
+      "title": "02 · Projet Amarenco",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "AmarencoEN.dc.html": {
+      "expand": "fill",
+      "h": 5800,
+      "is_interactive": true,
+      "title": "02 · Amarenco project (EN)",
+      "w": 1440,
+      "x": 1520,
+      "y": 6800
+    },
+    "Energiter.dc.html": {
+      "expand": "fill",
+      "h": 4300,
+      "is_interactive": true,
+      "title": "03 · Projet Energiter",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "EnergiterEN.dc.html": {
+      "expand": "fill",
+      "h": 4300,
+      "is_interactive": true,
+      "title": "03 · Energiter project (EN)",
+      "w": 1440,
+      "x": 3040,
+      "y": 6800
+    },
+    "Labo.dc.html": {
+      "expand": "fill",
+      "h": 3900,
+      "title": "05 · Labo et compétences",
+      "w": 1440,
+      "x": 6080,
+      "y": 0
+    },
+    "LaboEN.dc.html": {
+      "expand": "fill",
+      "h": 3900,
+      "title": "05 · Lab and skills (EN)",
+      "w": 1440,
+      "x": 6080,
+      "y": 6800
+    },
+    "LaboAion.dc.html": {
+      "expand": "fill",
+      "h": 6300,
+      "title": "07 · Labo — Agent AION 2",
+      "w": 1440,
+      "x": 9120,
+      "y": 0
+    },
+    "LaboAionEN.dc.html": {
+      "expand": "fill",
+      "h": 6300,
+      "title": "07 · Lab — AION 2 agent (EN)",
+      "w": 1440,
+      "x": 9120,
+      "y": 6800
+    },
+    "LaboKidsVid.dc.html": {
+      "expand": "fill",
+      "h": 4000,
+      "title": "06 · Labo — KidsVid",
+      "w": 1440,
+      "x": 7600,
+      "y": 0
+    },
+    "LaboKidsVidEN.dc.html": {
+      "expand": "fill",
+      "h": 4000,
+      "title": "06 · Lab — KidsVid (EN)",
+      "w": 1440,
+      "x": 7600,
+      "y": 6800
+    },
+    "LaboPico.dc.html": {
+      "expand": "fill",
+      "h": 4100,
+      "title": "08 · Labo — Pico 2 W",
+      "w": 1440,
+      "x": 10640,
+      "y": 0
+    },
+    "LaboPicoEN.dc.html": {
+      "expand": "fill",
+      "h": 4100,
+      "title": "08 · Lab — Pico 2 W (EN)",
+      "w": 1440,
+      "x": 10640,
+      "y": 6800
+    },
+    "LaboPulse.dc.html": {
+      "expand": "fill",
+      "h": 4200,
+      "title": "09 · Labo — Pulse",
+      "w": 1440,
+      "x": 12160,
+      "y": 0
+    },
+    "LaboPulseEN.dc.html": {
+      "expand": "fill",
+      "h": 4200,
+      "title": "09 · Lab — Pulse (EN)",
+      "w": 1440,
+      "x": 12160,
+      "y": 6800
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 3600,
+      "is_interactive": true,
+      "title": "01 · Accueil",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "MainEN.dc.html": {
+      "expand": "fill",
+      "h": 3600,
+      "is_interactive": true,
+      "title": "01 · Home (EN)",
+      "w": 1440,
+      "x": 0,
+      "y": 6800
+    },
+    "Mobile.dc.html": {
+      "h": 5500,
+      "title": "Mobile · Accueil à 390 px",
+      "w": 390,
+      "x": 15200,
+      "y": 0
+    },
+    "MobileEN.dc.html": {
+      "h": 5500,
+      "title": "Mobile · Home at 390 px (EN)",
+      "w": 390,
+      "x": 15200,
+      "y": 6800
+    },
+    "Parcours.dc.html": {
+      "expand": "fill",
+      "h": 4000,
+      "title": "10 · Parcours, documents, contact",
+      "w": 1440,
+      "x": 13680,
+      "y": 0
+    },
+    "ParcoursEN.dc.html": {
+      "expand": "fill",
+      "h": 4000,
+      "title": "10 · Background, documents, contact (EN)",
+      "w": 1440,
+      "x": 13680,
+      "y": 6800
+    },
+    "PlasmaCraft.dc.html": {
+      "expand": "fill",
+      "h": 4400,
+      "is_interactive": true,
+      "title": "04 · Projet PlasmaCraft",
+      "w": 1440,
+      "x": 4560,
+      "y": 0
+    },
+    "PlasmaCraftEN.dc.html": {
+      "expand": "fill",
+      "h": 4400,
+      "is_interactive": true,
+      "title": "04 · PlasmaCraft project (EN)",
+      "w": 1440,
+      "x": 4560,
+      "y": 6800
+    },
+    "AmarencoAudit.dc.html": {
+      "expand": "fill",
+      "h": 4100,
+      "is_interactive": true,
+      "title": "02 bis · Contrôle qualité PVsyst ↔ SynaptiQ",
+      "w": 1440,
+      "x": 15680,
+      "y": 0
+    },
+    "AmarencoAuditEN.dc.html": {
+      "expand": "fill",
+      "h": 4000,
+      "is_interactive": true,
+      "title": "02 bis · PVsyst ↔ SynaptiQ quality control (EN)",
+      "w": 1440,
+      "x": 15680,
+      "y": 6800
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-28T13:55:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "titre": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Portfolio Brice Rigourd — refonte « Haute tension »",
+      "w": 240,
+      "x": 0,
+      "y": -320
+    },
+    "titre-en": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Portfolio Brice Rigourd — English version",
+      "w": 240,
+      "x": 0,
+      "y": 6480
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Amarenco.dc.html",
+    "AmarencoAudit.dc.html",
+    "Energiter.dc.html",
+    "PlasmaCraft.dc.html",
+    "Labo.dc.html",
+    "LaboKidsVid.dc.html",
+    "LaboAion.dc.html",
+    "LaboPico.dc.html",
+    "LaboPulse.dc.html",
+    "Parcours.dc.html",
+    "Mobile.dc.html",
+    "MainEN.dc.html",
+    "AmarencoEN.dc.html",
+    "AmarencoAuditEN.dc.html",
+    "EnergiterEN.dc.html",
+    "PlasmaCraftEN.dc.html",
+    "LaboEN.dc.html",
+    "LaboKidsVidEN.dc.html",
+    "LaboAionEN.dc.html",
+    "LaboPicoEN.dc.html",
+    "LaboPulseEN.dc.html",
+    "ParcoursEN.dc.html",
+    "MobileEN.dc.html"
+  ],
+  "pages": [],
+  "title": "Portfolio Brice Rigourd"
+}

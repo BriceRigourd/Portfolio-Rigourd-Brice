@@ -1,0 +1,980 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projet 02 — Energiter</title>
+<link rel="alternate" hreflang="en" href="en/energiter.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F2F2EE}
+a{color:#111412}a:hover{color:#474D49}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div style="container-type: inline-size; min-height: 100vh; background: #F2F2EE; color: #111412; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility">
+<header style="position: sticky; top: 0; z-index: 30; background: #F2F2EE; border-bottom: 1px solid #D5D7D1">
+<div style="max-width: 1312px; margin: 0 auto; padding: 8px clamp(20px, 4.5cqi, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px">
+<a href="index.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #111412; text-decoration: none"><span aria-hidden="true" style="position: relative; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #111412; color: #F2F2EE; font-weight: 800; font-stretch: 125%; font-size: 11.5px; letter-spacing: 0.02em">BR<span style="position: absolute; right: -4px; bottom: -4px; width: 9px; height: 9px; background: #FCCA21; border: 2px solid #F2F2EE"></span></span><span style="font-weight: 700; font-stretch: 108%; font-size: 16px; white-space: nowrap">Brice Rigourd</span><span style="font-size: 14px; font-weight: 500; color: #5C625E; white-space: nowrap">← Accueil</span></a>
+<div role="group" aria-label="Langue" style="display: inline-flex; border: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em"><span aria-current="true" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; background: #111412; color: #F2F2EE">FR</span><a href="en/energiter.html" hreflang="en" lang="en" aria-label="English version" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #111412; text-decoration: none">EN</a></div>
+</div>
+</header>
+<article id="energiter" aria-labelledby="en-title" style="padding: clamp(56px, 6.5cqi, 96px) 0 clamp(64px, 6.5cqi, 96px)">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-top: 16px; border-top: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #111412; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21; outline: 1.5px solid #111412"></span>Projet 02</span>
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; background: #111412; color: #F2F2EE; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FCCA21" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg>Avril – septembre 2024</span>
+<span>Energiter, Montpellier</span>
+<span style="margin-left: auto">Outil géospatial d'aide à la décision</span>
+</div>
+
+<h2 id="en-title" style="margin: 36px 0 0; max-width: 22ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2rem, 3.9cqi, 3.5rem); line-height: 1.03; letter-spacing: -0.03em; text-wrap: balance">Outil d'étude de raccordement au réseau</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; margin-top: clamp(32px, 3.4cqi, 48px)">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Le contexte</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">En France, un parc éolien ou solaire peut attendre plus de huit ans son raccordement, faute de capacité dans les postes sources.</p>
+</div>
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Ce que j'ai construit</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">Pour chaque projet, l'outil trouve les postes réellement accessibles par la route, vérifie leur capacité d'accueil et chiffre le raccordement. C'est le sujet de mon mémoire de Master.</p>
+</div>
+</div>
+<dl style="flex: 1 1 340px; max-width: 480px; margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 2px solid #111412; font-size: 15px; line-height: 1.45">
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Entreprise</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Energiter, bureau d'études éolien et solaire</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Rôle</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Ingénieur bureau d'études EnR, stage de fin d'études</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Période</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Avril – septembre 2024</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Cadre</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Mémoire de Master, UPV/EHU, octobre 2024</dd>
+<dt style="padding: 13px 16px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Architecture</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; font-weight: 500">Interface Excel/VBA qui pilote des scripts Python via PowerShell</dd>
+</dl>
+</div>
+
+<dl aria-label="En chiffres" style="margin: clamp(48px, 4.6cqi, 64px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">postes sources Caparéseau filtrés et classés par criticité, en 5 à 20 s</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">3 400+</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">de temps de réponse grâce aux appels asynchrones à l'API IGN : de 15–35 s à 3–15 s pour 10 postes</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">−64 %</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">études de faisabilité et de productible PV, centrales HTA de 2 à 22 MWc</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">40+</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">simulations éoliennes WAsP et windPRO, parcs de 3 à 15 MW</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">15+</dd></div>
+</dl>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Chaîne de traitement</p>
+<ol aria-label="Chaîne de traitement" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 28px 0">
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">01</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Données réseau</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Téléchargement automatique et archivage des données Caparéseau (RTE, plus de 3 400 postes sources) et des schémas régionaux S3REnR.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">02</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Distance réelle</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">API Itinéraire de l'IGN appelée en asynchrone, en voiture, à pied ou au plus court des deux, après une présélection des postes dans un rayon autour du projet.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">03</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Analyse des postes</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Postes à 20 kV et plus en aval, score de criticité de 0 à 5 selon la capacité avec et sans travaux, transformateurs et capacité HTB/HTA restante, postes à créer signalés.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">04</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Chiffrage</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Modules de 17 MW, câble choisi dans une table puissance × distance, coût réseau et quote-part régionale retrouvée à partir des coordonnées, plusieurs puissances comparées d'un coup.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #111412; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">05</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Livrables</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Tracés KML pour Google Earth, cartes HTML (folium), base de projets archivée, rapport PDF et XLSM généré depuis Excel.</p>
+</li>
+</ol>
+</div>
+
+<section aria-labelledby="sim-title" style="margin-top: clamp(56px, 5cqi, 72px); background: #111412; color: #F2F2EE">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 48px; padding: clamp(24px, 2.5cqi, 36px); border-bottom: 1px solid #2C312D">
+<div style="flex: 999 1 480px; min-width: 0">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21"></span>Démo · données fictives</p>
+<h3 id="sim-title" style="margin: 12px 0 0; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.5cqi, 36px); line-height: 1.08; letter-spacing: -0.025em">Étude de raccordement</h3>
+</div>
+<p style="flex: 1 1 380px; margin: 0; font-size: 15px; line-height: 1.55; color: #A9B0AA">Simulation sur données fictives, avec la logique de l'outil. Cliquez sur la carte pour placer le parc, ou déplacez-le avec les flèches du clavier, puis jouez sur sa puissance.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1px; background: #2C312D">
+<div style="flex: 999 1 620px; min-width: 0; background: #151916">
+<div tabindex="0" aria-label="Carte de simulation : cliquez pour placer le parc solaire, ou déplacez-le avec les flèches du clavier." style="position: relative; background-color: #151916; background-image: linear-gradient(rgba(242,242,238,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(242,242,238,0.035) 1px, transparent 1px), linear-gradient(rgba(242,242,238,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(242,242,238,0.07) 1px, transparent 1px); background-size: 16px 16px, 16px 16px, 80px 80px, 80px 80px; cursor: crosshair; touch-action: manipulation; outline-offset: -3px">
+<svg viewBox="0 0 640 440" role="img" style="display: block; width: 100%; height: auto; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif" aria-label="Carte fictive : routes, rivière, postes sources colorés par tension. Le tracé relie le parc au poste retenu P-02.">
+<path fill="none" stroke="#22384A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" d="M-10.0 198.5L0.3 194.5L10.6 190.4L20.9 186.2L31.3 182.0L41.6 178.0L51.9 174.3L62.2 171.1L72.5 168.5L82.8 166.8L93.1 166.0L103.4 166.3L113.8 167.7L124.1 170.3L134.4 174.0L144.7 178.7L155.0 184.5L165.3 191.0L175.6 198.2L185.9 205.7L196.3 213.5L206.6 221.2L216.9 228.7L227.2 235.7L237.5 242.1L247.8 247.7L258.1 252.5L268.4 256.4L278.8 259.5L289.1 261.7L299.4 263.1L309.7 263.9L320.0 264.1L330.3 263.9L340.6 263.3L350.9 262.6L361.3 261.8L371.6 260.9L381.9 259.9L392.2 259.0L402.5 258.0L412.8 256.8L423.1 255.5L433.4 253.8L443.8 251.8L454.1 249.2L464.4 246.0L474.7 242.2L485.0 237.7L495.3 232.5L505.6 226.6L515.9 220.2L526.3 213.4L536.6 206.3L546.9 199.2L557.2 192.1L567.5 185.4L577.8 179.3L588.1 173.9L598.4 169.5L608.8 166.1L619.1 163.9L629.4 162.9L639.7 163.2L650.0 164.6"></path>
+<path fill="none" stroke="#3A413B" stroke-width="1.15" stroke-linecap="round" d="M536.1 235.8Q553.6 222.7 566.2 204.9M536.1 235.8Q559.8 230.0 583.2 236.9M536.1 235.8Q524.5 247.8 508.5 252.8M61.3 232.7Q66.4 257.8 70.2 283.1M61.3 232.7Q38.6 237.4 17.2 246.5M61.3 232.7Q76.8 225.4 93.8 226.0M61.3 232.7Q37.1 223.9 13.4 213.9M61.3 232.7Q65.4 212.7 66.9 192.5M386.4 199.3Q404.3 206.8 421.0 216.8M386.4 199.3Q377.6 184.2 374.7 167.0M386.4 199.3Q410.6 188.4 435.4 179.1M386.4 199.3Q369.5 202.2 353.1 207.1M307.7 362.9Q286.8 347.8 270.4 327.9M307.7 362.9Q329.2 353.3 352.2 348.2M307.7 362.9Q324.0 367.8 336.5 379.5M307.7 362.9Q314.5 346.5 313.1 328.9M270.7 290.8Q301.0 298.1 330.8 288.8M270.7 290.8Q261.1 275.9 247.4 264.8M431.8 78.9Q401.0 73.6 370.8 65.0M431.8 78.9Q418.6 96.4 398.7 105.7M431.8 78.9Q424.3 111.6 433.4 144.0M431.8 78.9Q446.0 87.6 461.4 93.8M431.8 78.9Q437.6 52.6 441.3 25.9M255.9 168.8Q257.3 187.1 251.6 204.4M255.9 168.8Q240.4 161.0 223.7 156.1M255.9 168.8Q267.7 182.6 282.1 193.6M255.9 168.8Q260.0 149.3 263.4 129.5M370.8 65.0Q351.1 74.1 337.6 91.1M269.7 363.2Q269.6 345.6 270.4 327.9M508.1 331.8Q498.3 355.2 489.1 378.8M508.1 331.8Q513.0 315.6 510.7 298.8M207.6 271.2Q214.1 288.8 214.7 307.6M207.6 271.2Q187.4 276.8 167.2 282.4M207.6 271.2Q227.7 269.1 247.4 264.8M207.6 271.2Q209.8 254.8 207.7 238.3M167.0 35.4Q183.8 31.0 196.3 19.0M468.4 418.7Q493.5 414.5 515.0 401.0M468.4 418.7Q476.7 397.7 489.1 378.8M194.9 73.0Q202.9 90.7 212.6 107.6M194.9 73.0Q201.4 46.2 196.3 19.0M470.0 156.4Q451.2 151.7 433.4 144.0M470.0 156.4Q474.9 135.7 485.3 117.2M470.0 156.4Q486.5 153.0 501.4 145.1M470.0 156.4Q452.0 166.7 435.4 179.1M470.0 156.4Q493.6 173.0 508.1 197.8M532.8 71.6Q552.8 64.5 573.7 67.6M532.8 71.6Q552.6 93.3 573.7 113.9M532.8 71.6Q518.0 55.9 498.5 46.6M535.4 353.2Q519.3 374.6 515.0 401.0M535.4 353.2Q534.4 334.2 541.1 316.4M535.4 353.2Q514.2 369.5 489.1 378.8M249.0 22.6Q222.9 17.3 196.3 19.0M59.3 362.0Q87.5 361.1 112.5 347.9M59.3 362.0Q81.1 377.0 104.8 389.0M59.3 362.0Q41.0 351.2 21.3 343.4M318.3 230.9Q333.0 243.0 350.9 249.6M318.3 230.9Q317.1 211.2 318.6 191.5M318.3 230.9Q334.3 217.0 353.1 207.1M178.6 220.8Q161.7 220.7 144.8 222.2M178.6 220.8Q193.5 229.0 207.7 238.3M464.3 49.0Q465.3 30.4 474.4 14.1M464.3 49.0Q468.7 71.8 461.4 93.8M408.8 30.8Q382.0 31.0 355.2 30.7M618.4 190.1Q592.9 199.8 566.2 204.9M618.4 190.1Q601.5 214.0 583.2 236.9M618.4 190.1Q620.0 212.1 623.1 233.9M299.2 158.8Q319.5 146.8 334.7 128.8M41.7 317.1Q32.0 299.6 14.9 289.1M270.4 327.9Q241.1 321.7 214.7 307.6M270.4 327.9Q291.8 324.9 313.1 328.9M226.3 362.4Q240.1 380.0 244.6 401.9M226.3 362.4Q209.0 376.5 189.0 386.4M226.3 362.4Q214.8 387.8 212.6 415.5M226.3 362.4Q208.7 356.2 190.3 353.2M110.7 61.3Q105.8 43.7 108.0 25.6M400.2 271.4Q406.1 292.6 413.3 313.4M244.6 401.9Q260.1 408.4 276.8 406.8M537.4 274.0Q538.7 295.3 541.1 316.4M537.4 274.0Q521.1 265.9 508.5 252.8M537.4 274.0Q555.5 272.3 573.6 273.4M17.3 378.4Q19.1 360.9 21.3 343.4M197.8 181.8Q211.2 169.4 223.7 156.1M197.8 181.8Q182.4 177.0 166.4 175.5M328.7 55.0Q318.3 32.9 302.7 14.1M328.7 55.0Q339.7 40.4 355.2 30.7M556.8 411.9Q535.4 408.6 515.0 401.0M556.8 411.9Q580.4 418.3 604.8 419.1M556.8 411.9Q567.2 395.1 570.1 375.5M70.2 283.1Q46.7 260.4 17.2 246.5M70.2 283.1Q85.8 270.3 101.2 257.3M412.9 426.1Q387.5 427.9 363.9 418.5M412.9 426.1Q408.7 402.1 399.4 379.7M412.9 426.1Q430.0 410.7 445.4 393.6M480.6 284.0Q495.1 292.5 510.7 298.8M55.9 131.3Q51.3 106.2 43.2 82.1M55.9 131.3Q71.8 136.7 83.8 148.5M55.9 131.3Q40.8 148.2 31.7 169.0M421.0 216.8Q425.8 197.1 435.4 179.1M421.0 216.8Q410.1 230.0 395.7 239.2M398.7 105.7Q413.9 126.8 433.4 144.0M246.6 87.3Q258.9 65.7 280.4 53.1M246.6 87.3Q256.9 107.7 263.4 129.5M515.0 401.0Q500.1 392.2 489.1 378.8M474.4 14.1Q496.9 18.8 519.5 15.1M362.7 303.3Q348.0 293.3 330.8 288.8M362.7 303.3Q336.8 313.9 313.1 328.9M112.5 347.9Q127.5 360.0 146.0 365.7M112.5 347.9Q107.3 368.2 104.8 389.0M112.5 347.9Q109.2 330.3 98.4 316.1M112.5 347.9Q138.7 336.7 155.9 313.9M51.2 47.3Q45.9 64.4 43.2 82.1M51.2 47.3Q31.8 55.5 13.7 66.4M51.2 47.3Q37.7 29.4 18.7 17.3M51.2 47.3Q61.6 31.9 64.0 13.6M51.2 47.3Q68.2 60.7 75.9 80.9M626.5 266.9Q609.6 279.7 599.2 298.1M626.5 266.9Q600.8 276.2 573.6 273.4M445.6 359.3Q423.1 370.7 399.4 379.7M445.6 359.3Q466.5 371.0 489.1 378.8M43.2 82.1Q31.2 109.0 20.2 136.4M269.1 233.7Q261.0 218.7 251.6 204.4M269.1 233.7Q272.9 212.8 282.1 193.6M296.9 124.5Q279.6 123.1 263.4 129.5M374.7 167.0Q403.9 178.6 435.4 179.1M374.7 167.0Q374.6 139.5 365.8 113.5M612.8 135.5Q594.9 121.7 573.7 113.9M612.8 135.5Q616.9 119.3 625.1 104.7M433.4 144.0Q446.5 118.4 461.4 93.8M433.4 144.0Q437.2 161.4 435.4 179.1M13.7 66.4Q10.6 41.3 18.7 17.3M131.1 274.9Q132.8 247.2 144.8 222.2M131.1 274.9Q115.7 266.8 101.2 257.3M151.6 97.0Q153.3 119.1 158.8 140.6M17.2 246.5Q11.9 267.6 14.9 289.1M17.2 246.5Q17.7 229.9 13.4 213.9M607.0 372.2Q600.4 395.3 604.8 419.1M607.0 372.2Q584.8 350.3 573.9 321.1M485.3 117.2Q474.1 104.7 461.4 93.8M485.3 117.2Q499.6 108.9 513.9 100.7M617.4 69.8Q595.7 65.5 573.7 67.6M617.4 69.8Q621.3 43.0 615.1 16.7M617.4 69.8Q618.7 87.8 625.1 104.7M280.4 53.1Q293.2 34.5 302.7 14.1M66.4 401.8Q80.8 418.5 100.8 427.8M66.4 401.8Q48.4 404.3 32.4 412.9M350.9 249.6Q372.6 241.4 395.7 239.2M154.6 400.7Q173.1 396.6 189.0 386.4M154.6 400.7Q129.1 397.5 104.8 389.0M214.7 307.6Q192.0 293.0 167.2 282.4M214.7 307.6Q232.1 287.0 247.4 264.8M564.5 171.5Q568.4 142.6 573.7 113.9M564.5 171.5Q552.9 149.4 532.9 134.5M564.5 171.5Q535.9 183.7 508.1 197.8M276.8 406.8Q290.9 415.4 303.1 426.4M167.2 282.4Q156.0 252.3 144.8 222.2M191.9 146.4Q182.6 164.0 166.4 175.5M352.2 348.2Q376.9 362.3 399.4 379.7M189.0 386.4Q164.7 381.8 146.0 365.7M189.0 386.4Q201.8 400.1 212.6 415.5M189.0 386.4Q191.0 369.9 190.3 353.2M146.0 365.7Q169.0 362.3 190.3 353.2M573.7 113.9Q554.6 126.9 532.9 134.5M573.7 113.9Q600.3 114.4 625.1 104.7M93.8 226.0Q119.8 230.9 144.8 222.2M93.8 226.0Q80.3 209.3 66.9 192.5M104.8 389.0Q107.5 408.9 100.8 427.8M130.3 193.6Q135.8 208.8 144.8 222.2M130.3 193.6Q98.5 201.1 66.9 192.5M501.4 145.1Q517.7 141.5 532.9 134.5M212.6 107.6Q196.2 109.0 180.4 113.7M330.8 288.8Q324.4 309.9 313.1 328.9M363.9 418.5Q383.6 400.9 399.4 379.7M462.5 214.9Q485.6 207.0 508.1 197.8M98.4 316.1Q99.0 286.7 101.2 257.3M98.4 316.1Q127.1 315.1 155.9 313.9M599.2 298.1Q589.3 312.6 573.9 321.1M599.2 298.1Q585.3 286.9 573.6 273.4M318.6 191.5Q336.3 198.2 353.1 207.1M303.1 426.4Q319.1 402.4 336.5 379.5M583.2 236.9Q602.8 230.4 623.1 233.9M583.2 236.9Q575.8 254.4 573.6 273.4M440.0 268.9Q424.8 290.0 413.3 313.4M399.4 379.7Q393.6 357.5 386.2 335.7M399.4 379.7Q367.9 383.2 336.5 379.5M144.8 222.2Q121.0 237.3 101.2 257.3M386.2 335.7Q398.5 323.1 413.3 313.4M615.1 16.7Q592.0 14.1 570.6 23.4M155.9 313.9Q177.5 329.7 190.3 353.2M18.7 17.3Q41.2 13.8 64.0 13.6M541.1 316.4Q557.5 318.6 573.9 321.1M541.1 316.4Q526.1 307.3 510.7 298.8M541.1 316.4Q552.5 291.2 573.6 273.4M13.4 213.9Q42.4 208.7 66.9 192.5M570.1 375.5Q565.6 347.8 573.9 321.1M334.7 128.8Q348.2 116.9 365.8 113.5M508.5 252.8Q505.1 276.0 510.7 298.8M158.8 140.6Q162.7 158.0 166.4 175.5M573.9 321.1Q571.8 297.2 573.6 273.4M122.0 126.9Q122.9 160.6 130.3 193.6M566.2 204.9Q537.7 196.6 508.1 197.8"></path>
+<path fill="none" stroke="#5E665F" stroke-width="2.2" stroke-linecap="round" d="M508.1 331.8Q521.8 342.5 535.4 353.2M508.1 331.8Q480.2 332.3 453.0 326.1M194.9 73.0Q221.6 76.9 246.6 87.3M194.9 73.0Q170.9 62.3 144.9 59.0M535.4 353.2Q554.3 361.9 570.1 375.5M249.0 22.6Q238.6 39.7 223.1 52.4M110.7 61.3Q127.7 59.1 144.9 59.0M110.7 61.3Q95.5 75.1 75.9 80.9M328.7 55.0Q304.7 48.8 280.4 53.1M328.7 55.0Q328.6 74.2 337.6 91.1M328.7 55.0Q308.0 63.9 294.5 81.9M55.9 131.3Q74.3 122.7 90.5 110.6M55.9 131.3Q38.0 133.2 20.2 136.4M246.6 87.3Q270.9 87.3 294.5 81.9M362.7 303.3Q353.2 324.8 352.2 348.2M362.7 303.3Q387.2 312.1 413.3 313.4M374.7 167.0Q358.4 144.0 334.7 128.8M374.7 167.0Q363.4 186.8 353.1 207.1M223.1 52.4Q251.7 54.7 280.4 53.1M607.0 372.2Q616.8 348.0 625.1 323.2M607.0 372.2Q588.4 372.6 570.1 375.5M350.9 249.6Q352.8 228.4 353.1 207.1M90.5 110.6Q85.1 94.8 75.9 80.9M453.0 326.1Q431.6 324.6 413.3 313.4M352.2 348.2Q347.0 365.2 336.5 379.5M337.6 91.1Q337.5 110.0 334.7 128.8M363.9 418.5Q346.3 401.7 336.5 379.5M362.7 303.3Q349.5 278.1 350.9 249.6"></path>
+<path fill="none" stroke="#A9B0AA" stroke-width="3.4" stroke-linecap="butt" d="M125.0 151.3L127.3 169.1M358.7 285.3L354.9 267.7M546.1 202.4L528.2 200.3"></path>
+<g transform="translate(14 422)"><path d="M0 -5V0H100V-5M50 -3V0" fill="none" stroke="#A9B0AA" stroke-width="1.4"></path><text x="0" y="-9" fill="#A9B0AA" font-size="10.5" font-weight="600">0</text><text x="100" y="-9" text-anchor="middle" fill="#A9B0AA" font-size="10.5" font-weight="600">5 km</text></g>
+<g transform="translate(618 24)"><path d="M0 -14L6 6L0 2L-6 6Z" fill="#A9B0AA"></path><text x="0" y="19" text-anchor="middle" fill="#A9B0AA" font-size="10.5" font-weight="600">N</text></g>
+<path fill="none" stroke="#FCCA21" stroke-width="1.6" stroke-linecap="round" d="" opacity="0.15"></path>
+<path fill="none" stroke="#FF8A70" stroke-width="1.4" stroke-dasharray="6 5" d="M291.1 186.6L191.9 146.4"></path>
+<text text-anchor="middle" fill="#FF8A70" font-size="11.5" font-weight="600" paint-order="stroke" stroke="#151916" stroke-width="4" stroke-linejoin="round" x="246.0" y="155.4"></text>
+<path fill="none" stroke="#1A1E1B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M291.1 186.6L282.1 193.6Q267.7 182.6 255.9 168.8Q260.0 149.3 263.4 129.5Q256.9 107.7 246.6 87.3Q221.6 76.9 194.9 73.0Q170.9 62.3 144.9 59.0Q127.7 59.1 110.7 61.3Q95.5 75.1 75.9 80.9Q68.2 60.7 51.2 47.3" opacity="1"></path>
+<path fill="none" stroke="#FCCA21" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" d="M291.1 186.6L282.1 193.6Q267.7 182.6 255.9 168.8Q260.0 149.3 263.4 129.5Q256.9 107.7 246.6 87.3Q221.6 76.9 194.9 73.0Q170.9 62.3 144.9 59.0Q127.7 59.1 110.7 61.3Q95.5 75.1 75.9 80.9Q68.2 60.7 51.2 47.3" stroke-dasharray="none" stroke-dashoffset="0"></path>
+<path fill="none" stroke="#FCCA21" stroke-width="2" stroke-dasharray="3 3" d="M291.1 186.6L282.1 193.6"></path>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="530.6" y="230.3" width="11" height="11" fill="#639BE1" opacity="1"><title>P-01, 90 kV, 22 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="526.6" y="226.3" width="19" height="19" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="546.6" y="239.8" text-anchor="start" fill="#A9B0AA" font-weight="500">P-01 (22 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="46.5" y="42.5" width="9.5" height="9.5" fill="#3772BB" opacity="1"><title>P-02, 63 kV, 14 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="42.5" y="38.5" width="17.5" height="17.5" display="inline"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="61.0" y="51.3" text-anchor="start" fill="#F2F2EE" font-weight="700">P-02 (14 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="149.9" y="395.9" width="9.5" height="9.5" fill="#3772BB" opacity="0.38"><title>P-03, 63 kV, 9 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="145.9" y="391.9" width="17.5" height="17.5" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="164.4" y="404.7" text-anchor="start" fill="#A9B0AA" font-weight="500">P-03 (9 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="323.9" y="50.2" width="9.5" height="9.5" fill="#3772BB" opacity="0.38"><title>P-04, 63 kV, 4 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="319.9" y="46.2" width="17.5" height="17.5" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="338.4" y="59.0" text-anchor="start" fill="#A9B0AA" font-weight="500">P-04 (4 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="325.3" y="283.3" width="11" height="11" fill="#639BE1" opacity="1"><title>P-05, 90 kV, 12 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="321.3" y="279.3" width="19" height="19" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="341.3" y="292.8" text-anchor="start" fill="#A9B0AA" font-weight="500">P-05 (12 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="54.8" y="226.2" width="13" height="13" fill="#9DC7FE" opacity="1"><title>P-06, 225 kV, 80 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="50.8" y="222.2" width="21" height="21" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="72.8" y="236.7" text-anchor="start" fill="#A9B0AA" font-weight="500">P-06 (80 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="569.0" y="62.9" width="9.5" height="9.5" fill="#3772BB" opacity="0.38"><title>P-07, 63 kV, 6 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="565.0" y="58.9" width="17.5" height="17.5" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="564.0" y="71.6" text-anchor="end" fill="#A9B0AA" font-weight="500">P-07 (6 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="509.5" y="395.5" width="11" height="11" fill="#639BE1" opacity="1"><title>P-08, 90 kV, 30 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="505.5" y="391.5" width="19" height="19" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="525.5" y="405.0" text-anchor="start" fill="#A9B0AA" font-weight="500">P-08 (30 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="187.2" y="141.6" width="9.5" height="9.5" fill="#3772BB" opacity="0.38"><title>P-09, 63 kV, 0 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="183.2" y="137.6" width="17.5" height="17.5" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="201.7" y="150.4" text-anchor="start" fill="#A9B0AA" font-weight="500">P-09 (0 MW)</text></g>
+<g><rect stroke="#1A1E1B" stroke-width="1.5" x="426.9" y="137.5" width="13" height="13" fill="#9DC7FE" opacity="1"><title>P-10, 225 kV, 45 MW disponibles</title></rect><rect fill="none" stroke="#F2F2EE" stroke-width="1.6" x="422.9" y="133.5" width="21" height="21" display="none"></rect><text font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round" x="444.9" y="148.0" text-anchor="start" fill="#A9B0AA" font-weight="500">P-10 (45 MW)</text></g>
+<g transform="translate(291.1 186.6)"><circle r="13" fill="none" stroke="#FF8A70" stroke-width="1.2"></circle><circle r="6.5" fill="#FF8A70" stroke="#1A1E1B" stroke-width="2"></circle><text y="-12" fill="#F2F2EE" font-size="11.5" font-weight="700" paint-order="stroke" stroke="#151916" stroke-width="3.5" stroke-linejoin="round" x="16" text-anchor="start">Parc 12 MW</text></g>
+</svg>
+
+<span aria-hidden="true" style="position: absolute; right: 12px; bottom: 12px; padding: 6px 10px; background: #1A1E1B; border: 1px solid #2C312D; font-size: 12.5px; font-weight: 600; color: #D2D6D1; pointer-events: none">Cliquez sur la carte pour placer le parc</span>
+
+</div>
+</div>
+<div style="flex: 1 1 330px; min-width: 0; background: #111412; display: flex; flex-direction: column">
+<div style="padding: clamp(20px, 2cqi, 26px); display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid #2C312D">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<label for="sim-power" style="font-size: 14.5px; font-weight: 600">Puissance du parc</label>
+<output for="sim-power" style="font-weight: 800; font-stretch: 108%; font-size: 22px; line-height: 1">12 MW</output>
+</div>
+<input id="sim-power" type="range" min="2" max="40" step="1" style="width: 100%; margin: 0; accent-color: #FCCA21" value="12">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px">
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1.5px solid #8C938D; background: transparent; color: #F2F2EE; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Nouveau site au hasard</button>
+<label style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; color: #A9B0AA; cursor: pointer"><input type="checkbox" style="width: 18px; height: 18px; margin: 0; accent-color: #FCCA21" checked="">Montrer l'exploration</label>
+</div>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: #2C312D; border-bottom: 1px solid #2C312D">
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Poste retenu</dt>
+<dd style="margin: 6px 0 0"><span style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; background: #3772BB"></span>P-02</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">63 kV, 14 MW disponibles</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Distance par la route</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">17,9 km</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">13,9 km à vol d'oiseau</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Câble</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">1 × 2×240 Alu</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">120 k€/km</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Coût de raccordement</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">2 694 k€</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">225 k€/MW, dont 541 k€ de quote-part</span></dd>
+</div>
+</dl>
+<p aria-live="polite" style="margin: 0; padding: 18px clamp(20px, 2cqi, 26px); font-size: 14.5px; line-height: 1.55; color: #D2D6D1"><strong style="color: #FF8A70; font-weight: 700">P-09</strong> est le plus proche à vol d'oiseau (5,4 km) mais n'a que 0 MW disponibles : l'outil passe au poste suivant.</p>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 20px clamp(20px, 2.5cqi, 36px) 24px; border-top: 1px solid #2C312D">
+<ul aria-label="Légende" style="flex: 1 1 520px; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; font-size: 13px; color: #A9B0AA">
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 9px; height: 9px; background: #3772BB"></span>Poste 63 kV</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 11px; height: 11px; background: #639BE1"></span>Poste 90 kV</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 13px; height: 13px; background: #9DC7FE"></span>Poste 225 kV</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 6px; background: #22384A"></span>Rivière, trois ponts</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 4px; background: #FCCA21"></span>Tracé retenu</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 0; border-top: 2px dashed #FF8A70"></span>Vol d'oiseau</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #FF8A70"></span>Parc solaire</li>
+</ul>
+<p style="flex: 1 1 420px; margin: 0; font-size: 13.5px; line-height: 1.55; color: #A9B0AA">Même logique que l'outil livré chez Energiter : plus court chemin par la route (Dijkstra), contrôle de la capacité d'accueil du poste, choix du câble selon puissance et distance, puis coût réseau et quote-part régionale. Prix et table de câbles repris du mémoire.</p>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; margin-top: clamp(56px, 5cqi, 72px)">
+<figure style="flex: 3 1 480px; min-width: 0; margin: 0">
+<div style="background: #FFFFFF; border: 1px solid #D5D7D1; overflow: hidden"><img src="assets/img/energiter-1.webp" alt="Vue satellite : tracés routiers colorés entre un projet et sept postes sources." style="display: block; width: 100%; height: auto; aspect-ratio: 1095 / 747"></div>
+<figcaption style="margin-top: 10px; max-width: 70ch; font-size: 14px; line-height: 1.5; color: #5C625E">Cas test d'un projet de 10 MW : un tracé par poste candidat, exporté en KML et ouvert dans Google Earth. L'outil retient Phalsbourg, plus loin qu'Ingwiller mais mieux doté en capacité.</figcaption>
+</figure>
+<figure style="flex: 2 1 320px; min-width: 0; margin: 0">
+<div style="background: #FFFFFF; border: 1px solid #D5D7D1; overflow: hidden"><img src="assets/img/energiter-2.webp" alt="Détail d'un tracé avec la distance calculée par l'API, en mode piéton." style="display: block; width: 100%; height: auto; aspect-ratio: 911 / 745"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Chaque tracé porte son nom de projet, son poste, sa distance et son mode de calcul.</figcaption>
+</figure>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 32px">
+<h3 style="margin: 0; font-weight: 800; font-stretch: 108%; font-size: clamp(24px, 2.2cqi, 31px); line-height: 1.15; letter-spacing: -0.02em">Ce que l'outil a montré</h3>
+<p style="margin: 0; font-size: 15.5px; color: #474D49">Trois cas tests du mémoire, choisis au hasard en France. Limite assumée : les tracés supposent les chemins praticables ; propriétés privées et voies ferrées restent à vérifier.</p>
+</div>
+<div style="margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Projet</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">12 MW</p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Poste retenu</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Montbrun, à 14,3 km</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">Ce n'est pas le poste le plus proche, mais le seul avec la tension aval et la capacité suffisantes.</p>
+</div>
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Projet</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">10 MW</p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Poste retenu</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Phalsbourg</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">Préféré à Ingwiller, plus proche : il faut comparer les capacités avec et sans travaux.</p>
+</div>
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Projet</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">20 MW <span style="font-size: 0.55em; font-weight: 700; letter-spacing: -0.01em">éolien</span></p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Poste retenu</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Gouzon saturé, piste Ouest-Allier</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">Sans capacité disponible, l'outil oriente vers un futur poste (40 MW prévus) et une étude complémentaire.</p>
+</div>
+</div>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 56px">
+<h3 style="flex: 1 1 300px; margin: 0; font-weight: 800; font-stretch: 108%; font-size: clamp(24px, 2.2cqi, 31px); line-height: 1.15; letter-spacing: -0.02em">Études énergie menées en parallèle</h3>
+<p style="flex: 2 1 520px; margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.6; color: #474D49">Plus de 40 études de faisabilité et de productible PV (centrales HTA de 2 à 22 MWc, PVsyst avec les données Solargis) et plus de 15 simulations éoliennes (parcs de 3 à 15 MW, corrélation long terme avec les réanalyses ERA5 et MERRA, modélisation WAsP et windPRO avec cartes de relief et de rugosité). J'ai aussi mené des études de raccordement aux postes sources RTE et Enedis (contraintes HTA/BT, quote-part, point de livraison) et mis au point une méthode windPRO de bridage chiroptères, validée contre l'outil Python interne : environ un point d'écart sur deux parcs.</p>
+</div>
+<div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px">
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="assets/img/energiter-3.webp" alt="Distribution de Weibull des vitesses de vent, A = 7,4 m/s, k = 2,18." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Distribution des vitesses de vent (Weibull) sur un site étudié.</figcaption>
+</figure>
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="assets/img/energiter-4.webp" alt="Carte de relief et de rugosité préparée pour WAsP." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Carte de relief et de rugosité préparée pour la modélisation WAsP.</figcaption>
+</figure>
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="assets/img/energiter-5.webp" alt="Courbes de puissance d'une éolienne selon les modes de bridage." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Courbes de puissance selon les modes de bridage, utilisées pour chiffrer les pertes.</figcaption>
+</figure>
+</div>
+</div>
+
+<div style="margin-top: 48px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Technologies</p>
+<ul aria-label="Technologies" style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #111412">
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Python</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">asyncio / aiohttp</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">API IGN Géoportail</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Dijkstra</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">geopy</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">folium</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">simplekml</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Selenium</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pandas</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Excel / VBA</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">PowerShell</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">WAsP</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">windPRO</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">PVsyst</li>
+</ul>
+</div>
+
+</div>
+</article>
+</div>
+</div>
+<template id="dc-template">
+<div style="container-type: inline-size; min-height: 100vh; background: #F2F2EE; color: #111412; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility">
+<header style="position: sticky; top: 0; z-index: 30; background: #F2F2EE; border-bottom: 1px solid #D5D7D1">
+<div style="max-width: 1312px; margin: 0 auto; padding: 8px clamp(20px, 4.5cqi, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px">
+<a href="index.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #111412; text-decoration: none"><span aria-hidden="true" style="position: relative; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #111412; color: #F2F2EE; font-weight: 800; font-stretch: 125%; font-size: 11.5px; letter-spacing: 0.02em">BR<span style="position: absolute; right: -4px; bottom: -4px; width: 9px; height: 9px; background: #FCCA21; border: 2px solid #F2F2EE"></span></span><span style="font-weight: 700; font-stretch: 108%; font-size: 16px; white-space: nowrap">Brice Rigourd</span><span style="font-size: 14px; font-weight: 500; color: #5C625E; white-space: nowrap">← Accueil</span></a>
+<div role="group" aria-label="Langue" style="display: inline-flex; border: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em"><span aria-current="true" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; background: #111412; color: #F2F2EE">FR</span><a href="en/energiter.html" hreflang="en" lang="en" aria-label="English version" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #111412; text-decoration: none">EN</a></div>
+</div>
+</header>
+<article id="energiter" aria-labelledby="en-title" style="padding: clamp(56px, 6.5cqi, 96px) 0 clamp(64px, 6.5cqi, 96px)">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-top: 16px; border-top: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #111412; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21; outline: 1.5px solid #111412"></span>Projet 02</span>
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; background: #111412; color: #F2F2EE; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FCCA21" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg>Avril – septembre 2024</span>
+<span>Energiter, Montpellier</span>
+<span style="margin-left: auto">Outil géospatial d'aide à la décision</span>
+</div>
+
+<h2 id="en-title" style="margin: 36px 0 0; max-width: 22ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2rem, 3.9cqi, 3.5rem); line-height: 1.03; letter-spacing: -0.03em; text-wrap: balance">Outil d'étude de raccordement au réseau</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; margin-top: clamp(32px, 3.4cqi, 48px)">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Le contexte</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">En France, un parc éolien ou solaire peut attendre plus de huit ans son raccordement, faute de capacité dans les postes sources.</p>
+</div>
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Ce que j'ai construit</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">Pour chaque projet, l'outil trouve les postes réellement accessibles par la route, vérifie leur capacité d'accueil et chiffre le raccordement. C'est le sujet de mon mémoire de Master.</p>
+</div>
+</div>
+<dl style="flex: 1 1 340px; max-width: 480px; margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 2px solid #111412; font-size: 15px; line-height: 1.45">
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Entreprise</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Energiter, bureau d'études éolien et solaire</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Rôle</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Ingénieur bureau d'études EnR, stage de fin d'études</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Période</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Avril – septembre 2024</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Cadre</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Mémoire de Master, UPV/EHU, octobre 2024</dd>
+<dt style="padding: 13px 16px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Architecture</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; font-weight: 500">Interface Excel/VBA qui pilote des scripts Python via PowerShell</dd>
+</dl>
+</div>
+
+<dl aria-label="En chiffres" style="margin: clamp(48px, 4.6cqi, 64px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">postes sources Caparéseau filtrés et classés par criticité, en 5 à 20 s</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">3 400+</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">de temps de réponse grâce aux appels asynchrones à l'API IGN : de 15–35 s à 3–15 s pour 10 postes</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">−64 %</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">études de faisabilité et de productible PV, centrales HTA de 2 à 22 MWc</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">40+</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">simulations éoliennes WAsP et windPRO, parcs de 3 à 15 MW</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">15+</dd></div>
+</dl>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Chaîne de traitement</p>
+<ol aria-label="Chaîne de traitement" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 28px 0">
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">01</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Données réseau</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Téléchargement automatique et archivage des données Caparéseau (RTE, plus de 3 400 postes sources) et des schémas régionaux S3REnR.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">02</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Distance réelle</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">API Itinéraire de l'IGN appelée en asynchrone, en voiture, à pied ou au plus court des deux, après une présélection des postes dans un rayon autour du projet.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">03</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Analyse des postes</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Postes à 20 kV et plus en aval, score de criticité de 0 à 5 selon la capacité avec et sans travaux, transformateurs et capacité HTB/HTA restante, postes à créer signalés.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">04</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Chiffrage</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Modules de 17 MW, câble choisi dans une table puissance × distance, coût réseau et quote-part régionale retrouvée à partir des coordonnées, plusieurs puissances comparées d'un coup.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #111412; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">05</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Livrables</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Tracés KML pour Google Earth, cartes HTML (folium), base de projets archivée, rapport PDF et XLSM généré depuis Excel.</p>
+</li>
+</ol>
+</div>
+
+<section aria-labelledby="sim-title" style="margin-top: clamp(56px, 5cqi, 72px); background: #111412; color: #F2F2EE">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 48px; padding: clamp(24px, 2.5cqi, 36px); border-bottom: 1px solid #2C312D">
+<div style="flex: 999 1 480px; min-width: 0">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21"></span>Démo · données fictives</p>
+<h3 id="sim-title" style="margin: 12px 0 0; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.5cqi, 36px); line-height: 1.08; letter-spacing: -0.025em">Étude de raccordement</h3>
+</div>
+<p style="flex: 1 1 380px; margin: 0; font-size: 15px; line-height: 1.55; color: #A9B0AA">Simulation sur données fictives, avec la logique de l'outil. Cliquez sur la carte pour placer le parc, ou déplacez-le avec les flèches du clavier, puis jouez sur sa puissance.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1px; background: #2C312D">
+<div style="flex: 999 1 620px; min-width: 0; background: #151916">
+<div tabindex="0" aria-label="Carte de simulation : cliquez pour placer le parc solaire, ou déplacez-le avec les flèches du clavier." dc-onClick="{{onMap}}" dc-onKeyDown="{{onKey}}" style="position: relative; background-color: #151916; background-image: linear-gradient(rgba(242,242,238,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(242,242,238,0.035) 1px, transparent 1px), linear-gradient(rgba(242,242,238,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(242,242,238,0.07) 1px, transparent 1px); background-size: 16px 16px, 16px 16px, 80px 80px, 80px 80px; cursor: crosshair; touch-action: manipulation; outline-offset: -3px">
+<svg viewBox="0 0 640 440" role="img" dc-aria-label="{{mapLabel}}" style="display: block; width: 100%; height: auto; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif">
+<path dc-d="{{riverD}}" fill="none" stroke="#22384A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path dc-d="{{roadD}}" fill="none" stroke="#3A413B" stroke-width="1.15" stroke-linecap="round"></path>
+<path dc-d="{{mainD}}" fill="none" stroke="#5E665F" stroke-width="2.2" stroke-linecap="round"></path>
+<path dc-d="{{bridgeD}}" fill="none" stroke="#A9B0AA" stroke-width="3.4" stroke-linecap="butt"></path>
+<g transform="translate(14 422)"><path d="M0 -5V0H100V-5M50 -3V0" fill="none" stroke="#A9B0AA" stroke-width="1.4"></path><text x="0" y="-9" fill="#A9B0AA" font-size="10.5" font-weight="600">0</text><text x="100" y="-9" text-anchor="middle" fill="#A9B0AA" font-size="10.5" font-weight="600">5 km</text></g>
+<g transform="translate(618 24)"><path d="M0 -14L6 6L0 2L-6 6Z" fill="#A9B0AA"></path><text x="0" y="19" text-anchor="middle" fill="#A9B0AA" font-size="10.5" font-weight="600">N</text></g>
+<path dc-d="{{exploreD}}" fill="none" stroke="#FCCA21" stroke-width="1.6" stroke-linecap="round" dc-opacity="{{exploreOp}}"></path>
+<path dc-d="{{crowD}}" fill="none" stroke="#FF8A70" stroke-width="1.4" stroke-dasharray="6 5"></path>
+<text dc-x="{{crowTx}}" dc-y="{{crowTy}}" text-anchor="middle" fill="#FF8A70" font-size="11.5" font-weight="600" paint-order="stroke" stroke="#151916" stroke-width="4" stroke-linejoin="round">{{crowT}}</text>
+<path dc-d="{{routeD}}" fill="none" stroke="#1A1E1B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" dc-opacity="{{casingOp}}"></path>
+<path dc-d="{{routeD}}" fill="none" stroke="#FCCA21" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" dc-stroke-dasharray="{{routeDash}}" dc-stroke-dashoffset="{{routeOff}}"></path>
+<path dc-d="{{accessD}}" fill="none" stroke="#FCCA21" stroke-width="2" stroke-dasharray="3 3"></path>
+<g><rect dc-x="{{s0.rx}}" dc-y="{{s0.ry}}" dc-width="{{s0.size}}" dc-height="{{s0.size}}" dc-fill="{{s0.fill}}" dc-opacity="{{s0.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s0.title}}</title></rect><rect dc-x="{{s0.gx}}" dc-y="{{s0.gy}}" dc-width="{{s0.gs}}" dc-height="{{s0.gs}}" dc-display="{{s0.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s0.tx}}" dc-y="{{s0.ty}}" dc-text-anchor="{{s0.anchor}}" dc-fill="{{s0.tf}}" dc-font-weight="{{s0.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s0.label}}</text></g>
+<g><rect dc-x="{{s1.rx}}" dc-y="{{s1.ry}}" dc-width="{{s1.size}}" dc-height="{{s1.size}}" dc-fill="{{s1.fill}}" dc-opacity="{{s1.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s1.title}}</title></rect><rect dc-x="{{s1.gx}}" dc-y="{{s1.gy}}" dc-width="{{s1.gs}}" dc-height="{{s1.gs}}" dc-display="{{s1.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s1.tx}}" dc-y="{{s1.ty}}" dc-text-anchor="{{s1.anchor}}" dc-fill="{{s1.tf}}" dc-font-weight="{{s1.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s1.label}}</text></g>
+<g><rect dc-x="{{s2.rx}}" dc-y="{{s2.ry}}" dc-width="{{s2.size}}" dc-height="{{s2.size}}" dc-fill="{{s2.fill}}" dc-opacity="{{s2.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s2.title}}</title></rect><rect dc-x="{{s2.gx}}" dc-y="{{s2.gy}}" dc-width="{{s2.gs}}" dc-height="{{s2.gs}}" dc-display="{{s2.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s2.tx}}" dc-y="{{s2.ty}}" dc-text-anchor="{{s2.anchor}}" dc-fill="{{s2.tf}}" dc-font-weight="{{s2.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s2.label}}</text></g>
+<g><rect dc-x="{{s3.rx}}" dc-y="{{s3.ry}}" dc-width="{{s3.size}}" dc-height="{{s3.size}}" dc-fill="{{s3.fill}}" dc-opacity="{{s3.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s3.title}}</title></rect><rect dc-x="{{s3.gx}}" dc-y="{{s3.gy}}" dc-width="{{s3.gs}}" dc-height="{{s3.gs}}" dc-display="{{s3.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s3.tx}}" dc-y="{{s3.ty}}" dc-text-anchor="{{s3.anchor}}" dc-fill="{{s3.tf}}" dc-font-weight="{{s3.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s3.label}}</text></g>
+<g><rect dc-x="{{s4.rx}}" dc-y="{{s4.ry}}" dc-width="{{s4.size}}" dc-height="{{s4.size}}" dc-fill="{{s4.fill}}" dc-opacity="{{s4.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s4.title}}</title></rect><rect dc-x="{{s4.gx}}" dc-y="{{s4.gy}}" dc-width="{{s4.gs}}" dc-height="{{s4.gs}}" dc-display="{{s4.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s4.tx}}" dc-y="{{s4.ty}}" dc-text-anchor="{{s4.anchor}}" dc-fill="{{s4.tf}}" dc-font-weight="{{s4.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s4.label}}</text></g>
+<g><rect dc-x="{{s5.rx}}" dc-y="{{s5.ry}}" dc-width="{{s5.size}}" dc-height="{{s5.size}}" dc-fill="{{s5.fill}}" dc-opacity="{{s5.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s5.title}}</title></rect><rect dc-x="{{s5.gx}}" dc-y="{{s5.gy}}" dc-width="{{s5.gs}}" dc-height="{{s5.gs}}" dc-display="{{s5.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s5.tx}}" dc-y="{{s5.ty}}" dc-text-anchor="{{s5.anchor}}" dc-fill="{{s5.tf}}" dc-font-weight="{{s5.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s5.label}}</text></g>
+<g><rect dc-x="{{s6.rx}}" dc-y="{{s6.ry}}" dc-width="{{s6.size}}" dc-height="{{s6.size}}" dc-fill="{{s6.fill}}" dc-opacity="{{s6.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s6.title}}</title></rect><rect dc-x="{{s6.gx}}" dc-y="{{s6.gy}}" dc-width="{{s6.gs}}" dc-height="{{s6.gs}}" dc-display="{{s6.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s6.tx}}" dc-y="{{s6.ty}}" dc-text-anchor="{{s6.anchor}}" dc-fill="{{s6.tf}}" dc-font-weight="{{s6.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s6.label}}</text></g>
+<g><rect dc-x="{{s7.rx}}" dc-y="{{s7.ry}}" dc-width="{{s7.size}}" dc-height="{{s7.size}}" dc-fill="{{s7.fill}}" dc-opacity="{{s7.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s7.title}}</title></rect><rect dc-x="{{s7.gx}}" dc-y="{{s7.gy}}" dc-width="{{s7.gs}}" dc-height="{{s7.gs}}" dc-display="{{s7.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s7.tx}}" dc-y="{{s7.ty}}" dc-text-anchor="{{s7.anchor}}" dc-fill="{{s7.tf}}" dc-font-weight="{{s7.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s7.label}}</text></g>
+<g><rect dc-x="{{s8.rx}}" dc-y="{{s8.ry}}" dc-width="{{s8.size}}" dc-height="{{s8.size}}" dc-fill="{{s8.fill}}" dc-opacity="{{s8.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s8.title}}</title></rect><rect dc-x="{{s8.gx}}" dc-y="{{s8.gy}}" dc-width="{{s8.gs}}" dc-height="{{s8.gs}}" dc-display="{{s8.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s8.tx}}" dc-y="{{s8.ty}}" dc-text-anchor="{{s8.anchor}}" dc-fill="{{s8.tf}}" dc-font-weight="{{s8.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s8.label}}</text></g>
+<g><rect dc-x="{{s9.rx}}" dc-y="{{s9.ry}}" dc-width="{{s9.size}}" dc-height="{{s9.size}}" dc-fill="{{s9.fill}}" dc-opacity="{{s9.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s9.title}}</title></rect><rect dc-x="{{s9.gx}}" dc-y="{{s9.gy}}" dc-width="{{s9.gs}}" dc-height="{{s9.gs}}" dc-display="{{s9.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text dc-x="{{s9.tx}}" dc-y="{{s9.ty}}" dc-text-anchor="{{s9.anchor}}" dc-fill="{{s9.tf}}" dc-font-weight="{{s9.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s9.label}}</text></g>
+<g dc-transform="{{projT}}"><circle r="13" fill="none" stroke="#FF8A70" stroke-width="1.2"></circle><circle r="6.5" fill="#FF8A70" stroke="#1A1E1B" stroke-width="2"></circle><text dc-x="{{projTx}}" y="-12" dc-text-anchor="{{projAnchor}}" fill="#F2F2EE" font-size="11.5" font-weight="700" paint-order="stroke" stroke="#151916" stroke-width="3.5" stroke-linejoin="round">{{projLabel}}</text></g>
+</svg>
+<sc-if dc-value="{{showHint}}" dc-hint-placeholder-val="{{ true }}">
+<span aria-hidden="true" style="position: absolute; right: 12px; bottom: 12px; padding: 6px 10px; background: #1A1E1B; border: 1px solid #2C312D; font-size: 12.5px; font-weight: 600; color: #D2D6D1; pointer-events: none">Cliquez sur la carte pour placer le parc</span>
+</sc-if>
+</div>
+</div>
+<div style="flex: 1 1 330px; min-width: 0; background: #111412; display: flex; flex-direction: column">
+<div style="padding: clamp(20px, 2cqi, 26px); display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid #2C312D">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<label for="sim-power" style="font-size: 14.5px; font-weight: 600">Puissance du parc</label>
+<output for="sim-power" style="font-weight: 800; font-stretch: 108%; font-size: 22px; line-height: 1">{{powerLabel}}</output>
+</div>
+<input id="sim-power" type="range" min="2" max="40" step="1" dc-value="{{P}}" dc-onChange="{{onPower}}" style="width: 100%; margin: 0; accent-color: #FCCA21">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px">
+<button type="button" dc-onClick="{{onRandom}}" style="min-height: 44px; padding: 0 16px; border: 1.5px solid #8C938D; background: transparent; color: #F2F2EE; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Nouveau site au hasard</button>
+<label style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; color: #A9B0AA; cursor: pointer"><input type="checkbox" dc-checked="{{explore}}" dc-onChange="{{onExplore}}" style="width: 18px; height: 18px; margin: 0; accent-color: #FCCA21">Montrer l'exploration</label>
+</div>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: #2C312D; border-bottom: 1px solid #2C312D">
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Poste retenu</dt>
+<dd style="margin: 6px 0 0"><span style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1"><sc-if dc-value="{{hasBest}}" dc-hint-placeholder-val="{{ true }}"><span aria-hidden="true" dc-style="flex: none; width: 10px; height: 10px; background: {{bestColor}}"></span></sc-if>{{bestCode}}</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">{{bestSub}}</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Distance par la route</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">{{route}}</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">{{routeSub}}</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Câble</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">{{cable}}</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">{{cableSub}}</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Coût de raccordement</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">{{cost}}</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">{{costSub}}</span></dd>
+</div>
+</dl>
+<p aria-live="polite" style="margin: 0; padding: 18px clamp(20px, 2cqi, 26px); font-size: 14.5px; line-height: 1.55; color: #D2D6D1"><strong style="color: #FF8A70; font-weight: 700">{{noteStrong}}</strong>{{noteRest}}</p>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 20px clamp(20px, 2.5cqi, 36px) 24px; border-top: 1px solid #2C312D">
+<ul aria-label="Légende" style="flex: 1 1 520px; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; font-size: 13px; color: #A9B0AA">
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 9px; height: 9px; background: #3772BB"></span>Poste 63 kV</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 11px; height: 11px; background: #639BE1"></span>Poste 90 kV</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 13px; height: 13px; background: #9DC7FE"></span>Poste 225 kV</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 6px; background: #22384A"></span>Rivière, trois ponts</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 4px; background: #FCCA21"></span>Tracé retenu</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 0; border-top: 2px dashed #FF8A70"></span>Vol d'oiseau</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #FF8A70"></span>Parc solaire</li>
+</ul>
+<p style="flex: 1 1 420px; margin: 0; font-size: 13.5px; line-height: 1.55; color: #A9B0AA">Même logique que l'outil livré chez Energiter : plus court chemin par la route (Dijkstra), contrôle de la capacité d'accueil du poste, choix du câble selon puissance et distance, puis coût réseau et quote-part régionale. Prix et table de câbles repris du mémoire.</p>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; margin-top: clamp(56px, 5cqi, 72px)">
+<figure style="flex: 3 1 480px; min-width: 0; margin: 0">
+<div style="background: #FFFFFF; border: 1px solid #D5D7D1; overflow: hidden"><img src="assets/img/energiter-1.webp" alt="Vue satellite : tracés routiers colorés entre un projet et sept postes sources." style="display: block; width: 100%; height: auto; aspect-ratio: 1095 / 747"></div>
+<figcaption style="margin-top: 10px; max-width: 70ch; font-size: 14px; line-height: 1.5; color: #5C625E">Cas test d'un projet de 10 MW : un tracé par poste candidat, exporté en KML et ouvert dans Google Earth. L'outil retient Phalsbourg, plus loin qu'Ingwiller mais mieux doté en capacité.</figcaption>
+</figure>
+<figure style="flex: 2 1 320px; min-width: 0; margin: 0">
+<div style="background: #FFFFFF; border: 1px solid #D5D7D1; overflow: hidden"><img src="assets/img/energiter-2.webp" alt="Détail d'un tracé avec la distance calculée par l'API, en mode piéton." style="display: block; width: 100%; height: auto; aspect-ratio: 911 / 745"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Chaque tracé porte son nom de projet, son poste, sa distance et son mode de calcul.</figcaption>
+</figure>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 32px">
+<h3 style="margin: 0; font-weight: 800; font-stretch: 108%; font-size: clamp(24px, 2.2cqi, 31px); line-height: 1.15; letter-spacing: -0.02em">Ce que l'outil a montré</h3>
+<p style="margin: 0; font-size: 15.5px; color: #474D49">Trois cas tests du mémoire, choisis au hasard en France. Limite assumée : les tracés supposent les chemins praticables ; propriétés privées et voies ferrées restent à vérifier.</p>
+</div>
+<div style="margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Projet</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">12 MW</p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Poste retenu</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Montbrun, à 14,3 km</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">Ce n'est pas le poste le plus proche, mais le seul avec la tension aval et la capacité suffisantes.</p>
+</div>
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Projet</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">10 MW</p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Poste retenu</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Phalsbourg</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">Préféré à Ingwiller, plus proche : il faut comparer les capacités avec et sans travaux.</p>
+</div>
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Projet</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">20 MW <span style="font-size: 0.55em; font-weight: 700; letter-spacing: -0.01em">éolien</span></p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Poste retenu</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Gouzon saturé, piste Ouest-Allier</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">Sans capacité disponible, l'outil oriente vers un futur poste (40 MW prévus) et une étude complémentaire.</p>
+</div>
+</div>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 56px">
+<h3 style="flex: 1 1 300px; margin: 0; font-weight: 800; font-stretch: 108%; font-size: clamp(24px, 2.2cqi, 31px); line-height: 1.15; letter-spacing: -0.02em">Études énergie menées en parallèle</h3>
+<p style="flex: 2 1 520px; margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.6; color: #474D49">Plus de 40 études de faisabilité et de productible PV (centrales HTA de 2 à 22 MWc, PVsyst avec les données Solargis) et plus de 15 simulations éoliennes (parcs de 3 à 15 MW, corrélation long terme avec les réanalyses ERA5 et MERRA, modélisation WAsP et windPRO avec cartes de relief et de rugosité). J'ai aussi mené des études de raccordement aux postes sources RTE et Enedis (contraintes HTA/BT, quote-part, point de livraison) et mis au point une méthode windPRO de bridage chiroptères, validée contre l'outil Python interne : environ un point d'écart sur deux parcs.</p>
+</div>
+<div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px">
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="assets/img/energiter-3.webp" alt="Distribution de Weibull des vitesses de vent, A = 7,4 m/s, k = 2,18." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Distribution des vitesses de vent (Weibull) sur un site étudié.</figcaption>
+</figure>
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="assets/img/energiter-4.webp" alt="Carte de relief et de rugosité préparée pour WAsP." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Carte de relief et de rugosité préparée pour la modélisation WAsP.</figcaption>
+</figure>
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="assets/img/energiter-5.webp" alt="Courbes de puissance d'une éolienne selon les modes de bridage." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Courbes de puissance selon les modes de bridage, utilisées pour chiffrer les pertes.</figcaption>
+</figure>
+</div>
+</div>
+
+<div style="margin-top: 48px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Technologies</p>
+<ul aria-label="Technologies" style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #111412">
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Python</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">asyncio / aiohttp</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">API IGN Géoportail</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Dijkstra</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">geopy</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">folium</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">simplekml</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Selenium</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pandas</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Excel / VBA</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">PowerShell</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">WAsP</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">windPRO</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">PVsyst</li>
+</ul>
+</div>
+
+</div>
+</article>
+</div>
+</template>
+<script src="assets/js/dc-lite.js"></script>
+<script>
+(function () {
+class Component extends DCLogic {
+  getSim() {
+    if (this._sim) return this._sim;
+    const W = 640, H = 440, M_PER_U = 50;
+    const f1 = (v) => v.toFixed(1);
+    function mulberry32(a) {
+      return function () {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+    function segInter(p1, p2, p3, p4) {
+      const d = (p2.x - p1.x) * (p4.y - p3.y) - (p2.y - p1.y) * (p4.x - p3.x);
+      if (Math.abs(d) < 1e-9) return false;
+      const t = ((p3.x - p1.x) * (p4.y - p3.y) - (p3.y - p1.y) * (p4.x - p3.x)) / d;
+      const u = ((p3.x - p1.x) * (p2.y - p1.y) - (p3.y - p1.y) * (p2.x - p1.x)) / d;
+      return t > 0 && t < 1 && u > 0 && u < 1;
+    }
+    function build(seed) {
+      const rnd = mulberry32(seed);
+      const river = [];
+      const y0 = H * (0.42 + rnd() * 0.16), amp = 38 + rnd() * 22, ph = rnd() * 6.28, f = 1.6 + rnd() * 1.2;
+      for (let i = 0; i <= 64; i++) {
+        const x = -10 + (W + 20) * i / 64;
+        const y = y0 + Math.sin(i / 64 * Math.PI * f + ph) * amp + Math.sin(i / 64 * Math.PI * 5.3 + ph * 2) * 9;
+        river.push({ x: x, y: y });
+      }
+      const riverDist = (x, y) => {
+        let best = Infinity;
+        for (let i = 0; i < river.length - 1; i++) {
+          const a = river[i], b = river[i + 1];
+          const vx = b.x - a.x, vy = b.y - a.y;
+          const t = Math.max(0, Math.min(1, ((x - a.x) * vx + (y - a.y) * vy) / (vx * vx + vy * vy)));
+          best = Math.min(best, Math.hypot(a.x + t * vx - x, a.y + t * vy - y));
+        }
+        return best;
+      };
+      const pts = [];
+      let tries = 0;
+      while (pts.length < 160 && tries < 30000) {
+        tries++;
+        const x = 12 + rnd() * (W - 24), y = 12 + rnd() * (H - 24);
+        if (riverDist(x, y) < 12) continue;
+        if (pts.every((p) => (p.x - x) * (p.x - x) + (p.y - y) * (p.y - y) > 32 * 32)) pts.push({ x: x, y: y });
+      }
+      const n = pts.length;
+      let edges = [];
+      for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) {
+        const a = pts[i], b = pts[j];
+        const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+        const r2 = ((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)) / 4;
+        if (r2 > 80 * 80) continue;
+        let ok = true;
+        for (let k = 0; k < n && ok; k++) {
+          if (k === i || k === j) continue;
+          if ((pts[k].x - mx) * (pts[k].x - mx) + (pts[k].y - my) * (pts[k].y - my) < r2) ok = false;
+        }
+        if (ok) edges.push([i, j]);
+      }
+      const crosses = (e) => {
+        const a = pts[e[0]], b = pts[e[1]];
+        for (let i = 0; i < river.length - 1; i++) if (segInter(a, b, river[i], river[i + 1])) return true;
+        return false;
+      };
+      const crossing = edges.filter(crosses);
+      const nonCross = edges.filter((e) => !crosses(e));
+      crossing.sort((e1, e2) => (pts[e1[0]].x + pts[e1[1]].x) - (pts[e2[0]].x + pts[e2[1]].x));
+      const bridges = [];
+      for (let k = 0; k < 3; k++) {
+        const idx = Math.min(crossing.length - 1, Math.max(0, Math.floor((k + 0.5) / 3 * crossing.length + (rnd() - 0.5) * 2)));
+        if (crossing[idx] && bridges.indexOf(crossing[idx]) < 0) bridges.push(crossing[idx]);
+      }
+      edges = nonCross.concat(bridges);
+      const countFrom0 = (E) => {
+        const A = Array.from({ length: n }, () => []);
+        for (const e of E) { A[e[0]].push(e[1]); A[e[1]].push(e[0]); }
+        const seen = new Uint8Array(n); const st = [0]; seen[0] = 1; let c = 1;
+        while (st.length) { const u = st.pop(); for (const v of A[u]) if (!seen[v]) { seen[v] = 1; c++; st.push(v); } }
+        return c;
+      };
+      const target = countFrom0(edges);
+      const order = edges.map((e, k) => k).sort(() => rnd() - 0.5);
+      let kept = edges.slice();
+      for (const k of order) {
+        const e = edges[k];
+        if (bridges.indexOf(e) >= 0) continue;
+        if (rnd() < 0.40) {
+          const cand = kept.filter((x) => x !== e);
+          if (countFrom0(cand) === target) kept = cand;
+        }
+      }
+      const A = Array.from({ length: n }, () => []);
+      for (const e of kept) { A[e[0]].push(e[1]); A[e[1]].push(e[0]); }
+      const alive = new Uint8Array(n); const st = [0]; alive[0] = 1;
+      while (st.length) { const u = st.pop(); for (const v of A[u]) if (!alive[v]) { alive[v] = 1; st.push(v); } }
+      const bends = kept.map(() => (rnd() - 0.5) * 0.28);
+      return { pts: pts, edges: kept, bends: bends, river: river, bridges: bridges, alive: alive };
+    }
+
+    const net = build(11);
+    const pts = net.pts, edges = net.edges, bends = net.bends, river = net.river;
+    const nNodes = pts.length;
+    const ctrl = edges.map((e, k) => {
+      const a = pts[e[0]], b = pts[e[1]];
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, dx = b.x - a.x, dy = b.y - a.y;
+      return { x: mx - dy * bends[k], y: my + dx * bends[k] };
+    });
+    const elen = edges.map((e, k) => Math.hypot(pts[e[0]].x - pts[e[1]].x, pts[e[0]].y - pts[e[1]].y) * (1 + 2.2 * bends[k] * bends[k]));
+    const adj = Array.from({ length: nNodes }, () => []);
+    edges.forEach((e, k) => { adj[e[0]].push([e[1], elen[k], k]); adj[e[1]].push([e[0], elen[k], k]); });
+    function dijkstra(src) {
+      const dist = new Float64Array(nNodes).fill(Infinity), prev = new Int32Array(nNodes).fill(-1), prevE = new Int32Array(nNodes).fill(-1), done = new Uint8Array(nNodes);
+      dist[src] = 0; const order = [];
+      for (let it = 0; it < nNodes; it++) {
+        let u = -1, best = Infinity;
+        for (let k = 0; k < nNodes; k++) if (!done[k] && dist[k] < best) { best = dist[k]; u = k; }
+        if (u < 0) break;
+        done[u] = 1; order.push(u);
+        for (const a of adj[u]) if (dist[u] + a[1] < dist[a[0]]) { dist[a[0]] = dist[u] + a[1]; prev[a[0]] = u; prevE[a[0]] = a[2]; }
+      }
+      return { dist: dist, prev: prev, prevE: prevE, order: order };
+    }
+
+    const alive = [];
+    for (let i = 0; i < nNodes; i++) if (net.alive[i]) alive.push(i);
+    const extreme = (fn) => alive.reduce((b, i) => (fn(pts[i]) < fn(pts[b]) ? i : b), alive[0]);
+    const mainEdges = new Set();
+    const pairs = [[extreme((p) => p.x + Math.abs(p.y - H * 0.3)), extreme((p) => -p.x + Math.abs(p.y - H * 0.7))],
+                   [extreme((p) => p.y + Math.abs(p.x - W * 0.42)), extreme((p) => -p.y + Math.abs(p.x - W * 0.55))]];
+    for (const pr of pairs) {
+      const r = dijkstra(pr[0]);
+      let v = pr[1];
+      while (v !== pr[0] && r.prevE[v] >= 0) { mainEdges.add(r.prevE[v]); v = r.prev[v]; }
+    }
+
+    const rs = mulberry32(11 * 31 + 5);
+    const cand = alive.filter((i) => pts[i].x > 36 && pts[i].x < W - 36 && pts[i].y > 36 && pts[i].y < H - 36);
+    const subsIdx = [cand[Math.floor(rs() * cand.length)]];
+    while (subsIdx.length < 10) {
+      let best = -1, bd = -1;
+      for (const i of cand) {
+        const d = Math.min.apply(null, subsIdx.map((s) => Math.hypot(pts[i].x - pts[s].x, pts[i].y - pts[s].y)));
+        if (d > bd) { bd = d; best = i; }
+      }
+      subsIdx.push(best);
+    }
+    const specs = [
+      { kv: 63, cap: 0 }, { kv: 63, cap: 4 }, { kv: 63, cap: 9 }, { kv: 63, cap: 14 }, { kv: 63, cap: 6 },
+      { kv: 90, cap: 12 }, { kv: 90, cap: 22 }, { kv: 90, cap: 30 }, { kv: 225, cap: 45 }, { kv: 225, cap: 80 }
+    ];
+    for (let i = specs.length - 1; i > 0; i--) { const j = Math.floor(rs() * (i + 1)); const tmp = specs[i]; specs[i] = specs[j]; specs[j] = tmp; }
+    const subs = subsIdx.map((node, k) => ({ node: node, x: pts[node].x, y: pts[node].y, kv: specs[k].kv, cap: specs[k].cap, code: 'P-' + String(k + 1).padStart(2, '0') }));
+
+    const CABLE_PRICE = { '240 Alu': 95, '240 Cu': 110, '2×240 Alu': 120 };
+    const SWITCH_AT = { 1: 28, 2: 28, 3: 28, 4: 28, 5: 28, 6: 27, 7: 27, 8: 25, 9: 24, 10: 20, 11: 19, 12: 18, 13: 17, 14: 15, 15: 15, 16: 12, 17: 11 };
+    const QUOTE_PART = 45.09;
+    function cableFor(punit, dKm) {
+      const row = Math.min(17, Math.max(1, Math.ceil(punit - 1e-9)));
+      const dr = Math.ceil(dKm);
+      const base = row >= 15 ? '240 Cu' : '240 Alu';
+      return dr >= SWITCH_AT[row] ? '2×240 Alu' : base;
+    }
+    function costFor(P, dKm) {
+      const N = Math.ceil(P / 17 - 1e-9);
+      const punit = Math.min(P / N, 17);
+      const cable = cableFor(punit, dKm);
+      const cNet = N * dKm * CABLE_PRICE[cable];
+      const cQp = P * QUOTE_PART;
+      return { N: N, punit: punit, cable: cable, cNet: cNet, cQp: cQp, total: cNet + cQp, perMW: (cNet + cQp) / P };
+    }
+    function nearestNode(x, y) {
+      let best = -1, bd = Infinity;
+      for (const i of alive) { const d = Math.hypot(pts[i].x - x, pts[i].y - y); if (d < bd) { bd = d; best = i; } }
+      return { node: best, d: bd };
+    }
+    function evaluate(x, y, P) {
+      const nn = nearestNode(x, y);
+      const r = dijkstra(nn.node);
+      const rows = subs.map((s, k) => {
+        const roadU = r.dist[s.node] + nn.d;
+        const crowU = Math.hypot(s.x - x, s.y - y);
+        const dKm = roadU * M_PER_U / 1000;
+        return { k: k, s: s, roadU: roadU, crowU: crowU, dKm: dKm, feasible: s.cap >= P, cost: costFor(P, dKm) };
+      });
+      const feasible = rows.filter((q) => q.feasible).sort((a, b) => a.cost.total - b.cost.total);
+      const byCrow = rows.slice().sort((a, b) => a.crowU - b.crowU)[0];
+      return { nn: nn, r: r, rows: rows, best: feasible[0] || null, byCrow: byCrow };
+    }
+    function routeOf(res, target, x, y) {
+      const segs = [];
+      let v = target;
+      while (v !== res.nn.node && res.r.prevE[v] >= 0) {
+        segs.push({ u: res.r.prev[v], v: v, k: res.r.prevE[v] });
+        v = res.r.prev[v];
+      }
+      segs.reverse();
+      const n0 = pts[res.nn.node];
+      let d = 'M' + f1(x) + ' ' + f1(y) + 'L' + f1(n0.x) + ' ' + f1(n0.y);
+      let len = Math.hypot(n0.x - x, n0.y - y);
+      for (const s of segs) {
+        const a = pts[s.u], c = ctrl[s.k], b = pts[s.v];
+        d += 'Q' + f1(c.x) + ' ' + f1(c.y) + ' ' + f1(b.x) + ' ' + f1(b.y);
+        let px = a.x, py = a.y;
+        for (let i = 1; i <= 8; i++) {
+          const t = i / 8, mt = 1 - t;
+          const qx = mt * mt * a.x + 2 * mt * t * c.x + t * t * b.x;
+          const qy = mt * mt * a.y + 2 * mt * t * c.y + t * t * b.y;
+          len += Math.hypot(qx - px, qy - py); px = qx; py = qy;
+        }
+      }
+      return { d: d, len: len };
+    }
+    function exploreD(res, count) {
+      let d = '';
+      for (let i = 1; i < count; i++) {
+        const v = res.r.order[i], k = res.r.prevE[v], u = res.r.prev[v];
+        if (k < 0) continue;
+        d += 'M' + f1(pts[u].x) + ' ' + f1(pts[u].y) + 'Q' + f1(ctrl[k].x) + ' ' + f1(ctrl[k].y) + ' ' + f1(pts[v].x) + ' ' + f1(pts[v].y);
+      }
+      return d;
+    }
+
+    const riverD = 'M' + river.map((p) => f1(p.x) + ' ' + f1(p.y)).join('L');
+    let roadD = '', mainD = '';
+    edges.forEach((e, k) => {
+      const seg = 'M' + f1(pts[e[0]].x) + ' ' + f1(pts[e[0]].y) + 'Q' + f1(ctrl[k].x) + ' ' + f1(ctrl[k].y) + ' ' + f1(pts[e[1]].x) + ' ' + f1(pts[e[1]].y);
+      if (mainEdges.has(k)) mainD += seg; else roadD += seg;
+    });
+    let bridgeD = '';
+    net.bridges.forEach((e) => {
+      const a = pts[e[0]], b = pts[e[1]];
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, L = Math.hypot(b.x - a.x, b.y - a.y), ux = (b.x - a.x) / L, uy = (b.y - a.y) / L;
+      bridgeD += 'M' + f1(mx - ux * 9) + ' ' + f1(my - uy * 9) + 'L' + f1(mx + ux * 9) + ' ' + f1(my + uy * 9);
+    });
+
+    let def = null;
+    const centre = alive.slice().sort((a, b) => Math.hypot(pts[a].x - W * 0.46, pts[a].y - H * 0.5) - Math.hypot(pts[b].x - W * 0.46, pts[b].y - H * 0.5));
+    for (const i of centre) {
+      const x = pts[i].x + 9, y = pts[i].y - 7;
+      const res = evaluate(x, y, 12);
+      if (res.best && !res.byCrow.feasible && res.best.dKm > 6 && res.best.dKm < 18) { def = { x: x, y: y }; break; }
+    }
+    if (!def) def = { x: W * 0.46, y: H * 0.5 };
+
+    const nf0 = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 });
+    const nf1 = new Intl.NumberFormat('fr-FR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    this._sim = {
+      W: W, H: H, M_PER_U: M_PER_U, pts: pts, subs: subs, CABLE_PRICE: CABLE_PRICE,
+      evaluate: evaluate, routeOf: routeOf, exploreD: exploreD,
+      riverD: riverD, roadD: roadD, mainD: mainD, bridgeD: bridgeD,
+      def: def, nf0: nf0, nf1: nf1
+    };
+    return this._sim;
+  }
+
+  evalAt(x, y, P) {
+    const key = x + '|' + y + '|' + P;
+    if (this._evKey !== key) { this._evKey = key; this._ev = this.getSim().evaluate(x, y, P); }
+    return this._ev;
+  }
+
+  current() {
+    const S = this.getSim();
+    return Object.assign({ x: S.def.x, y: S.def.y, P: 12, explore: true, interacted: false, phase: 'done', ex: 0, rf: 1, exOp: 0.15 }, this.state || {});
+  }
+
+  runAnim(animate, x, y, exploreNow) {
+    if (this._raf) { cancelAnimationFrame(this._raf); this._raf = 0; }
+    const st = this.current();
+    const explore = exploreNow === undefined ? st.explore : exploreNow;
+    const reduce = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!animate || reduce || typeof requestAnimationFrame !== 'function') { this.setState({ phase: 'done' }); return; }
+    const total = this.evalAt(x, y, st.P).r.order.length;
+    const T1 = explore ? 900 : 0, T2 = 650;
+    let t0 = null;
+    const step = (now) => {
+      if (t0 === null) t0 = now;
+      const t = now - t0;
+      const ex = explore ? Math.min(total, Math.floor(total * Math.min(1, t / T1))) : 0;
+      if (t < T1) {
+        this.setState({ phase: 'anim', ex: ex, rf: 0, exOp: 0.45 });
+        this._raf = requestAnimationFrame(step);
+        return;
+      }
+      const f = Math.min(1, (t - T1) / T2);
+      if (f >= 1) { this._raf = 0; this.setState({ phase: 'done' }); return; }
+      this.setState({ phase: 'anim', ex: ex, rf: f, exOp: 0.45 - 0.3 * f });
+      this._raf = requestAnimationFrame(step);
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+
+  moveTo(x, y, animate) {
+    this.setState({ x: x, y: y, interacted: true });
+    this.runAnim(animate, x, y);
+  }
+
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+  }
+
+  renderVals() {
+    const S = this.getSim();
+    const st = this.current();
+    const x = st.x, y = st.y, P = st.P;
+    const res = this.evalAt(x, y, P);
+    const anim = st.phase === 'anim';
+    const KV = { 63: '#3772BB', 90: '#639BE1', 225: '#9DC7FE' };
+    const nf0 = S.nf0, nf1 = S.nf1;
+    const fmtKm = (u) => nf1.format(u * S.M_PER_U / 1000) + ' km';
+    const clampX = (v) => Math.max(8, Math.min(S.W - 8, v));
+    const clampY = (v) => Math.max(8, Math.min(S.H - 8, v));
+
+    let exploreD = '', exploreOp = 0.15;
+    if (anim) { exploreD = st.ex > 1 ? S.exploreD(res, st.ex) : ''; exploreOp = st.exOp; }
+    else if (st.interacted && st.explore) exploreD = S.exploreD(res, res.r.order.length);
+
+    const b = res.best;
+    const route = b ? S.routeOf(res, b.s.node, x, y) : { d: '', len: 0 };
+    const rf = anim ? st.rf : 1;
+    const L = route.len.toFixed(1);
+
+    const bc = res.byCrow;
+    let crowD = '', crowT = '', crowTx = 0, crowTy = 0;
+    if (!b || bc.k !== b.k) {
+      crowD = 'M' + x.toFixed(1) + ' ' + y.toFixed(1) + 'L' + bc.s.x.toFixed(1) + ' ' + bc.s.y.toFixed(1);
+      const mx = (x + bc.s.x) / 2, my = (y + bc.s.y) / 2;
+      const dx = bc.s.x - x, dy = bc.s.y - y, Lc = Math.hypot(dx, dy) || 1;
+      let nx = -dy / Lc, ny = dx / Lc;
+      if (ny > 0) { nx = -nx; ny = -ny; }
+      crowTx = Math.max(70, Math.min(S.W - 70, mx + nx * 12)).toFixed(1);
+      crowTy = Math.max(14, my + ny * 12).toFixed(1);
+      crowT = Lc > 150 ? fmtKm(bc.crowU) + " à vol d'oiseau" : '';
+    }
+
+    const sub = (k) => {
+      const s = S.subs[k];
+      const row = res.rows[k];
+      const sel = !!(b && b.k === k);
+      const size = s.kv === 225 ? 13 : s.kv === 90 ? 11 : 9.5;
+      const left = s.x > S.W - 70;
+      return {
+        rx: (s.x - size / 2).toFixed(1), ry: (s.y - size / 2).toFixed(1), size: size,
+        fill: KV[s.kv], op: row.feasible ? 1 : 0.38,
+        gx: (s.x - size / 2 - 4).toFixed(1), gy: (s.y - size / 2 - 4).toFixed(1), gs: size + 8, gd: sel ? 'inline' : 'none',
+        tx: (left ? s.x - size / 2 - 5 : s.x + size / 2 + 5).toFixed(1), ty: (s.y + 4).toFixed(1), anchor: left ? 'end' : 'start',
+        label: s.code + ' (' + s.cap + ' MW)', tf: sel ? '#F2F2EE' : '#A9B0AA', tw: sel ? 700 : 500,
+        title: s.code + ', ' + s.kv + ' kV, ' + s.cap + ' MW disponibles'
+      };
+    };
+
+    const onRight = x > S.W - 120;
+    const out = {
+      hasBest: !!b, bestCode: 'Aucun', bestSub: 'pas de poste avec ' + P + ' MW disponibles', bestColor: 'transparent',
+      route: '–', routeSub: '', cable: '–', cableSub: '', cost: '–', costSub: '',
+      noteStrong: 'Aucun poste',
+      noteRest: " ne peut accueillir " + P + " MW sans travaux. Dans l'outil réel, c'est le signal pour regarder les postes à créer prévus par le S3REnR ou réduire la puissance."
+    };
+    if (b) {
+      const c = b.cost;
+      out.bestCode = b.s.code;
+      out.bestSub = b.s.kv + ' kV, ' + b.s.cap + ' MW disponibles';
+      out.bestColor = KV[b.s.kv];
+      out.route = nf1.format(b.dKm) + ' km';
+      out.routeSub = fmtKm(b.crowU) + " à vol d'oiseau";
+      out.cable = c.N + ' × ' + c.cable;
+      out.cableSub = (c.N > 1 ? c.N + ' modules de ' + nf1.format(c.punit) + ' MW, ' : '') + S.CABLE_PRICE[c.cable] + ' k€/km';
+      out.cost = nf0.format(c.total) + ' k€';
+      out.costSub = nf0.format(c.perMW) + ' k€/MW, dont ' + nf0.format(c.cQp) + ' k€ de quote-part';
+      if (bc.k === b.k) {
+        out.noteStrong = '';
+        out.noteRest = 'Le poste le plus proche convient : ' + b.s.code + ' a la capacité pour ' + P + ' MW.';
+      } else if (!bc.feasible) {
+        out.noteStrong = bc.s.code;
+        out.noteRest = " est le plus proche à vol d'oiseau (" + fmtKm(bc.crowU) + ") mais n'a que " + bc.s.cap + ' MW disponibles : l\'outil passe au poste suivant.';
+      } else {
+        out.noteStrong = bc.s.code;
+        out.noteRest = " est plus proche à vol d'oiseau (" + fmtKm(bc.crowU) + ') mais à ' + nf1.format(bc.dKm) + ' km par la route : la rivière impose un détour par un pont.';
+      }
+    }
+
+    return Object.assign(out, {
+      riverD: S.riverD, roadD: S.roadD, mainD: S.mainD, bridgeD: S.bridgeD,
+      exploreD: exploreD, exploreOp: exploreOp,
+      crowD: crowD, crowT: crowT, crowTx: crowTx, crowTy: crowTy,
+      routeD: route.d,
+      routeDash: rf < 1 ? L + ' ' + L : 'none',
+      routeOff: rf < 1 ? (route.len * (1 - rf)).toFixed(1) : '0',
+      casingOp: rf < 1 ? rf : 1,
+      accessD: 'M' + x.toFixed(1) + ' ' + y.toFixed(1) + 'L' + S.pts[res.nn.node].x.toFixed(1) + ' ' + S.pts[res.nn.node].y.toFixed(1),
+      s0: sub(0), s1: sub(1), s2: sub(2), s3: sub(3), s4: sub(4), s5: sub(5), s6: sub(6), s7: sub(7), s8: sub(8), s9: sub(9),
+      projT: 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')',
+      projTx: onRight ? -16 : 16, projAnchor: onRight ? 'end' : 'start', projLabel: 'Parc ' + P + ' MW',
+      mapLabel: 'Carte fictive : routes, rivière, postes sources colorés par tension. ' + (b ? 'Le tracé relie le parc au poste retenu ' + b.s.code + '.' : 'Aucun poste ne convient à cette puissance.'),
+      showHint: !st.interacted,
+      P: P, powerLabel: P + ' MW', explore: !!st.explore,
+      onMap: (e) => {
+        const box = e && e.currentTarget;
+        const svg = box && box.querySelector ? box.querySelector('svg') : null;
+        if (!svg) return;
+        const r = svg.getBoundingClientRect();
+        if (!r.width || !r.height) return;
+        this.moveTo(clampX((e.clientX - r.left) / r.width * S.W), clampY((e.clientY - r.top) / r.height * S.H), true);
+      },
+      onKey: (e) => {
+        const d = { ArrowLeft: [-12, 0], ArrowRight: [12, 0], ArrowUp: [0, -12], ArrowDown: [0, 12] }[e.key];
+        if (!d) return;
+        e.preventDefault();
+        const cur = this.current();
+        this.moveTo(clampX(cur.x + d[0]), clampY(cur.y + d[1]), false);
+      },
+      onPower: (e) => {
+        if (this._raf) { cancelAnimationFrame(this._raf); this._raf = 0; }
+        this.setState({ P: Number(e.target.value), phase: 'done' });
+      },
+      onRandom: () => {
+        this.moveTo(30 + Math.random() * (S.W - 60), 30 + Math.random() * (S.H - 60), true);
+      },
+      onExplore: (e) => {
+        const on = !!e.target.checked;
+        const cur = this.current();
+        this.setState({ explore: on, interacted: true });
+        this.runAnim(true, cur.x, cur.y, on);
+      }
+    });
+  }
+}
+DCLite.mount(Component, document.getElementById('dc-root'), document.getElementById('dc-template'));
+})();
+</script>
+</body>
+</html>

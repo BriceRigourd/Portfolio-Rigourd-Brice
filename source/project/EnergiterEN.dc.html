@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project 02 — Energiter</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F2F2EE}
+a{color:#111412}a:hover{color:#474D49}
+</style>
+</helmet>
+<div style="container-type: inline-size; min-height: 100vh; background: #F2F2EE; color: #111412; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility">
+<header style="position: sticky; top: 0; z-index: 30; background: #F2F2EE; border-bottom: 1px solid #D5D7D1">
+<div style="max-width: 1312px; margin: 0 auto; padding: 8px clamp(20px, 4.5cqi, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px">
+<a href="MainEN.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #111412; text-decoration: none"><span aria-hidden="true" style="position: relative; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #111412; color: #F2F2EE; font-weight: 800; font-stretch: 125%; font-size: 11.5px; letter-spacing: 0.02em">BR<span style="position: absolute; right: -4px; bottom: -4px; width: 9px; height: 9px; background: #FCCA21; border: 2px solid #F2F2EE"></span></span><span style="font-weight: 700; font-stretch: 108%; font-size: 16px; white-space: nowrap">Brice Rigourd</span><span style="font-size: 14px; font-weight: 500; color: #5C625E; white-space: nowrap">← Home</span></a>
+<div role="group" aria-label="Language" style="display: inline-flex; border: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em"><a href="Energiter.dc.html" hreflang="fr" lang="fr" aria-label="Version française" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #111412; text-decoration: none">FR</a><span aria-current="true" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; background: #111412; color: #F2F2EE">EN</span></div>
+</div>
+</header>
+<article id="energiter" aria-labelledby="en-title" style="padding: clamp(56px, 6.5cqi, 96px) 0 clamp(64px, 6.5cqi, 96px)">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-top: 16px; border-top: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #111412; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21; outline: 1.5px solid #111412"></span>Project 02</span>
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; background: #111412; color: #F2F2EE; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FCCA21" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg>April – September 2024</span>
+<span>Energiter, Montpellier</span>
+<span style="margin-left: auto">Geospatial decision-support tool</span>
+</div>
+
+<h2 id="en-title" style="margin: 36px 0 0; max-width: 22ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2rem, 3.9cqi, 3.5rem); line-height: 1.03; letter-spacing: -0.03em; text-wrap: balance">Grid connection study tool</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; margin-top: clamp(32px, 3.4cqi, 48px)">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The context</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">In France, a wind or solar farm can wait more than eight years for its grid connection, for lack of capacity at the source substations.</p>
+</div>
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">What I built</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">For each project, the tool finds the substations that can really be reached by road, checks their hosting capacity and prices the connection. It is the subject of my Master's thesis.</p>
+</div>
+</div>
+<dl style="flex: 1 1 340px; max-width: 480px; margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 2px solid #111412; font-size: 15px; line-height: 1.45">
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Company</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Energiter, wind and solar engineering consultancy</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Role</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Renewable energy design engineer, final-year internship</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Period</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">April – September 2024</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Framework</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Master's thesis, UPV/EHU, October 2024</dd>
+<dt style="padding: 13px 16px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Architecture</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; font-weight: 500">An Excel/VBA interface that drives Python scripts through PowerShell</dd>
+</dl>
+</div>
+
+<dl aria-label="Key figures" style="margin: clamp(48px, 4.6cqi, 64px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">Caparéseau source substations filtered and ranked by criticality, in 5 to 20 s</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">3,400+</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">response time with asynchronous calls to the IGN API: from 15–35 s down to 3–15 s for 10 substations</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">−64%</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">PV feasibility and yield studies, MV-connected plants from 2 to 22 MWp</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">40+</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #F2F2EE; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">wind simulations in WAsP and windPRO, 3 to 15 MW wind farms</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">15+</dd></div>
+</dl>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Processing chain</p>
+<ol aria-label="Processing chain" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 28px 0">
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">01</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Grid data</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Automatic download and archiving of Caparéseau data (RTE, over 3,400 source substations) and of the regional S3REnR schemes.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">02</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Real distance</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">The IGN routing API, called asynchronously by car, on foot or whichever is shorter, after preselecting substations within a radius of the project.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">03</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Substation analysis</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Substations with 20 kV or more downstream, a 0-to-5 criticality score from capacity with and without works, transformers and remaining HV/MV capacity, planned substations flagged.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">04</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Costing</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">17 MW modules, a cable picked from a power × distance table, network cost and the regional cost share looked up from the coordinates, several power levels compared at once.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #111412; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">05</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Deliverables</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">KML routes for Google Earth, HTML maps (folium), an archived project database, and a PDF and XLSM report generated from Excel.</p>
+</li>
+</ol>
+</div>
+
+<section aria-labelledby="sim-title" style="margin-top: clamp(56px, 5cqi, 72px); background: #111412; color: #F2F2EE">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 48px; padding: clamp(24px, 2.5cqi, 36px); border-bottom: 1px solid #2C312D">
+<div style="flex: 999 1 480px; min-width: 0">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21"></span>Demo · fictitious data</p>
+<h3 id="sim-title" style="margin: 12px 0 0; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.5cqi, 36px); line-height: 1.08; letter-spacing: -0.025em">Grid connection study</h3>
+</div>
+<p style="flex: 1 1 380px; margin: 0; font-size: 15px; line-height: 1.55; color: #A9B0AA">A simulation on fictitious data, using the tool's logic. Click the map to place the solar farm, or move it with the arrow keys, then adjust its capacity.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1px; background: #2C312D">
+<div style="flex: 999 1 620px; min-width: 0; background: #151916">
+<div tabindex="0" aria-label="Simulation map: click to place the solar farm, or move it with the arrow keys." onClick="{{onMap}}" onKeyDown="{{onKey}}" style="position: relative; background-color: #151916; background-image: linear-gradient(rgba(242,242,238,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(242,242,238,0.035) 1px, transparent 1px), linear-gradient(rgba(242,242,238,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(242,242,238,0.07) 1px, transparent 1px); background-size: 16px 16px, 16px 16px, 80px 80px, 80px 80px; cursor: crosshair; touch-action: manipulation; outline-offset: -3px">
+<svg viewBox="0 0 640 440" role="img" aria-label="{{mapLabel}}" style="display: block; width: 100%; height: auto; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif">
+<path d="{{riverD}}" fill="none" stroke="#22384A" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="{{roadD}}" fill="none" stroke="#3A413B" stroke-width="1.15" stroke-linecap="round"></path>
+<path d="{{mainD}}" fill="none" stroke="#5E665F" stroke-width="2.2" stroke-linecap="round"></path>
+<path d="{{bridgeD}}" fill="none" stroke="#A9B0AA" stroke-width="3.4" stroke-linecap="butt"></path>
+<g transform="translate(14 422)"><path d="M0 -5V0H100V-5M50 -3V0" fill="none" stroke="#A9B0AA" stroke-width="1.4"></path><text x="0" y="-9" fill="#A9B0AA" font-size="10.5" font-weight="600">0</text><text x="100" y="-9" text-anchor="middle" fill="#A9B0AA" font-size="10.5" font-weight="600">5 km</text></g>
+<g transform="translate(618 24)"><path d="M0 -14L6 6L0 2L-6 6Z" fill="#A9B0AA"></path><text x="0" y="19" text-anchor="middle" fill="#A9B0AA" font-size="10.5" font-weight="600">N</text></g>
+<path d="{{exploreD}}" fill="none" stroke="#FCCA21" stroke-width="1.6" stroke-linecap="round" opacity="{{exploreOp}}"></path>
+<path d="{{crowD}}" fill="none" stroke="#FF8A70" stroke-width="1.4" stroke-dasharray="6 5"></path>
+<text x="{{crowTx}}" y="{{crowTy}}" text-anchor="middle" fill="#FF8A70" font-size="11.5" font-weight="600" paint-order="stroke" stroke="#151916" stroke-width="4" stroke-linejoin="round">{{crowT}}</text>
+<path d="{{routeD}}" fill="none" stroke="#1A1E1B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="{{casingOp}}"></path>
+<path d="{{routeD}}" fill="none" stroke="#FCCA21" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="{{routeDash}}" stroke-dashoffset="{{routeOff}}"></path>
+<path d="{{accessD}}" fill="none" stroke="#FCCA21" stroke-width="2" stroke-dasharray="3 3"></path>
+<g><rect x="{{s0.rx}}" y="{{s0.ry}}" width="{{s0.size}}" height="{{s0.size}}" fill="{{s0.fill}}" opacity="{{s0.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s0.title}}</title></rect><rect x="{{s0.gx}}" y="{{s0.gy}}" width="{{s0.gs}}" height="{{s0.gs}}" display="{{s0.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s0.tx}}" y="{{s0.ty}}" text-anchor="{{s0.anchor}}" fill="{{s0.tf}}" font-weight="{{s0.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s0.label}}</text></g>
+<g><rect x="{{s1.rx}}" y="{{s1.ry}}" width="{{s1.size}}" height="{{s1.size}}" fill="{{s1.fill}}" opacity="{{s1.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s1.title}}</title></rect><rect x="{{s1.gx}}" y="{{s1.gy}}" width="{{s1.gs}}" height="{{s1.gs}}" display="{{s1.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s1.tx}}" y="{{s1.ty}}" text-anchor="{{s1.anchor}}" fill="{{s1.tf}}" font-weight="{{s1.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s1.label}}</text></g>
+<g><rect x="{{s2.rx}}" y="{{s2.ry}}" width="{{s2.size}}" height="{{s2.size}}" fill="{{s2.fill}}" opacity="{{s2.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s2.title}}</title></rect><rect x="{{s2.gx}}" y="{{s2.gy}}" width="{{s2.gs}}" height="{{s2.gs}}" display="{{s2.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s2.tx}}" y="{{s2.ty}}" text-anchor="{{s2.anchor}}" fill="{{s2.tf}}" font-weight="{{s2.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s2.label}}</text></g>
+<g><rect x="{{s3.rx}}" y="{{s3.ry}}" width="{{s3.size}}" height="{{s3.size}}" fill="{{s3.fill}}" opacity="{{s3.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s3.title}}</title></rect><rect x="{{s3.gx}}" y="{{s3.gy}}" width="{{s3.gs}}" height="{{s3.gs}}" display="{{s3.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s3.tx}}" y="{{s3.ty}}" text-anchor="{{s3.anchor}}" fill="{{s3.tf}}" font-weight="{{s3.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s3.label}}</text></g>
+<g><rect x="{{s4.rx}}" y="{{s4.ry}}" width="{{s4.size}}" height="{{s4.size}}" fill="{{s4.fill}}" opacity="{{s4.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s4.title}}</title></rect><rect x="{{s4.gx}}" y="{{s4.gy}}" width="{{s4.gs}}" height="{{s4.gs}}" display="{{s4.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s4.tx}}" y="{{s4.ty}}" text-anchor="{{s4.anchor}}" fill="{{s4.tf}}" font-weight="{{s4.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s4.label}}</text></g>
+<g><rect x="{{s5.rx}}" y="{{s5.ry}}" width="{{s5.size}}" height="{{s5.size}}" fill="{{s5.fill}}" opacity="{{s5.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s5.title}}</title></rect><rect x="{{s5.gx}}" y="{{s5.gy}}" width="{{s5.gs}}" height="{{s5.gs}}" display="{{s5.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s5.tx}}" y="{{s5.ty}}" text-anchor="{{s5.anchor}}" fill="{{s5.tf}}" font-weight="{{s5.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s5.label}}</text></g>
+<g><rect x="{{s6.rx}}" y="{{s6.ry}}" width="{{s6.size}}" height="{{s6.size}}" fill="{{s6.fill}}" opacity="{{s6.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s6.title}}</title></rect><rect x="{{s6.gx}}" y="{{s6.gy}}" width="{{s6.gs}}" height="{{s6.gs}}" display="{{s6.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s6.tx}}" y="{{s6.ty}}" text-anchor="{{s6.anchor}}" fill="{{s6.tf}}" font-weight="{{s6.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s6.label}}</text></g>
+<g><rect x="{{s7.rx}}" y="{{s7.ry}}" width="{{s7.size}}" height="{{s7.size}}" fill="{{s7.fill}}" opacity="{{s7.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s7.title}}</title></rect><rect x="{{s7.gx}}" y="{{s7.gy}}" width="{{s7.gs}}" height="{{s7.gs}}" display="{{s7.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s7.tx}}" y="{{s7.ty}}" text-anchor="{{s7.anchor}}" fill="{{s7.tf}}" font-weight="{{s7.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s7.label}}</text></g>
+<g><rect x="{{s8.rx}}" y="{{s8.ry}}" width="{{s8.size}}" height="{{s8.size}}" fill="{{s8.fill}}" opacity="{{s8.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s8.title}}</title></rect><rect x="{{s8.gx}}" y="{{s8.gy}}" width="{{s8.gs}}" height="{{s8.gs}}" display="{{s8.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s8.tx}}" y="{{s8.ty}}" text-anchor="{{s8.anchor}}" fill="{{s8.tf}}" font-weight="{{s8.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s8.label}}</text></g>
+<g><rect x="{{s9.rx}}" y="{{s9.ry}}" width="{{s9.size}}" height="{{s9.size}}" fill="{{s9.fill}}" opacity="{{s9.op}}" stroke="#1A1E1B" stroke-width="1.5"><title>{{s9.title}}</title></rect><rect x="{{s9.gx}}" y="{{s9.gy}}" width="{{s9.gs}}" height="{{s9.gs}}" display="{{s9.gd}}" fill="none" stroke="#F2F2EE" stroke-width="1.6"></rect><text x="{{s9.tx}}" y="{{s9.ty}}" text-anchor="{{s9.anchor}}" fill="{{s9.tf}}" font-weight="{{s9.tw}}" font-size="10.5" paint-order="stroke" stroke="#151916" stroke-width="3" stroke-linejoin="round">{{s9.label}}</text></g>
+<g transform="{{projT}}"><circle r="13" fill="none" stroke="#FF8A70" stroke-width="1.2"></circle><circle r="6.5" fill="#FF8A70" stroke="#1A1E1B" stroke-width="2"></circle><text x="{{projTx}}" y="-12" text-anchor="{{projAnchor}}" fill="#F2F2EE" font-size="11.5" font-weight="700" paint-order="stroke" stroke="#151916" stroke-width="3.5" stroke-linejoin="round">{{projLabel}}</text></g>
+</svg>
+<sc-if value="{{showHint}}" hint-placeholder-val="{{ true }}">
+<span aria-hidden="true" style="position: absolute; right: 12px; bottom: 12px; padding: 6px 10px; background: #1A1E1B; border: 1px solid #2C312D; font-size: 12.5px; font-weight: 600; color: #D2D6D1; pointer-events: none">Click the map to place the farm</span>
+</sc-if>
+</div>
+</div>
+<div style="flex: 1 1 330px; min-width: 0; background: #111412; display: flex; flex-direction: column">
+<div style="padding: clamp(20px, 2cqi, 26px); display: flex; flex-direction: column; gap: 16px; border-bottom: 1px solid #2C312D">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<label for="sim-power" style="font-size: 14.5px; font-weight: 600">Farm capacity</label>
+<output for="sim-power" style="font-weight: 800; font-stretch: 108%; font-size: 22px; line-height: 1">{{powerLabel}}</output>
+</div>
+<input id="sim-power" type="range" min="2" max="40" step="1" value="{{P}}" onChange="{{onPower}}" style="width: 100%; margin: 0; accent-color: #FCCA21">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px">
+<button type="button" onClick="{{onRandom}}" style="min-height: 44px; padding: 0 16px; border: 1.5px solid #8C938D; background: transparent; color: #F2F2EE; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">New random site</button>
+<label style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; color: #A9B0AA; cursor: pointer"><input type="checkbox" checked="{{explore}}" onChange="{{onExplore}}" style="width: 18px; height: 18px; margin: 0; accent-color: #FCCA21">Show the search</label>
+</div>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: #2C312D; border-bottom: 1px solid #2C312D">
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Selected substation</dt>
+<dd style="margin: 6px 0 0"><span style="display: flex; align-items: center; gap: 8px; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1"><sc-if value="{{hasBest}}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; background: {{bestColor}}"></span></sc-if>{{bestCode}}</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">{{bestSub}}</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Road distance</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">{{route}}</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">{{routeSub}}</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Cable</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">{{cable}}</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">{{cableSub}}</span></dd>
+</div>
+<div style="background: #111412; padding: 16px 18px">
+<dt style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #8C938D">Connection cost</dt>
+<dd style="margin: 6px 0 0"><span style="display: block; font-weight: 800; font-stretch: 108%; font-size: 23px; line-height: 1.1">{{cost}}</span><span style="display: block; margin-top: 4px; font-size: 13px; line-height: 1.4; color: #A9B0AA">{{costSub}}</span></dd>
+</div>
+</dl>
+<p aria-live="polite" style="margin: 0; padding: 18px clamp(20px, 2cqi, 26px); font-size: 14.5px; line-height: 1.55; color: #D2D6D1"><strong style="color: #FF8A70; font-weight: 700">{{noteStrong}}</strong>{{noteRest}}</p>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px 48px; padding: 20px clamp(20px, 2.5cqi, 36px) 24px; border-top: 1px solid #2C312D">
+<ul aria-label="Legend" style="flex: 1 1 520px; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; font-size: 13px; color: #A9B0AA">
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 9px; height: 9px; background: #3772BB"></span>63 kV substation</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 11px; height: 11px; background: #639BE1"></span>90 kV substation</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 13px; height: 13px; background: #9DC7FE"></span>225 kV substation</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 6px; background: #22384A"></span>River, three bridges</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 4px; background: #FCCA21"></span>Selected route</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 22px; height: 0; border-top: 2px dashed #FF8A70"></span>As the crow flies</li>
+<li style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 11px; height: 11px; border-radius: 50%; background: #FF8A70"></span>Solar farm</li>
+</ul>
+<p style="flex: 1 1 420px; margin: 0; font-size: 13.5px; line-height: 1.55; color: #A9B0AA">Same logic as the tool delivered at Energiter: shortest road path (Dijkstra), a check of the substation's hosting capacity, a cable chosen by power and distance, then network cost and regional cost share. Prices and cable table taken from the thesis.</p>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; margin-top: clamp(56px, 5cqi, 72px)">
+<figure style="flex: 3 1 480px; min-width: 0; margin: 0">
+<div style="background: #FFFFFF; border: 1px solid #D5D7D1; overflow: hidden"><img src="/_blob/7bb1ff81a6692fb79714ab827b673a1d" alt="Satellite view: colored road routes between a project and seven source substations." style="display: block; width: 100%; height: auto; aspect-ratio: 1095 / 747"></div>
+<figcaption style="margin-top: 10px; max-width: 70ch; font-size: 14px; line-height: 1.5; color: #5C625E">Test case for a 10 MW project: one route per candidate substation, exported to KML and opened in Google Earth. The tool selects Phalsbourg, farther away than Ingwiller but with more capacity.</figcaption>
+</figure>
+<figure style="flex: 2 1 320px; min-width: 0; margin: 0">
+<div style="background: #FFFFFF; border: 1px solid #D5D7D1; overflow: hidden"><img src="/_blob/d035060f94d22de6dce30ddb43d98a36" alt="Detail of a route with the distance computed by the API, in pedestrian mode." style="display: block; width: 100%; height: auto; aspect-ratio: 911 / 745"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Each route carries its project name, its substation, its distance and its calculation mode.</figcaption>
+</figure>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 32px">
+<h3 style="margin: 0; font-weight: 800; font-stretch: 108%; font-size: clamp(24px, 2.2cqi, 31px); line-height: 1.15; letter-spacing: -0.02em">What the tool showed</h3>
+<p style="margin: 0; font-size: 15.5px; color: #474D49">Three test cases from the thesis, picked at random across France. A stated limit: routes assume every path is usable; private land and railways still need checking.</p>
+</div>
+<div style="margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Project</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">12 MW</p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Selected substation</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Montbrun, 14.3 km away</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">Not the nearest substation, but the only one with enough downstream voltage and capacity.</p>
+</div>
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Project</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">10 MW</p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Selected substation</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Phalsbourg</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">Preferred over Ingwiller, which is closer: capacities must be compared with and without reinforcement works.</p>
+</div>
+<div style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Project</p>
+<p style="margin: 4px 0 0; font-weight: 800; font-stretch: 112%; font-size: 34px; line-height: 1.05; letter-spacing: -0.03em">20 MW <span style="font-size: 0.55em; font-weight: 700; letter-spacing: -0.01em">wind</span></p>
+<p style="margin: 18px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Selected substation</p>
+<p style="margin: 4px 0 0; font-size: 17px; font-weight: 700">Gouzon saturated, Ouest-Allier option</p>
+<p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px solid #E4E5E0; font-size: 15px; line-height: 1.55; color: #474D49">With no capacity available, the tool points to a future substation (40 MW planned) and a further study.</p>
+</div>
+</div>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 56px">
+<h3 style="flex: 1 1 300px; margin: 0; font-weight: 800; font-stretch: 108%; font-size: clamp(24px, 2.2cqi, 31px); line-height: 1.15; letter-spacing: -0.02em">Energy studies carried out alongside</h3>
+<p style="flex: 2 1 520px; margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.6; color: #474D49">Over 40 PV feasibility and yield studies (MV-connected plants from 2 to 22 MWp, PVsyst with Solargis data) and over 15 wind simulations (3 to 15 MW wind farms, long-term correlation with the ERA5 and MERRA reanalyses, WAsP and windPRO modeling with terrain and roughness maps). I also carried out grid connection studies for RTE and Enedis substations (MV/LV constraints, cost share, point of delivery) and developed a windPRO bat-curtailment method, validated against the in-house Python tool: about one point of difference on two wind farms.</p>
+</div>
+<div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px">
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="/_blob/91f1e36752984750ccf70f4bbba9643f" alt="Weibull distribution of wind speeds, A = 7.4 m/s, k = 2.18." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Wind speed distribution (Weibull) at a studied site.</figcaption>
+</figure>
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="/_blob/c06a60c5307a566b283306370d5a4991" alt="Terrain and roughness map prepared for WAsP." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Terrain and roughness map prepared for WAsP modeling.</figcaption>
+</figure>
+<figure style="min-width: 0; margin: 0">
+<div style="display: flex; align-items: center; justify-content: center; height: 280px; padding: 14px; box-sizing: border-box; background: #FFFFFF; border: 1px solid #D5D7D1"><img src="/_blob/f7085a06cbb35a9e415d80c2d4aa0197" alt="Wind turbine power curves under each curtailment mode." style="display: block; max-width: 100%; max-height: 100%; object-fit: contain"></div>
+<figcaption style="margin-top: 10px; font-size: 14px; line-height: 1.5; color: #5C625E">Power curves under each curtailment mode, used to quantify the losses.</figcaption>
+</figure>
+</div>
+</div>
+
+<div style="margin-top: 48px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Technologies</p>
+<ul aria-label="Technologies" style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #111412">
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Python</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">asyncio / aiohttp</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">IGN Géoportail API</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Dijkstra</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">geopy</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">folium</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">simplekml</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Selenium</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pandas</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Excel / VBA</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">PowerShell</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">WAsP</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">windPRO</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">PVsyst</li>
+</ul>
+</div>
+
+</div>
+</article>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4300}}'>
+class Component extends DCLogic {
+  getSim() {
+    if (this._sim) return this._sim;
+    const W = 640, H = 440, M_PER_U = 50;
+    const f1 = (v) => v.toFixed(1);
+    function mulberry32(a) {
+      return function () {
+        a |= 0; a = (a + 0x6D2B79F5) | 0;
+        let t = Math.imul(a ^ (a >>> 15), 1 | a);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+    function segInter(p1, p2, p3, p4) {
+      const d = (p2.x - p1.x) * (p4.y - p3.y) - (p2.y - p1.y) * (p4.x - p3.x);
+      if (Math.abs(d) < 1e-9) return false;
+      const t = ((p3.x - p1.x) * (p4.y - p3.y) - (p3.y - p1.y) * (p4.x - p3.x)) / d;
+      const u = ((p3.x - p1.x) * (p2.y - p1.y) - (p3.y - p1.y) * (p2.x - p1.x)) / d;
+      return t > 0 && t < 1 && u > 0 && u < 1;
+    }
+    function build(seed) {
+      const rnd = mulberry32(seed);
+      const river = [];
+      const y0 = H * (0.42 + rnd() * 0.16), amp = 38 + rnd() * 22, ph = rnd() * 6.28, f = 1.6 + rnd() * 1.2;
+      for (let i = 0; i <= 64; i++) {
+        const x = -10 + (W + 20) * i / 64;
+        const y = y0 + Math.sin(i / 64 * Math.PI * f + ph) * amp + Math.sin(i / 64 * Math.PI * 5.3 + ph * 2) * 9;
+        river.push({ x: x, y: y });
+      }
+      const riverDist = (x, y) => {
+        let best = Infinity;
+        for (let i = 0; i < river.length - 1; i++) {
+          const a = river[i], b = river[i + 1];
+          const vx = b.x - a.x, vy = b.y - a.y;
+          const t = Math.max(0, Math.min(1, ((x - a.x) * vx + (y - a.y) * vy) / (vx * vx + vy * vy)));
+          best = Math.min(best, Math.hypot(a.x + t * vx - x, a.y + t * vy - y));
+        }
+        return best;
+      };
+      const pts = [];
+      let tries = 0;
+      while (pts.length < 160 && tries < 30000) {
+        tries++;
+        const x = 12 + rnd() * (W - 24), y = 12 + rnd() * (H - 24);
+        if (riverDist(x, y) < 12) continue;
+        if (pts.every((p) => (p.x - x) * (p.x - x) + (p.y - y) * (p.y - y) > 32 * 32)) pts.push({ x: x, y: y });
+      }
+      const n = pts.length;
+      let edges = [];
+      for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) {
+        const a = pts[i], b = pts[j];
+        const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+        const r2 = ((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)) / 4;
+        if (r2 > 80 * 80) continue;
+        let ok = true;
+        for (let k = 0; k < n && ok; k++) {
+          if (k === i || k === j) continue;
+          if ((pts[k].x - mx) * (pts[k].x - mx) + (pts[k].y - my) * (pts[k].y - my) < r2) ok = false;
+        }
+        if (ok) edges.push([i, j]);
+      }
+      const crosses = (e) => {
+        const a = pts[e[0]], b = pts[e[1]];
+        for (let i = 0; i < river.length - 1; i++) if (segInter(a, b, river[i], river[i + 1])) return true;
+        return false;
+      };
+      const crossing = edges.filter(crosses);
+      const nonCross = edges.filter((e) => !crosses(e));
+      crossing.sort((e1, e2) => (pts[e1[0]].x + pts[e1[1]].x) - (pts[e2[0]].x + pts[e2[1]].x));
+      const bridges = [];
+      for (let k = 0; k < 3; k++) {
+        const idx = Math.min(crossing.length - 1, Math.max(0, Math.floor((k + 0.5) / 3 * crossing.length + (rnd() - 0.5) * 2)));
+        if (crossing[idx] && bridges.indexOf(crossing[idx]) < 0) bridges.push(crossing[idx]);
+      }
+      edges = nonCross.concat(bridges);
+      const countFrom0 = (E) => {
+        const A = Array.from({ length: n }, () => []);
+        for (const e of E) { A[e[0]].push(e[1]); A[e[1]].push(e[0]); }
+        const seen = new Uint8Array(n); const st = [0]; seen[0] = 1; let c = 1;
+        while (st.length) { const u = st.pop(); for (const v of A[u]) if (!seen[v]) { seen[v] = 1; c++; st.push(v); } }
+        return c;
+      };
+      const target = countFrom0(edges);
+      const order = edges.map((e, k) => k).sort(() => rnd() - 0.5);
+      let kept = edges.slice();
+      for (const k of order) {
+        const e = edges[k];
+        if (bridges.indexOf(e) >= 0) continue;
+        if (rnd() < 0.40) {
+          const cand = kept.filter((x) => x !== e);
+          if (countFrom0(cand) === target) kept = cand;
+        }
+      }
+      const A = Array.from({ length: n }, () => []);
+      for (const e of kept) { A[e[0]].push(e[1]); A[e[1]].push(e[0]); }
+      const alive = new Uint8Array(n); const st = [0]; alive[0] = 1;
+      while (st.length) { const u = st.pop(); for (const v of A[u]) if (!alive[v]) { alive[v] = 1; st.push(v); } }
+      const bends = kept.map(() => (rnd() - 0.5) * 0.28);
+      return { pts: pts, edges: kept, bends: bends, river: river, bridges: bridges, alive: alive };
+    }
+
+    const net = build(11);
+    const pts = net.pts, edges = net.edges, bends = net.bends, river = net.river;
+    const nNodes = pts.length;
+    const ctrl = edges.map((e, k) => {
+      const a = pts[e[0]], b = pts[e[1]];
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, dx = b.x - a.x, dy = b.y - a.y;
+      return { x: mx - dy * bends[k], y: my + dx * bends[k] };
+    });
+    const elen = edges.map((e, k) => Math.hypot(pts[e[0]].x - pts[e[1]].x, pts[e[0]].y - pts[e[1]].y) * (1 + 2.2 * bends[k] * bends[k]));
+    const adj = Array.from({ length: nNodes }, () => []);
+    edges.forEach((e, k) => { adj[e[0]].push([e[1], elen[k], k]); adj[e[1]].push([e[0], elen[k], k]); });
+    function dijkstra(src) {
+      const dist = new Float64Array(nNodes).fill(Infinity), prev = new Int32Array(nNodes).fill(-1), prevE = new Int32Array(nNodes).fill(-1), done = new Uint8Array(nNodes);
+      dist[src] = 0; const order = [];
+      for (let it = 0; it < nNodes; it++) {
+        let u = -1, best = Infinity;
+        for (let k = 0; k < nNodes; k++) if (!done[k] && dist[k] < best) { best = dist[k]; u = k; }
+        if (u < 0) break;
+        done[u] = 1; order.push(u);
+        for (const a of adj[u]) if (dist[u] + a[1] < dist[a[0]]) { dist[a[0]] = dist[u] + a[1]; prev[a[0]] = u; prevE[a[0]] = a[2]; }
+      }
+      return { dist: dist, prev: prev, prevE: prevE, order: order };
+    }
+
+    const alive = [];
+    for (let i = 0; i < nNodes; i++) if (net.alive[i]) alive.push(i);
+    const extreme = (fn) => alive.reduce((b, i) => (fn(pts[i]) < fn(pts[b]) ? i : b), alive[0]);
+    const mainEdges = new Set();
+    const pairs = [[extreme((p) => p.x + Math.abs(p.y - H * 0.3)), extreme((p) => -p.x + Math.abs(p.y - H * 0.7))],
+                   [extreme((p) => p.y + Math.abs(p.x - W * 0.42)), extreme((p) => -p.y + Math.abs(p.x - W * 0.55))]];
+    for (const pr of pairs) {
+      const r = dijkstra(pr[0]);
+      let v = pr[1];
+      while (v !== pr[0] && r.prevE[v] >= 0) { mainEdges.add(r.prevE[v]); v = r.prev[v]; }
+    }
+
+    const rs = mulberry32(11 * 31 + 5);
+    const cand = alive.filter((i) => pts[i].x > 36 && pts[i].x < W - 36 && pts[i].y > 36 && pts[i].y < H - 36);
+    const subsIdx = [cand[Math.floor(rs() * cand.length)]];
+    while (subsIdx.length < 10) {
+      let best = -1, bd = -1;
+      for (const i of cand) {
+        const d = Math.min.apply(null, subsIdx.map((s) => Math.hypot(pts[i].x - pts[s].x, pts[i].y - pts[s].y)));
+        if (d > bd) { bd = d; best = i; }
+      }
+      subsIdx.push(best);
+    }
+    const specs = [
+      { kv: 63, cap: 0 }, { kv: 63, cap: 4 }, { kv: 63, cap: 9 }, { kv: 63, cap: 14 }, { kv: 63, cap: 6 },
+      { kv: 90, cap: 12 }, { kv: 90, cap: 22 }, { kv: 90, cap: 30 }, { kv: 225, cap: 45 }, { kv: 225, cap: 80 }
+    ];
+    for (let i = specs.length - 1; i > 0; i--) { const j = Math.floor(rs() * (i + 1)); const tmp = specs[i]; specs[i] = specs[j]; specs[j] = tmp; }
+    const subs = subsIdx.map((node, k) => ({ node: node, x: pts[node].x, y: pts[node].y, kv: specs[k].kv, cap: specs[k].cap, code: 'P-' + String(k + 1).padStart(2, '0') }));
+
+    const CABLE_PRICE = { '240 Alu': 95, '240 Cu': 110, '2×240 Alu': 120 };
+    const SWITCH_AT = { 1: 28, 2: 28, 3: 28, 4: 28, 5: 28, 6: 27, 7: 27, 8: 25, 9: 24, 10: 20, 11: 19, 12: 18, 13: 17, 14: 15, 15: 15, 16: 12, 17: 11 };
+    const QUOTE_PART = 45.09;
+    function cableFor(punit, dKm) {
+      const row = Math.min(17, Math.max(1, Math.ceil(punit - 1e-9)));
+      const dr = Math.ceil(dKm);
+      const base = row >= 15 ? '240 Cu' : '240 Alu';
+      return dr >= SWITCH_AT[row] ? '2×240 Alu' : base;
+    }
+    function costFor(P, dKm) {
+      const N = Math.ceil(P / 17 - 1e-9);
+      const punit = Math.min(P / N, 17);
+      const cable = cableFor(punit, dKm);
+      const cNet = N * dKm * CABLE_PRICE[cable];
+      const cQp = P * QUOTE_PART;
+      return { N: N, punit: punit, cable: cable, cNet: cNet, cQp: cQp, total: cNet + cQp, perMW: (cNet + cQp) / P };
+    }
+    function nearestNode(x, y) {
+      let best = -1, bd = Infinity;
+      for (const i of alive) { const d = Math.hypot(pts[i].x - x, pts[i].y - y); if (d < bd) { bd = d; best = i; } }
+      return { node: best, d: bd };
+    }
+    function evaluate(x, y, P) {
+      const nn = nearestNode(x, y);
+      const r = dijkstra(nn.node);
+      const rows = subs.map((s, k) => {
+        const roadU = r.dist[s.node] + nn.d;
+        const crowU = Math.hypot(s.x - x, s.y - y);
+        const dKm = roadU * M_PER_U / 1000;
+        return { k: k, s: s, roadU: roadU, crowU: crowU, dKm: dKm, feasible: s.cap >= P, cost: costFor(P, dKm) };
+      });
+      const feasible = rows.filter((q) => q.feasible).sort((a, b) => a.cost.total - b.cost.total);
+      const byCrow = rows.slice().sort((a, b) => a.crowU - b.crowU)[0];
+      return { nn: nn, r: r, rows: rows, best: feasible[0] || null, byCrow: byCrow };
+    }
+    function routeOf(res, target, x, y) {
+      const segs = [];
+      let v = target;
+      while (v !== res.nn.node && res.r.prevE[v] >= 0) {
+        segs.push({ u: res.r.prev[v], v: v, k: res.r.prevE[v] });
+        v = res.r.prev[v];
+      }
+      segs.reverse();
+      const n0 = pts[res.nn.node];
+      let d = 'M' + f1(x) + ' ' + f1(y) + 'L' + f1(n0.x) + ' ' + f1(n0.y);
+      let len = Math.hypot(n0.x - x, n0.y - y);
+      for (const s of segs) {
+        const a = pts[s.u], c = ctrl[s.k], b = pts[s.v];
+        d += 'Q' + f1(c.x) + ' ' + f1(c.y) + ' ' + f1(b.x) + ' ' + f1(b.y);
+        let px = a.x, py = a.y;
+        for (let i = 1; i <= 8; i++) {
+          const t = i / 8, mt = 1 - t;
+          const qx = mt * mt * a.x + 2 * mt * t * c.x + t * t * b.x;
+          const qy = mt * mt * a.y + 2 * mt * t * c.y + t * t * b.y;
+          len += Math.hypot(qx - px, qy - py); px = qx; py = qy;
+        }
+      }
+      return { d: d, len: len };
+    }
+    function exploreD(res, count) {
+      let d = '';
+      for (let i = 1; i < count; i++) {
+        const v = res.r.order[i], k = res.r.prevE[v], u = res.r.prev[v];
+        if (k < 0) continue;
+        d += 'M' + f1(pts[u].x) + ' ' + f1(pts[u].y) + 'Q' + f1(ctrl[k].x) + ' ' + f1(ctrl[k].y) + ' ' + f1(pts[v].x) + ' ' + f1(pts[v].y);
+      }
+      return d;
+    }
+
+    const riverD = 'M' + river.map((p) => f1(p.x) + ' ' + f1(p.y)).join('L');
+    let roadD = '', mainD = '';
+    edges.forEach((e, k) => {
+      const seg = 'M' + f1(pts[e[0]].x) + ' ' + f1(pts[e[0]].y) + 'Q' + f1(ctrl[k].x) + ' ' + f1(ctrl[k].y) + ' ' + f1(pts[e[1]].x) + ' ' + f1(pts[e[1]].y);
+      if (mainEdges.has(k)) mainD += seg; else roadD += seg;
+    });
+    let bridgeD = '';
+    net.bridges.forEach((e) => {
+      const a = pts[e[0]], b = pts[e[1]];
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, L = Math.hypot(b.x - a.x, b.y - a.y), ux = (b.x - a.x) / L, uy = (b.y - a.y) / L;
+      bridgeD += 'M' + f1(mx - ux * 9) + ' ' + f1(my - uy * 9) + 'L' + f1(mx + ux * 9) + ' ' + f1(my + uy * 9);
+    });
+
+    let def = null;
+    const centre = alive.slice().sort((a, b) => Math.hypot(pts[a].x - W * 0.46, pts[a].y - H * 0.5) - Math.hypot(pts[b].x - W * 0.46, pts[b].y - H * 0.5));
+    for (const i of centre) {
+      const x = pts[i].x + 9, y = pts[i].y - 7;
+      const res = evaluate(x, y, 12);
+      if (res.best && !res.byCrow.feasible && res.best.dKm > 6 && res.best.dKm < 18) { def = { x: x, y: y }; break; }
+    }
+    if (!def) def = { x: W * 0.46, y: H * 0.5 };
+
+    const nf0 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+    const nf1 = new Intl.NumberFormat('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    this._sim = {
+      W: W, H: H, M_PER_U: M_PER_U, pts: pts, subs: subs, CABLE_PRICE: CABLE_PRICE,
+      evaluate: evaluate, routeOf: routeOf, exploreD: exploreD,
+      riverD: riverD, roadD: roadD, mainD: mainD, bridgeD: bridgeD,
+      def: def, nf0: nf0, nf1: nf1
+    };
+    return this._sim;
+  }
+
+  evalAt(x, y, P) {
+    const key = x + '|' + y + '|' + P;
+    if (this._evKey !== key) { this._evKey = key; this._ev = this.getSim().evaluate(x, y, P); }
+    return this._ev;
+  }
+
+  current() {
+    const S = this.getSim();
+    return Object.assign({ x: S.def.x, y: S.def.y, P: 12, explore: true, interacted: false, phase: 'done', ex: 0, rf: 1, exOp: 0.15 }, this.state || {});
+  }
+
+  runAnim(animate, x, y, exploreNow) {
+    if (this._raf) { cancelAnimationFrame(this._raf); this._raf = 0; }
+    const st = this.current();
+    const explore = exploreNow === undefined ? st.explore : exploreNow;
+    const reduce = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!animate || reduce || typeof requestAnimationFrame !== 'function') { this.setState({ phase: 'done' }); return; }
+    const total = this.evalAt(x, y, st.P).r.order.length;
+    const T1 = explore ? 900 : 0, T2 = 650;
+    let t0 = null;
+    const step = (now) => {
+      if (t0 === null) t0 = now;
+      const t = now - t0;
+      const ex = explore ? Math.min(total, Math.floor(total * Math.min(1, t / T1))) : 0;
+      if (t < T1) {
+        this.setState({ phase: 'anim', ex: ex, rf: 0, exOp: 0.45 });
+        this._raf = requestAnimationFrame(step);
+        return;
+      }
+      const f = Math.min(1, (t - T1) / T2);
+      if (f >= 1) { this._raf = 0; this.setState({ phase: 'done' }); return; }
+      this.setState({ phase: 'anim', ex: ex, rf: f, exOp: 0.45 - 0.3 * f });
+      this._raf = requestAnimationFrame(step);
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+
+  moveTo(x, y, animate) {
+    this.setState({ x: x, y: y, interacted: true });
+    this.runAnim(animate, x, y);
+  }
+
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+  }
+
+  renderVals() {
+    const S = this.getSim();
+    const st = this.current();
+    const x = st.x, y = st.y, P = st.P;
+    const res = this.evalAt(x, y, P);
+    const anim = st.phase === 'anim';
+    const KV = { 63: '#3772BB', 90: '#639BE1', 225: '#9DC7FE' };
+    const nf0 = S.nf0, nf1 = S.nf1;
+    const fmtKm = (u) => nf1.format(u * S.M_PER_U / 1000) + ' km';
+    const clampX = (v) => Math.max(8, Math.min(S.W - 8, v));
+    const clampY = (v) => Math.max(8, Math.min(S.H - 8, v));
+
+    let exploreD = '', exploreOp = 0.15;
+    if (anim) { exploreD = st.ex > 1 ? S.exploreD(res, st.ex) : ''; exploreOp = st.exOp; }
+    else if (st.interacted && st.explore) exploreD = S.exploreD(res, res.r.order.length);
+
+    const b = res.best;
+    const route = b ? S.routeOf(res, b.s.node, x, y) : { d: '', len: 0 };
+    const rf = anim ? st.rf : 1;
+    const L = route.len.toFixed(1);
+
+    const bc = res.byCrow;
+    let crowD = '', crowT = '', crowTx = 0, crowTy = 0;
+    if (!b || bc.k !== b.k) {
+      crowD = 'M' + x.toFixed(1) + ' ' + y.toFixed(1) + 'L' + bc.s.x.toFixed(1) + ' ' + bc.s.y.toFixed(1);
+      const mx = (x + bc.s.x) / 2, my = (y + bc.s.y) / 2;
+      const dx = bc.s.x - x, dy = bc.s.y - y, Lc = Math.hypot(dx, dy) || 1;
+      let nx = -dy / Lc, ny = dx / Lc;
+      if (ny > 0) { nx = -nx; ny = -ny; }
+      crowTx = Math.max(70, Math.min(S.W - 70, mx + nx * 12)).toFixed(1);
+      crowTy = Math.max(14, my + ny * 12).toFixed(1);
+      crowT = Lc > 150 ? fmtKm(bc.crowU) + ' as the crow flies' : '';
+    }
+
+    const sub = (k) => {
+      const s = S.subs[k];
+      const row = res.rows[k];
+      const sel = !!(b && b.k === k);
+      const size = s.kv === 225 ? 13 : s.kv === 90 ? 11 : 9.5;
+      const left = s.x > S.W - 70;
+      return {
+        rx: (s.x - size / 2).toFixed(1), ry: (s.y - size / 2).toFixed(1), size: size,
+        fill: KV[s.kv], op: row.feasible ? 1 : 0.38,
+        gx: (s.x - size / 2 - 4).toFixed(1), gy: (s.y - size / 2 - 4).toFixed(1), gs: size + 8, gd: sel ? 'inline' : 'none',
+        tx: (left ? s.x - size / 2 - 5 : s.x + size / 2 + 5).toFixed(1), ty: (s.y + 4).toFixed(1), anchor: left ? 'end' : 'start',
+        label: s.code + ' (' + s.cap + ' MW)', tf: sel ? '#F2F2EE' : '#A9B0AA', tw: sel ? 700 : 500,
+        title: s.code + ', ' + s.kv + ' kV, ' + s.cap + ' MW available'
+      };
+    };
+
+    const onRight = x > S.W - 120;
+    const out = {
+      hasBest: !!b, bestCode: 'None', bestSub: 'no substation with ' + P + ' MW available', bestColor: 'transparent',
+      route: '–', routeSub: '', cable: '–', cableSub: '', cost: '–', costSub: '',
+      noteStrong: 'No substation',
+      noteRest: ' can host ' + P + ' MW without reinforcement works. In the real tool, this is the signal to look at the new substations planned in the S3REnR, or to reduce the capacity.'
+    };
+    if (b) {
+      const c = b.cost;
+      out.bestCode = b.s.code;
+      out.bestSub = b.s.kv + ' kV, ' + b.s.cap + ' MW available';
+      out.bestColor = KV[b.s.kv];
+      out.route = nf1.format(b.dKm) + ' km';
+      out.routeSub = fmtKm(b.crowU) + ' as the crow flies';
+      out.cable = c.N + ' × ' + c.cable;
+      out.cableSub = (c.N > 1 ? c.N + ' modules of ' + nf1.format(c.punit) + ' MW, ' : '') + '€' + S.CABLE_PRICE[c.cable] + 'k/km';
+      out.cost = '€' + nf0.format(c.total) + 'k';
+      out.costSub = '€' + nf0.format(c.perMW) + 'k/MW, incl. €' + nf0.format(c.cQp) + 'k regional cost share';
+      if (bc.k === b.k) {
+        out.noteStrong = '';
+        out.noteRest = 'The nearest substation works: ' + b.s.code + ' has the capacity for ' + P + ' MW.';
+      } else if (!bc.feasible) {
+        out.noteStrong = bc.s.code;
+        out.noteRest = ' is the closest as the crow flies (' + fmtKm(bc.crowU) + ') but has only ' + bc.s.cap + ' MW available: the tool moves on to the next substation.';
+      } else {
+        out.noteStrong = bc.s.code;
+        out.noteRest = ' is closer as the crow flies (' + fmtKm(bc.crowU) + ') but ' + nf1.format(bc.dKm) + ' km away by road: the river forces a detour via a bridge.';
+      }
+    }
+
+    return Object.assign(out, {
+      riverD: S.riverD, roadD: S.roadD, mainD: S.mainD, bridgeD: S.bridgeD,
+      exploreD: exploreD, exploreOp: exploreOp,
+      crowD: crowD, crowT: crowT, crowTx: crowTx, crowTy: crowTy,
+      routeD: route.d,
+      routeDash: rf < 1 ? L + ' ' + L : 'none',
+      routeOff: rf < 1 ? (route.len * (1 - rf)).toFixed(1) : '0',
+      casingOp: rf < 1 ? rf : 1,
+      accessD: 'M' + x.toFixed(1) + ' ' + y.toFixed(1) + 'L' + S.pts[res.nn.node].x.toFixed(1) + ' ' + S.pts[res.nn.node].y.toFixed(1),
+      s0: sub(0), s1: sub(1), s2: sub(2), s3: sub(3), s4: sub(4), s5: sub(5), s6: sub(6), s7: sub(7), s8: sub(8), s9: sub(9),
+      projT: 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ')',
+      projTx: onRight ? -16 : 16, projAnchor: onRight ? 'end' : 'start', projLabel: P + ' MW farm',
+      mapLabel: 'Fictitious map: roads, a river and source substations colored by voltage. ' + (b ? 'The route links the farm to the selected substation ' + b.s.code + '.' : 'No substation suits this capacity.'),
+      showHint: !st.interacted,
+      P: P, powerLabel: P + ' MW', explore: !!st.explore,
+      onMap: (e) => {
+        const box = e && e.currentTarget;
+        const svg = box && box.querySelector ? box.querySelector('svg') : null;
+        if (!svg) return;
+        const r = svg.getBoundingClientRect();
+        if (!r.width || !r.height) return;
+        this.moveTo(clampX((e.clientX - r.left) / r.width * S.W), clampY((e.clientY - r.top) / r.height * S.H), true);
+      },
+      onKey: (e) => {
+        const d = { ArrowLeft: [-12, 0], ArrowRight: [12, 0], ArrowUp: [0, -12], ArrowDown: [0, 12] }[e.key];
+        if (!d) return;
+        e.preventDefault();
+        const cur = this.current();
+        this.moveTo(clampX(cur.x + d[0]), clampY(cur.y + d[1]), false);
+      },
+      onPower: (e) => {
+        if (this._raf) { cancelAnimationFrame(this._raf); this._raf = 0; }
+        this.setState({ P: Number(e.target.value), phase: 'done' });
+      },
+      onRandom: () => {
+        this.moveTo(30 + Math.random() * (S.W - 60), 30 + Math.random() * (S.H - 60), true);
+      },
+      onExplore: (e) => {
+        const on = !!e.target.checked;
+        const cur = this.current();
+        this.setState({ explore: on, interacted: true });
+        this.runAnim(true, cur.x, cur.y, on);
+      }
+    });
+  }
+}
+</script>
+</body>
+</html>

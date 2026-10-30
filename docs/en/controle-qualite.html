@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 02 — PVsyst ↔ SynaptiQ quality control</title>
+<link rel="alternate" hreflang="fr" href="../controle-qualite.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F2F2EE}
+a{color:#111412}a:hover{color:#474D49}
+</style>
+</head>
+<body>
+<div id="dc-root">
+<div style="container-type: inline-size; min-height: 100vh; background: #F2F2EE; color: #111412; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility">
+<header style="position: sticky; top: 0; z-index: 30; background: #F2F2EE; border-bottom: 1px solid #D5D7D1">
+<div style="max-width: 1312px; margin: 0 auto; padding: 8px clamp(20px, 4.5cqi, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px">
+<a href="index.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #111412; text-decoration: none"><span aria-hidden="true" style="position: relative; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #111412; color: #F2F2EE; font-weight: 800; font-stretch: 125%; font-size: 11.5px; letter-spacing: 0.02em">BR<span style="position: absolute; right: -4px; bottom: -4px; width: 9px; height: 9px; background: #FCCA21; border: 2px solid #F2F2EE"></span></span><span style="font-weight: 700; font-stretch: 108%; font-size: 16px; white-space: nowrap">Brice Rigourd</span><span style="font-size: 14px; font-weight: 500; color: #5C625E; white-space: nowrap">← Home</span></a>
+<div role="group" aria-label="Language" style="display: inline-flex; border: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em"><a href="../controle-qualite.html" hreflang="fr" lang="fr" aria-label="Version française" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #111412; text-decoration: none">FR</a><span aria-current="true" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; background: #111412; color: #F2F2EE">EN</span></div>
+</div>
+</header>
+<article id="amarenco-audit" aria-labelledby="aud-title" style="padding: clamp(56px, 6.5cqi, 96px) 0 clamp(64px, 6.5cqi, 96px)">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-top: 16px; border-top: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #111412; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21; outline: 1.5px solid #111412"></span>Project 02</span>
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; background: #111412; color: #F2F2EE; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FCCA21" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg>March – June 2025</span>
+<span>Amarenco, Toulouse</span>
+<span style="margin-left: auto">Data quality · SynaptiQ API</span>
+</div>
+
+<h2 id="aud-title" style="margin: 36px 0 0; max-width: 22ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2rem, 3.9cqi, 3.5rem); line-height: 1.03; letter-spacing: -0.03em; text-wrap: balance">PVsyst ↔ SynaptiQ quality control</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; margin-top: clamp(32px, 3.4cqi, 48px)">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The context</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">The monitoring platform reported performance ratios nobody could explain: a plant's digital twin and its PVsyst study did not tell the same story.</p>
+</div>
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">What I built</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">Two automated extractions, PVsyst studies from SharePoint and the digital twin from the SynaptiQ API, then a comparator that pinpoints the faulty PVsyst studies or configurations.</p>
+</div>
+</div>
+<dl style="flex: 1 1 340px; max-width: 480px; margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 2px solid #111412; font-size: 15px; line-height: 1.45">
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Company</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Amarenco, solar power producer</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Role</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Consulting engineer in PV operations and author of the tools</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Period</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">March – June 2025, within the Amarenco assignment</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Scope</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">970 active plants monitored in SynaptiQ, about 7,500 PVsyst files</dd>
+<dt style="padding: 13px 16px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Deliverables</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; font-weight: 500">Python scripts, digital-twin export, Excel discrepancy report</dd>
+</dl>
+</div>
+
+<section aria-labelledby="story-title" style="margin-top: clamp(56px, 5.5cqi, 80px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The story</p>
+<h3 id="story-title" style="margin: 14px 0 0; max-width: 26ch; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.6cqi, 38px); line-height: 1.08; letter-spacing: -0.025em; text-wrap: balance">A performance ratio nobody could explain</h3>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E; margin-top: 28px">Three sources that did not talk to each other</p>
+<ul style="list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 12px">
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 3px solid #111412; padding: 18px 20px 20px"><h4 style="margin: 0; font-size: 17px; font-weight: 700">SharePoint</h4><p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Each project's PVsyst studies, filed across several folder structures, often in several versions.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 3px solid #111412; padding: 18px 20px 20px"><h4 style="margin: 0; font-size: 17px; font-weight: 700">Internal technical database</h4><p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">An Excel workbook filled in and updated by hand: nothing flowed into it automatically from SharePoint.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 3px solid #111412; padding: 18px 20px 20px"><h4 style="margin: 0; font-size: 17px; font-weight: 700">SynaptiQ</h4><p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Each plant's digital twin, from which the monitoring platform computes expected production and the PR.</p></li>
+</ul>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px 48px; margin-top: 36px">
+<ol style="flex: 2 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #D5D7D1">
+<li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 1px solid #D5D7D1"><span style="grid-row: span 2; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #5C625E">01</span><h4 style="margin: 0; font-size: 17px; font-weight: 700">The problem</h4><p style="margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.55; color: #474D49">Finding a design value meant searching SharePoint by hand, project by project, then copying it into the database. It was slow, and the database was never up to date.</p></li>
+<li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 1px solid #D5D7D1"><span style="grid-row: span 2; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #5C625E">02</span><h4 style="margin: 0; font-size: 17px; font-weight: 700">First answer</h4><p style="margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.55; color: #474D49">Retrieve every PVsyst study from SharePoint automatically and extract its data, with no manual entry.</p></li>
+<li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 1px solid #D5D7D1"><span style="grid-row: span 2; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #5C625E">03</span><h4 style="margin: 0; font-size: 17px; font-weight: 700">The discovery</h4><p style="margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.55; color: #474D49">Analyzing production, some PR values stayed unexplainable: the gap between theory and reality came not from the plants but from the models themselves. The SynaptiQ configuration did not always match the PVsyst study, and neither fed the database.</p></li>
+<li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 1px solid #D5D7D1"><span style="grid-row: span 2; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #5C625E">04</span><h4 style="margin: 0; font-size: 17px; font-weight: 700">The decision</h4><p style="margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.55; color: #474D49">Extract the entire SynaptiQ API and check it against the PVsyst studies, to pinpoint the culprit in each case: a misconfigured digital twin, a wrong PVsyst simulation, or both.</p></li>
+</ol>
+<div style="flex: 1 1 300px; min-width: 0; margin: 0 14px 14px 0; padding: 22px 24px 24px; background: #111412; color: #F2F2EE; box-shadow: 12px 12px 0 #FCCA21">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E; color: #FCCA21">The goal</p>
+<p style="margin: 10px 0 0; font-size: 17px; line-height: 1.55">Make the PR explainable again and recover performance on every SPV: expected production computed from a configuration that matches what was actually built.</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="audit-title" style="margin-top: clamp(64px, 6cqi, 88px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The method</p>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 48px; margin-top: 14px">
+<h3 id="audit-title" style="flex: 999 1 480px; margin: 0; max-width: 24ch; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.6cqi, 38px); line-height: 1.08; letter-spacing: -0.025em; text-wrap: balance">Did PVsyst and the monitoring platform describe the same plant?</h3>
+<p style="flex: 1 1 420px; margin: 0; font-size: 16px; line-height: 1.6; color: #474D49">Every plant has two references: the PVsyst study, which describes what was designed, and the SynaptiQ configuration, from which the monitoring platform computes expected production and the performance ratio. A wrong orientation or module count skews the indicators reported to shareholders. I automated the cross-check across the whole fleet.</p>
+</div>
+<dl aria-label="Key figures" style="margin: clamp(32px, 3.4cqi, 44px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">SharePoint documents inventoried across 4,660 projects to locate every study</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">≈&nbsp;154,000</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">PVsyst files found, often in several versions per project: only the latest is kept</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">≈&nbsp;7,500</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">active plants with production data, checked against their PVsyst</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">970</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">PVsyst studies with discrepancies identified and reported to the teams, over a hundred of them being redone</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">230+</dd></div>
+</dl>
+<div style="display: flex; flex-wrap: wrap; gap: 36px 48px; margin-top: clamp(40px, 4cqi, 56px)">
+<div style="flex: 2 1 560px; min-width: 0">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The pipeline, script by script</p>
+<ol aria-label="The pipeline, script by script" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 10px">
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">01</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Inventory</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">The SharePoint inventories of every project are downloaded and merged, then the PVsyst files are located.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">02</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Download</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Only missing or updated PDFs are fetched, with automatic retries on HTTP 429 and a status report.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">03</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Losses</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">The loss diagram is read from PVsyst 6 to 8, in French and English, bifacial modules included.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">04</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Orientations</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Each array yields its tilt, azimuth and modules, summed per pair and checked against the declared total.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">05</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Merge</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Losses and orientations are combined into a single workbook, formatting included.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">06</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Latest version</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Up to five PVsyst files per project: only the most recent is kept, and duplicates are flagged.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">07</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Atlas</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Cross-referencing with the Atlas database cleans and enriches the retained data.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">08</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Comparison</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">The digital twin is extracted from the SynaptiQ API (970 plants, 1,794 module groups, 4,383 inverters), then every active plant is matched to its PVsyst and every discrepancy is classified.</p></li>
+</ol>
+</div>
+<div style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Matching rules</p>
+<ul style="list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; margin-top: 8px; background: #FCCA21; outline: 1.5px solid #111412"></span><span>A project is found by its code, otherwise by its name (at least 95% similarity).</span></li>
+<li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; margin-top: 8px; background: #FCCA21; outline: 1.5px solid #111412"></span><span>A tilt/azimuth pair must be identical, or within 1° of tilt and 10° of azimuth.</span></li>
+<li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; margin-top: 8px; background: #FCCA21; outline: 1.5px solid #111412"></span><span>The number of pairs and the number of modules per pair must agree; layout drawings serve as a cross-check.</span></li>
+<li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; margin-top: 8px; background: #FCCA21; outline: 1.5px solid #111412"></span><span>The five losses (wiring, soiling, LID, mismatch, module quality) are compared one by one.</span></li>
+</ul>
+<div style="margin: 30px 14px 14px 0; padding: 20px 22px 22px; background: #111412; color: #F2F2EE; box-shadow: 12px 12px 0 #FCCA21">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21">Outcome</p>
+<p style="margin: 10px 0 0; font-size: 15.5px; line-height: 1.55">Over 230 PVsyst studies showing discrepancies with the monitoring configuration were identified and reported to the teams; more than a hundred were being redone when I left. Most discrepancies concerned orientation, with an azimuth declared in the wrong cardinal direction, or the number of modules assigned to each orientation: long-standing discrepancies, built up over the years in both references.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="audit-demo-title" style="margin-top: clamp(40px, 4cqi, 56px); background: #111412; color: #F2F2EE">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 48px; padding: clamp(24px, 2.5cqi, 36px); border-bottom: 1px solid #2C312D">
+<div style="flex: 999 1 420px; min-width: 0">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21"></span>Demo · fictitious data</p>
+<h3 id="audit-demo-title" style="margin: 12px 0 0; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.5cqi, 36px); line-height: 1.08; letter-spacing: -0.025em">The discrepancy report, rebuilt</h3>
+</div>
+<p style="flex: 1 1 440px; margin: 0; font-size: 15px; line-height: 1.55; color: #A9B0AA">The original output workbook was not kept, so here is its structure, replayed on ten fictitious plants chosen to show every case. The demo applies the same rules as the comparator. Azimuths use the PVsyst convention: 0° = south, −90° = east, +90° = west.</p>
+</div>
+<div role="group" aria-label="Workbook sheets" style="display: flex; flex-wrap: wrap; padding: 0 clamp(12px, 1.6cqi, 22px); border-bottom: 1px solid #2C312D">
+<button type="button" aria-pressed="true" style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 14px; border: 0; border-bottom: 3px solid #FCCA21; background: transparent; color: #F2F2EE; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Summary<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D"></span></button><button type="button" aria-pressed="false" style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 14px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #A9B0AA; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Orientation gaps<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">7</span></button><button type="button" aria-pressed="false" style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 14px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #A9B0AA; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">To fix<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">3</span></button><button type="button" aria-pressed="false" style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 14px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #A9B0AA; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Loss gaps<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">8</span></button><button type="button" aria-pressed="false" style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 14px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #A9B0AA; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Errors<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">4</span></button>
+</div>
+<div aria-live="polite" style="padding: clamp(20px, 2cqi, 28px)">
+<p style="margin: 0 0 18px; max-width: 80ch; font-size: 14.5px; line-height: 1.55; color: #A9B0AA">What the team saw when opening the workbook: the number of plants per category and the list of codes involved.</p>
+
+<dl aria-label="Summary" style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(165px, 100%), 1fr)); gap: 1px; background: #2C312D; border: 1px solid #2C312D">
+<div style="display: flex; flex-direction: column; gap: 6px; background: #151916; padding: 16px 18px"><dt style="font-size: 13.5px; line-height: 1.4; color: #D2D6D1">SynaptiQ plants</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 110%; font-size: 30px; line-height: 1; letter-spacing: -0.02em">10</dd><dd style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">100% of SynaptiQ plants</dd></div><div style="display: flex; flex-direction: column; gap: 6px; background: #151916; padding: 16px 18px"><dt style="font-size: 13.5px; line-height: 1.4; color: #D2D6D1">PVsyst found</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 110%; font-size: 30px; line-height: 1; letter-spacing: -0.02em">9</dd><dd style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">90% of SynaptiQ plants</dd></div><div style="display: flex; flex-direction: column; gap: 6px; background: #151916; padding: 16px 18px"><dt style="font-size: 13.5px; line-height: 1.4; color: #D2D6D1">Excluded · extraction to check</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 110%; font-size: 30px; line-height: 1; letter-spacing: -0.02em">1</dd><dd style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">10% of SynaptiQ plants</dd></div><div style="display: flex; flex-direction: column; gap: 6px; background: #151916; padding: 16px 18px"><dt style="font-size: 13.5px; line-height: 1.4; color: #D2D6D1">Orientation or module gaps</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 110%; font-size: 30px; line-height: 1; letter-spacing: -0.02em">2</dd><dd style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">20% of SynaptiQ plants</dd></div><div style="display: flex; flex-direction: column; gap: 6px; background: #151916; padding: 16px 18px"><dt style="font-size: 13.5px; line-height: 1.4; color: #D2D6D1">Configurations to fix</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 110%; font-size: 30px; line-height: 1; letter-spacing: -0.02em">3</dd><dd style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">30% of SynaptiQ plants</dd></div><div style="display: flex; flex-direction: column; gap: 6px; background: #151916; padding: 16px 18px"><dt style="font-size: 13.5px; line-height: 1.4; color: #D2D6D1">Compliant</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 110%; font-size: 30px; line-height: 1; letter-spacing: -0.02em">3</dd><dd style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">30% of SynaptiQ plants</dd></div>
+</dl>
+<div role="img" style="margin-top: 22px; display: flex; height: 14px; background: #2C312D" aria-label="Breakdown: 3 compliant, 2 gaps, 3 to fix, 2 excluded or not found"><span style="display: block; width: 30%; background: #5CCB91; border-right: 2px solid #111412"></span><span style="display: block; width: 20%; background: #FFBC75; border-right: 2px solid #111412"></span><span style="display: block; width: 30%; background: #FF8A70; border-right: 2px solid #111412"></span><span style="display: block; width: 20%; background: #8C938D; border-right: 2px solid #111412"></span></div>
+<ul aria-label="Codes per category" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 12px 24px; font-size: 14px; line-height: 1.4"><li style="display: flex; align-items: baseline; gap: 10px"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; background: #5CCB91"></span><span><strong style="font-weight: 700">Compliant (3)</strong><span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D; font-size: 12.5px; color: #A9B0AA">C-103, C-105, C-108</span></span></li><li style="display: flex; align-items: baseline; gap: 10px"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; background: #FFBC75"></span><span><strong style="font-weight: 700">Gaps (2)</strong><span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D; font-size: 12.5px; color: #A9B0AA">C-101, C-104</span></span></li><li style="display: flex; align-items: baseline; gap: 10px"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; background: #FF8A70"></span><span><strong style="font-weight: 700">To fix (3)</strong><span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D; font-size: 12.5px; color: #A9B0AA">C-102, C-106, C-109</span></span></li><li style="display: flex; align-items: baseline; gap: 10px"><span aria-hidden="true" style="flex: none; width: 10px; height: 10px; background: #8C938D"></span><span><strong style="font-weight: 700">Excluded or not found (2)</strong><span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D; font-size: 12.5px; color: #A9B0AA">C-107, C-110</span></span></li></ul>
+
+
+
+
+
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px 48px; padding: 22px clamp(20px, 2.5cqi, 36px) 26px; border-top: 1px solid #2C312D; font-size: 14.5px; line-height: 1.55; color: #A9B0AA">
+<p style="flex: 1.4 1 420px; margin: 0"><strong style="color: #F2F2EE; font-weight: 700">In the real tool</strong>, the workbook had six sheets: loss discrepancies and errors, orientation discrepancies and errors, configurations to fix, and a summary listing the codes in each category. The computation runs on every CPU core.</p>
+<p style="flex: 1 1 320px; margin: 0">A plant whose extraction is flagged as faulty leaves the analysis instead of skewing the result: it is checked by hand.</p>
+</div>
+</section>
+
+<div style="margin-top: 40px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Technologies</p>
+<ul aria-label="Technologies" style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #111412">
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Python</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">asyncio</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">SynaptiQ REST API (JWT)</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">SharePoint · MSAL</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">requests</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">concurrent.futures</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pandas</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">openpyxl</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pdfplumber</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pypdf</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">regex</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">fuzzywuzzy</li>
+</ul>
+</div>
+
+<nav aria-label="Amarenco projects" style="margin-top: clamp(48px, 5cqi, 72px)">
+<a href="amarenco.html" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; padding: 20px 24px; background: #111412; color: #F2F2EE; text-decoration: none"><span style="min-width: 0"><span style="display: block; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21">Another Amarenco project</span><span style="display: block; margin-top: 6px; font-weight: 700; font-stretch: 108%; font-size: clamp(19px, 1.7cqi, 24px); line-height: 1.2">PVsyst orchestrator</span></span><span style="flex: none; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: #FCCA21; color: #111412"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></a>
+</nav>
+
+</div>
+</article>
+</div>
+</div>
+<template id="dc-template">
+<div style="container-type: inline-size; min-height: 100vh; background: #F2F2EE; color: #111412; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility">
+<header style="position: sticky; top: 0; z-index: 30; background: #F2F2EE; border-bottom: 1px solid #D5D7D1">
+<div style="max-width: 1312px; margin: 0 auto; padding: 8px clamp(20px, 4.5cqi, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px">
+<a href="index.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #111412; text-decoration: none"><span aria-hidden="true" style="position: relative; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #111412; color: #F2F2EE; font-weight: 800; font-stretch: 125%; font-size: 11.5px; letter-spacing: 0.02em">BR<span style="position: absolute; right: -4px; bottom: -4px; width: 9px; height: 9px; background: #FCCA21; border: 2px solid #F2F2EE"></span></span><span style="font-weight: 700; font-stretch: 108%; font-size: 16px; white-space: nowrap">Brice Rigourd</span><span style="font-size: 14px; font-weight: 500; color: #5C625E; white-space: nowrap">← Home</span></a>
+<div role="group" aria-label="Language" style="display: inline-flex; border: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em"><a href="../controle-qualite.html" hreflang="fr" lang="fr" aria-label="Version française" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #111412; text-decoration: none">FR</a><span aria-current="true" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; background: #111412; color: #F2F2EE">EN</span></div>
+</div>
+</header>
+<article id="amarenco-audit" aria-labelledby="aud-title" style="padding: clamp(56px, 6.5cqi, 96px) 0 clamp(64px, 6.5cqi, 96px)">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-top: 16px; border-top: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #111412; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21; outline: 1.5px solid #111412"></span>Project 02</span>
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; background: #111412; color: #F2F2EE; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FCCA21" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg>March – June 2025</span>
+<span>Amarenco, Toulouse</span>
+<span style="margin-left: auto">Data quality · SynaptiQ API</span>
+</div>
+
+<h2 id="aud-title" style="margin: 36px 0 0; max-width: 22ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2rem, 3.9cqi, 3.5rem); line-height: 1.03; letter-spacing: -0.03em; text-wrap: balance">PVsyst ↔ SynaptiQ quality control</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; margin-top: clamp(32px, 3.4cqi, 48px)">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The context</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">The monitoring platform reported performance ratios nobody could explain: a plant's digital twin and its PVsyst study did not tell the same story.</p>
+</div>
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">What I built</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">Two automated extractions, PVsyst studies from SharePoint and the digital twin from the SynaptiQ API, then a comparator that pinpoints the faulty PVsyst studies or configurations.</p>
+</div>
+</div>
+<dl style="flex: 1 1 340px; max-width: 480px; margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 2px solid #111412; font-size: 15px; line-height: 1.45">
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Company</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Amarenco, solar power producer</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Role</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Consulting engineer in PV operations and author of the tools</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Period</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">March – June 2025, within the Amarenco assignment</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Scope</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">970 active plants monitored in SynaptiQ, about 7,500 PVsyst files</dd>
+<dt style="padding: 13px 16px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Deliverables</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; font-weight: 500">Python scripts, digital-twin export, Excel discrepancy report</dd>
+</dl>
+</div>
+
+<section aria-labelledby="story-title" style="margin-top: clamp(56px, 5.5cqi, 80px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The story</p>
+<h3 id="story-title" style="margin: 14px 0 0; max-width: 26ch; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.6cqi, 38px); line-height: 1.08; letter-spacing: -0.025em; text-wrap: balance">A performance ratio nobody could explain</h3>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E; margin-top: 28px">Three sources that did not talk to each other</p>
+<ul style="list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 12px">
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 3px solid #111412; padding: 18px 20px 20px"><h4 style="margin: 0; font-size: 17px; font-weight: 700">SharePoint</h4><p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Each project's PVsyst studies, filed across several folder structures, often in several versions.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 3px solid #111412; padding: 18px 20px 20px"><h4 style="margin: 0; font-size: 17px; font-weight: 700">Internal technical database</h4><p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">An Excel workbook filled in and updated by hand: nothing flowed into it automatically from SharePoint.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 3px solid #111412; padding: 18px 20px 20px"><h4 style="margin: 0; font-size: 17px; font-weight: 700">SynaptiQ</h4><p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Each plant's digital twin, from which the monitoring platform computes expected production and the PR.</p></li>
+</ul>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px 48px; margin-top: 36px">
+<ol style="flex: 2 1 560px; min-width: 0; list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #D5D7D1">
+<li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 1px solid #D5D7D1"><span style="grid-row: span 2; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #5C625E">01</span><h4 style="margin: 0; font-size: 17px; font-weight: 700">The problem</h4><p style="margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.55; color: #474D49">Finding a design value meant searching SharePoint by hand, project by project, then copying it into the database. It was slow, and the database was never up to date.</p></li>
+<li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 1px solid #D5D7D1"><span style="grid-row: span 2; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #5C625E">02</span><h4 style="margin: 0; font-size: 17px; font-weight: 700">First answer</h4><p style="margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.55; color: #474D49">Retrieve every PVsyst study from SharePoint automatically and extract its data, with no manual entry.</p></li>
+<li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 1px solid #D5D7D1"><span style="grid-row: span 2; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #5C625E">03</span><h4 style="margin: 0; font-size: 17px; font-weight: 700">The discovery</h4><p style="margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.55; color: #474D49">Analyzing production, some PR values stayed unexplainable: the gap between theory and reality came not from the plants but from the models themselves. The SynaptiQ configuration did not always match the PVsyst study, and neither fed the database.</p></li>
+<li style="display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 1px solid #D5D7D1"><span style="grid-row: span 2; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; color: #5C625E">04</span><h4 style="margin: 0; font-size: 17px; font-weight: 700">The decision</h4><p style="margin: 0; max-width: 72ch; font-size: 15.5px; line-height: 1.55; color: #474D49">Extract the entire SynaptiQ API and check it against the PVsyst studies, to pinpoint the culprit in each case: a misconfigured digital twin, a wrong PVsyst simulation, or both.</p></li>
+</ol>
+<div style="flex: 1 1 300px; min-width: 0; margin: 0 14px 14px 0; padding: 22px 24px 24px; background: #111412; color: #F2F2EE; box-shadow: 12px 12px 0 #FCCA21">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E; color: #FCCA21">The goal</p>
+<p style="margin: 10px 0 0; font-size: 17px; line-height: 1.55">Make the PR explainable again and recover performance on every SPV: expected production computed from a configuration that matches what was actually built.</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="audit-title" style="margin-top: clamp(64px, 6cqi, 88px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The method</p>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 48px; margin-top: 14px">
+<h3 id="audit-title" style="flex: 999 1 480px; margin: 0; max-width: 24ch; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.6cqi, 38px); line-height: 1.08; letter-spacing: -0.025em; text-wrap: balance">Did PVsyst and the monitoring platform describe the same plant?</h3>
+<p style="flex: 1 1 420px; margin: 0; font-size: 16px; line-height: 1.6; color: #474D49">Every plant has two references: the PVsyst study, which describes what was designed, and the SynaptiQ configuration, from which the monitoring platform computes expected production and the performance ratio. A wrong orientation or module count skews the indicators reported to shareholders. I automated the cross-check across the whole fleet.</p>
+</div>
+<dl aria-label="Key figures" style="margin: clamp(32px, 3.4cqi, 44px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">SharePoint documents inventoried across 4,660 projects to locate every study</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">≈ 154,000</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">PVsyst files found, often in several versions per project: only the latest is kept</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">≈ 7,500</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">active plants with production data, checked against their PVsyst</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">970</dd></div>
+<div style="display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; padding: 20px 22px 22px"><dt style="font-size: 14.5px; line-height: 1.45; color: #474D49">PVsyst studies with discrepancies identified and reported to the teams, over a hundred of them being redone</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(30px, 2.8cqi, 40px); line-height: 1; letter-spacing: -0.03em; white-space: nowrap">230+</dd></div>
+</dl>
+<div style="display: flex; flex-wrap: wrap; gap: 36px 48px; margin-top: clamp(40px, 4cqi, 56px)">
+<div style="flex: 2 1 560px; min-width: 0">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The pipeline, script by script</p>
+<ol aria-label="The pipeline, script by script" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 10px">
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">01</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Inventory</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">The SharePoint inventories of every project are downloaded and merged, then the PVsyst files are located.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">02</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Download</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Only missing or updated PDFs are fetched, with automatic retries on HTTP 429 and a status report.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">03</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Losses</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">The loss diagram is read from PVsyst 6 to 8, in French and English, bifacial modules included.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">04</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Orientations</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Each array yields its tilt, azimuth and modules, summed per pair and checked against the declared total.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">05</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Merge</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Losses and orientations are combined into a single workbook, formatting included.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">06</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Latest version</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Up to five PVsyst files per project: only the most recent is kept, and duplicates are flagged.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">07</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Atlas</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">Cross-referencing with the Atlas database cleans and enriches the retained data.</p></li>
+<li style="min-width: 0; background: #FFFFFF; border: 1px solid #D5D7D1; padding: 16px 18px 18px"><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; color: #5C625E">08</span><h4 style="margin: 6px 0 0; font-size: 16.5px; font-weight: 700; line-height: 1.25">Comparison</h4><p style="margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: #474D49">The digital twin is extracted from the SynaptiQ API (970 plants, 1,794 module groups, 4,383 inverters), then every active plant is matched to its PVsyst and every discrepancy is classified.</p></li>
+</ol>
+</div>
+<div style="flex: 1 1 320px; min-width: 0">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Matching rules</p>
+<ul style="list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; margin-top: 8px; background: #FCCA21; outline: 1.5px solid #111412"></span><span>A project is found by its code, otherwise by its name (at least 95% similarity).</span></li>
+<li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; margin-top: 8px; background: #FCCA21; outline: 1.5px solid #111412"></span><span>A tilt/azimuth pair must be identical, or within 1° of tilt and 10° of azimuth.</span></li>
+<li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; margin-top: 8px; background: #FCCA21; outline: 1.5px solid #111412"></span><span>The number of pairs and the number of modules per pair must agree; layout drawings serve as a cross-check.</span></li>
+<li style="display: flex; gap: 12px; font-size: 15px; line-height: 1.5"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; margin-top: 8px; background: #FCCA21; outline: 1.5px solid #111412"></span><span>The five losses (wiring, soiling, LID, mismatch, module quality) are compared one by one.</span></li>
+</ul>
+<div style="margin: 30px 14px 14px 0; padding: 20px 22px 22px; background: #111412; color: #F2F2EE; box-shadow: 12px 12px 0 #FCCA21">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21">Outcome</p>
+<p style="margin: 10px 0 0; font-size: 15.5px; line-height: 1.55">Over 230 PVsyst studies showing discrepancies with the monitoring configuration were identified and reported to the teams; more than a hundred were being redone when I left. Most discrepancies concerned orientation, with an azimuth declared in the wrong cardinal direction, or the number of modules assigned to each orientation: long-standing discrepancies, built up over the years in both references.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="audit-demo-title" style="margin-top: clamp(40px, 4cqi, 56px); background: #111412; color: #F2F2EE">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 48px; padding: clamp(24px, 2.5cqi, 36px); border-bottom: 1px solid #2C312D">
+<div style="flex: 999 1 420px; min-width: 0">
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21"></span>Demo · fictitious data</p>
+<h3 id="audit-demo-title" style="margin: 12px 0 0; font-weight: 800; font-stretch: 110%; font-size: clamp(26px, 2.5cqi, 36px); line-height: 1.08; letter-spacing: -0.025em">The discrepancy report, rebuilt</h3>
+</div>
+<p style="flex: 1 1 440px; margin: 0; font-size: 15px; line-height: 1.55; color: #A9B0AA">The original output workbook was not kept, so here is its structure, replayed on ten fictitious plants chosen to show every case. The demo applies the same rules as the comparator. Azimuths use the PVsyst convention: 0° = south, −90° = east, +90° = west.</p>
+</div>
+<div role="group" aria-label="Workbook sheets" style="display: flex; flex-wrap: wrap; padding: 0 clamp(12px, 1.6cqi, 22px); border-bottom: 1px solid #2C312D">
+<sc-for dc-list="{{auditTabs}}" as="t" hint-placeholder-count="5"><button type="button" dc-aria-pressed="{{t.pressed}}" dc-onClick="{{t.pick}}" dc-style="display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 14px; border: 0; border-bottom: 3px solid {{t.line}}; background: transparent; color: {{t.fg}}; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">{{t.label}}<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">{{t.n}}</span></button></sc-for>
+</div>
+<div aria-live="polite" style="padding: clamp(20px, 2cqi, 28px)">
+<p style="margin: 0 0 18px; max-width: 80ch; font-size: 14.5px; line-height: 1.55; color: #A9B0AA">{{auditCaption}}</p>
+<sc-if dc-value="{{tabResume}}" dc-hint-placeholder-val="{{true}}">
+<dl aria-label="Summary" style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(165px, 100%), 1fr)); gap: 1px; background: #2C312D; border: 1px solid #2C312D">
+<sc-for dc-list="{{kpis}}" as="k" hint-placeholder-count="6"><div style="display: flex; flex-direction: column; gap: 6px; background: #151916; padding: 16px 18px"><dt style="font-size: 13.5px; line-height: 1.4; color: #D2D6D1">{{k.label}}</dt><dd style="order: -1; margin: 0; font-weight: 800; font-stretch: 110%; font-size: 30px; line-height: 1; letter-spacing: -0.02em">{{k.n}}</dd><dd style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; color: #8C938D">{{k.pct}}</dd></div></sc-for>
+</dl>
+<div role="img" dc-aria-label="{{barLabel}}" style="margin-top: 22px; display: flex; height: 14px; background: #2C312D"><sc-for dc-list="{{segs}}" as="s" hint-placeholder-count="4"><span dc-style="display: block; width: {{s.w}}; background: {{s.c}}; border-right: 2px solid #111412"></span></sc-for></div>
+<ul aria-label="Codes per category" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 12px 24px; font-size: 14px; line-height: 1.4"><sc-for dc-list="{{cats}}" as="c" hint-placeholder-count="4"><li style="display: flex; align-items: baseline; gap: 10px"><span aria-hidden="true" dc-style="flex: none; width: 10px; height: 10px; background: {{c.color}}"></span><span><strong style="font-weight: 700">{{c.label}}</strong><span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D; font-size: 12.5px; color: #A9B0AA">{{c.codes}}</span></span></li></sc-for></ul>
+</sc-if>
+<sc-if dc-value="{{tabOrient}}" dc-hint-placeholder-val="{{false}}">
+<div style="overflow-x: auto; border: 1px solid #2C312D">
+<div role="table" aria-label="Orientation gaps" style="min-width: 980px">
+<div role="row" style="display: grid; grid-template-columns: minmax(190px, 1.7fr) minmax(130px, 1.3fr) repeat(8, minmax(70px, 0.75fr)); background: #1A1E1B"><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Plant</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Match</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Tilt SQ</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Tilt PV</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Azim. SQ</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Azim. PV</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Δ azim.</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Modules SQ</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Modules PV</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Δ modules</div></div>
+<sc-for dc-list="{{orientRows}}" as="r" hint-placeholder-count="4"><div role="row" dc-style="display: grid; grid-template-columns: minmax(190px, 1.7fr) minmax(130px, 1.3fr) repeat(8, minmax(70px, 0.75fr)); background: {{r.bg}}"><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: 600">{{r.plant}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; color: #D2D6D1">{{r.how}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{r.tSq}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{r.tPv}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{r.aSq}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{r.aPv}}</div><div role="cell" dc-style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: {{r.dAzW}}">{{r.dAz}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{r.mSq}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{r.mPv}}</div><div role="cell" dc-style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: {{r.dModW}}">{{r.dMod}}</div></div></sc-for>
+</div>
+</div>
+</sc-if>
+<sc-if dc-value="{{tabBad}}" dc-hint-placeholder-val="{{false}}">
+<div style="overflow-x: auto; border: 1px solid #2C312D">
+<div role="table" aria-label="Configurations to fix" style="min-width: 860px">
+<div role="row" style="display: grid; grid-template-columns: minmax(190px, 1.2fr) minmax(190px, 1.3fr) minmax(190px, 1.3fr) minmax(260px, 1.8fr); background: #1A1E1B"><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Plant</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">SynaptiQ pairs (modules)</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">PVsyst pairs (modules)</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Reason</div></div>
+<sc-for dc-list="{{badRows}}" as="b" hint-placeholder-count="4"><div role="row" style="display: grid; grid-template-columns: minmax(190px, 1.2fr) minmax(190px, 1.3fr) minmax(190px, 1.3fr) minmax(260px, 1.8fr); background: transparent"><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: 600">{{b.plant}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{b.sq}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{b.pv}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; color: #FF8A70; font-weight: 600">{{b.why}}</div></div></sc-for>
+</div>
+</div>
+</sc-if>
+<sc-if dc-value="{{tabLosses}}" dc-hint-placeholder-val="{{false}}">
+<div style="overflow-x: auto; border: 1px solid #2C312D">
+<div role="table" aria-label="Loss gaps" style="min-width: 860px">
+<div role="row" style="display: grid; grid-template-columns: minmax(190px, 1.5fr) repeat(6, minmax(104px, 0.85fr)); background: #1A1E1B"><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Plant</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Wiring</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Soiling</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">LID</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Mismatch</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Quality</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">ΣΔ</div></div>
+<sc-for dc-list="{{lossRows}}" as="l" hint-placeholder-count="4"><div role="row" style="display: grid; grid-template-columns: minmax(190px, 1.5fr) repeat(6, minmax(104px, 0.85fr)); background: transparent"><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: 600">{{l.plant}}</div><div role="cell" dc-style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: {{l.c0.w}}">{{l.c0.d}}<span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D">{{l.c0.sub}}</span></div><div role="cell" dc-style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: {{l.c1.w}}">{{l.c1.d}}<span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D">{{l.c1.sub}}</span></div><div role="cell" dc-style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: {{l.c2.w}}">{{l.c2.d}}<span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D">{{l.c2.sub}}</span></div><div role="cell" dc-style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: {{l.c3.w}}">{{l.c3.d}}<span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D">{{l.c3.sub}}</span></div><div role="cell" dc-style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: {{l.c4.w}}">{{l.c4.d}}<span style="display: block; margin-top: 2px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 400; color: #8C938D">{{l.c4.sub}}</span></div><div role="cell" dc-style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: {{l.sumW}}">{{l.sum}}</div></div></sc-for>
+</div>
+</div>
+</sc-if>
+<sc-if dc-value="{{tabErrors}}" dc-hint-placeholder-val="{{false}}">
+<div style="overflow-x: auto; border: 1px solid #2C312D">
+<div role="table" aria-label="Errors" style="min-width: 820px">
+<div role="row" style="display: grid; grid-template-columns: minmax(190px, 1.2fr) minmax(120px, 0.8fr) minmax(190px, 1.3fr) minmax(260px, 1.8fr); background: #1A1E1B"><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Plant</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">SynaptiQ pair</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">PVsyst available</div><div role="columnheader" style="padding: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #A9B0AA">Error type</div></div>
+<sc-for dc-list="{{errRows}}" as="e" hint-placeholder-count="4"><div role="row" style="display: grid; grid-template-columns: minmax(190px, 1.2fr) minmax(120px, 0.8fr) minmax(190px, 1.3fr) minmax(260px, 1.8fr); background: transparent"><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; font-weight: 600">{{e.plant}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{e.sq}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums">{{e.pv}}</div><div role="cell" style="padding: 10px 12px; border-top: 1px solid #232824; font-size: 13.5px; line-height: 1.45; font-variant-numeric: tabular-nums; color: #D2D6D1">{{e.type}}</div></div></sc-for>
+</div>
+</div>
+</sc-if>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px 48px; padding: 22px clamp(20px, 2.5cqi, 36px) 26px; border-top: 1px solid #2C312D; font-size: 14.5px; line-height: 1.55; color: #A9B0AA">
+<p style="flex: 1.4 1 420px; margin: 0"><strong style="color: #F2F2EE; font-weight: 700">In the real tool</strong>, the workbook had six sheets: loss discrepancies and errors, orientation discrepancies and errors, configurations to fix, and a summary listing the codes in each category. The computation runs on every CPU core.</p>
+<p style="flex: 1 1 320px; margin: 0">A plant whose extraction is flagged as faulty leaves the analysis instead of skewing the result: it is checked by hand.</p>
+</div>
+</section>
+
+<div style="margin-top: 40px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Technologies</p>
+<ul aria-label="Technologies" style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #111412">
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Python</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">asyncio</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">SynaptiQ REST API (JWT)</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">SharePoint · MSAL</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">requests</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">concurrent.futures</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pandas</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">openpyxl</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pdfplumber</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">pypdf</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">regex</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">fuzzywuzzy</li>
+</ul>
+</div>
+
+<nav aria-label="Amarenco projects" style="margin-top: clamp(48px, 5cqi, 72px)">
+<a href="amarenco.html" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; padding: 20px 24px; background: #111412; color: #F2F2EE; text-decoration: none"><span style="min-width: 0"><span style="display: block; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FCCA21">Another Amarenco project</span><span style="display: block; margin-top: 6px; font-weight: 700; font-stretch: 108%; font-size: clamp(19px, 1.7cqi, 24px); line-height: 1.2">PVsyst orchestrator</span></span><span style="flex: none; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: #FCCA21; color: #111412"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></a>
+</nav>
+
+</div>
+</article>
+</div>
+</template>
+<script src="../assets/js/dc-lite.js"></script>
+<script>
+(function () {
+class Component extends DCLogic {
+  renderVals() {
+    // ---- Contrôle qualité PVsyst ↔ SynaptiQ : rapport d'écarts reconstitué sur des centrales fictives ----
+    const AL = Object.assign({"locale": "en-US", "kinds": ["East-west roof", "Livestock building", "Storage shed", "Agricultural greenhouse", "Parking canopy", "Industrial roof", "Farm building", "Retail roof", "Two-sided canopy", "Sports hall"], "diags": ["north azimuth (180°) instead of south (0°)", "a single side declared in SynaptiQ for all 1,440 modules", "west side declared as east, azimuth sign flipped"], "tabs": ["Summary", "Orientation gaps", "To fix", "Loss gaps", "Errors"], "captions": {"resume": "What the team saw when opening the workbook: the number of plants per category and the list of codes involved.", "orient": "Each SynaptiQ tilt/azimuth pair matched to its PVsyst. Yellow: found within tolerance. Red: same pair, different module count.", "bad": "Plants whose configuration cannot match: a pair is missing on one side, or the number of orientations differs.", "losses": "The five PVsyst losses compared with SynaptiQ's, in percentage points: Δ = PVsyst − SynaptiQ, an empty field counts as 0.", "errors": "What could not be matched, and why."}, "kpi": ["SynaptiQ plants", "PVsyst found", "Excluded · extraction to check", "Orientation or module gaps", "Configurations to fix", "Compliant"], "cats": ["Compliant", "Gaps", "To fix", "Excluded or not found"], "how": {"code": "project code", "tol": "tolerance"}, "missing": "Pair missing from PVsyst", "empty": "empty", "sep": ": ", "extraction": "Extraction flagged as faulty: PDF excluded from the analysis"}, {
+      pct: (n) => n + '% of SynaptiQ plants',
+      bar: (a, b, c, d) => 'Breakdown: ' + a + ' compliant, ' + b + ' gaps, ' + c + ' to fix, ' + d + ' excluded or not found',
+      name: (s) => 'name (' + s + '%)',
+      versions: (n) => ' · ' + n + ' versions, latest kept',
+      count: (a, b) => 'Different number of orientations (' + a + ' in SynaptiQ, ' + b + ' in PVsyst)',
+      notFound: (s) => 'PVsyst not found (best similarity ' + s + '%)'
+    });
+    const nfA = new Intl.NumberFormat(AL.locale);
+    const nf1 = new Intl.NumberFormat(AL.locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    const minus = (s) => s.replace('-', '−');
+    const num = (n) => minus(nfA.format(n));
+    const sgn = (n, f) => (n > 0 ? '+' : '') + minus((f || nfA).format(n));
+    const deg = (n) => minus(String(n)) + '°';
+    const pair = (c) => deg(c[0]) + ' / ' + deg(c[1]);
+    const pairMod = (c) => pair(c) + ' (' + num(c[2]) + ')';
+    const azGap = (a, b) => Math.abs((((a - b + 180) % 360) + 360) % 360 - 180);
+    // Couples [inclinaison, azimut, modules] ; pertes [PVsyst, SynaptiQ] : câblage, encrassement, LID, mismatch, qualité.
+    const PLANTS = [
+      { code: 'C-101', kind: 0, method: 'code', sq: [[9, -90, 408], [9, 90, 288]], pv: [[9, -90, 288], [9, 90, 408]], loss: [[1.0, 1.0], [2.0, 2.0], [1.3, 1.3], [0.6, 0.6], [-0.8, -0.8]] },
+      { code: 'C-102', kind: 1, method: 'code', diag: 0, sq: [[15, 180, 552]], pv: [[15, 0, 552]], loss: [[1.5, 0.5], [2.0, 0.5], [2.0, 1.0], [1.0, 0.3], [-0.4, -0.3]] },
+      { code: 'C-103', kind: 2, method: 'code', sq: [[12, 0, 240]], pv: [[12, -8, 240]], loss: [[1.0, 1.0], [1.5, 1.5], [1.3, 1.3], [0.6, 0.6], [-0.4, -0.4]] },
+      { code: 'C-104', kind: 3, method: 'code', sq: [[25, 0, 2856]], pv: [[25, 0, 2880]], loss: [[0.8, 0.5], [3.0, 1.5], [1.3, 1.0], [0.6, 0.3], [-0.8, -0.2]] },
+      { code: 'C-105', kind: 4, method: 'name', score: 97, sq: [[5, -90, 468], [5, 90, 468]], pv: [[5, -90, 468], [5, 90, 468]], loss: [[1.0, 1.0], [2.0, 2.0], [1.3, 1.3], [0.6, 0.6], [-0.8, -0.8]] },
+      { code: 'C-106', kind: 5, method: 'code', diag: 1, sq: [[10, -20, 1440]], pv: [[10, -20, 720], [10, 160, 720]], loss: [[1.5, null], [2.0, null], [1.3, null], [0.6, null], [-0.8, null]] },
+      { code: 'C-107', kind: 6, excluded: true, sq: [[10, -30, 238]] },
+      { code: 'C-108', kind: 7, method: 'code', versions: 3, sq: [[8, -15, 384]], pv: [[8, -15, 384]], loss: [[1.2, 1.2], [1.5, 1.5], [1.3, 1.3], [0.6, 0.6], [-0.4, -0.4]] },
+      { code: 'C-109', kind: 8, method: 'code', diag: 2, sq: [[7, -80, 300], [7, -100, 300]], pv: [[7, -80, 300], [7, 100, 300]], loss: [[1.2, 1.2], [2.0, 1.5], [1.3, 1.3], [0.6, 0.6], [-0.8, -0.8]] },
+      { code: 'C-110', kind: 9, notFound: true, score: 71, sq: [[6, 0, 290]] }
+    ];
+    // Mêmes règles que le comparateur : couple identique, sinon ±1° d'inclinaison et ±10° d'azimut, sinon absent ;
+    // à reprendre si un couple manque ou si le nombre de couples diffère ; écart si un couple identique n'a pas le même nombre de modules.
+    const audit = PLANTS.map((pl) => {
+      const label = pl.code + ' · ' + AL.kinds[pl.kind];
+      if (pl.excluded || pl.notFound) return Object.assign({}, pl, { label: label, status: 'excl', rows: [], missing: [] });
+      const rows = [], missing = [];
+      pl.sq.forEach((c) => {
+        let m = pl.pv.find((p) => p[0] === c[0] && p[1] === c[1]);
+        let how = pl.method;
+        if (!m) { m = pl.pv.find((p) => Math.abs(p[0] - c[0]) <= 1 && azGap(p[1], c[1]) <= 10); how = 'tol'; }
+        if (!m) { missing.push(c); return; }
+        rows.push({ c: c, m: m, how: how, dAz: m[1] - c[1], dMod: m[2] - c[2] });
+      });
+      const nPv = new Set(pl.pv.map((p) => p[0] + '/' + p[1])).size;
+      const bad = missing.length > 0 || nPv !== pl.sq.length;
+      const gap = !bad && rows.some((r) => r.how === 'code' && r.dMod !== 0);
+      return Object.assign({}, pl, { label: label, status: bad ? 'bad' : gap ? 'gap' : 'ok', rows: rows, missing: missing, nPv: nPv });
+    });
+    const COLORS = { ok: '#5CCB91', gap: '#FFBC75', bad: '#FF8A70', excl: '#8C938D' };
+    const nTotal = audit.length;
+    const nOf = (s) => audit.filter((a) => a.status === s).length;
+    const nOk = nOf('ok'), nGap = nOf('gap'), nBad = nOf('bad'), nExcl = nOf('excl');
+    const kpis = [nTotal, audit.filter((a) => !a.notFound).length, audit.filter((a) => a.excluded).length, nGap, nBad, nOk]
+      .map((n, k) => ({ n: num(n), label: AL.kpi[k], pct: AL.pct(Math.round(100 * n / nTotal)) }));
+    const segs = [['ok', nOk], ['gap', nGap], ['bad', nBad], ['excl', nExcl]].filter((s) => s[1] > 0)
+      .map((s) => ({ w: (100 * s[1] / nTotal) + '%', c: COLORS[s[0]] }));
+    const cats = ['ok', 'gap', 'bad', 'excl'].map((s, k) => ({ label: AL.cats[k] + ' (' + nOf(s) + ')', color: COLORS[s], codes: audit.filter((a) => a.status === s).map((a) => a.code).join(', ') }));
+    const orientRows = [];
+    audit.filter((a) => a.status === 'ok' || a.status === 'gap').forEach((a) => a.rows.forEach((r) => {
+      const red = r.how === 'code' && r.dMod !== 0;
+      orientRows.push({
+        plant: a.label,
+        how: (r.how === 'tol' ? AL.how.tol : r.how === 'name' ? AL.name(a.score) : AL.how.code) + (a.versions ? AL.versions(a.versions) : ''),
+        tSq: deg(r.c[0]), tPv: deg(r.m[0]), aSq: deg(r.c[1]), aPv: deg(r.m[1]),
+        dAz: r.dAz ? sgn(r.dAz) + '°' : '0', dAzW: r.dAz ? 700 : 400,
+        mSq: num(r.c[2]), mPv: num(r.m[2]), dMod: r.dMod ? sgn(r.dMod) : '0', dModW: r.dMod ? 700 : 400,
+        bg: r.how === 'tol' ? 'rgba(252, 202, 33, 0.14)' : red ? 'rgba(255, 138, 112, 0.14)' : 'transparent'
+      });
+    }));
+    const badRows = audit.filter((a) => a.status === 'bad').map((a) => ({
+      plant: a.label, sq: a.sq.map(pairMod).join(' · '), pv: a.pv.map(pairMod).join(' · '),
+      why: (a.missing.length ? AL.missing : AL.count(a.sq.length, a.nPv)) + (a.diag !== undefined ? AL.sep + AL.diags[a.diag] : '')
+    }));
+    const lossRows = audit.filter((a) => a.loss && a.status !== 'excl').map((a) => {
+      let sum = 0;
+      const cells = a.loss.map((l) => {
+        const syn = l[1] === null ? 0 : l[1];
+        const d = Math.round((l[0] - syn) * 10) / 10;
+        sum += d;
+        return { d: d ? sgn(d, nf1) : nf1.format(0), w: d ? 700 : 400, sub: 'PV ' + minus(nf1.format(l[0])) + ' · SQ ' + (l[1] === null ? AL.empty : minus(nf1.format(l[1]))) };
+      });
+      sum = Math.round(sum * 10) / 10;
+      return { plant: a.label, c0: cells[0], c1: cells[1], c2: cells[2], c3: cells[3], c4: cells[4], sum: sum ? sgn(sum, nf1) : nf1.format(0), sumW: sum ? 700 : 400 };
+    });
+    const errRows = [];
+    audit.forEach((a) => {
+      if (a.excluded) errRows.push({ plant: a.label, sq: pair(a.sq[0]), pv: '—', type: AL.extraction });
+      else if (a.notFound) errRows.push({ plant: a.label, sq: pair(a.sq[0]), pv: '—', type: AL.notFound(a.score) });
+      else a.missing.forEach((c) => errRows.push({ plant: a.label, sq: pair(c), pv: a.pv.map(pair).join(' · '), type: AL.missing }));
+    });
+    const auditTab = (this.state && this.state.auditTab) || 'resume';
+    const auditTabs = [['resume', ''], ['orient', orientRows.length], ['bad', badRows.length], ['losses', lossRows.length], ['errors', errRows.length]]
+      .map((t, k) => {
+        const on = t[0] === auditTab;
+        return { label: AL.tabs[k], n: String(t[1]), pressed: on ? 'true' : 'false', fg: on ? '#F2F2EE' : '#A9B0AA', line: on ? '#FCCA21' : 'transparent', pick: () => this.setState({ auditTab: t[0] }) };
+      });
+    return {
+      auditTabs: auditTabs,
+      auditCaption: AL.captions[auditTab],
+      tabResume: auditTab === 'resume',
+      tabOrient: auditTab === 'orient',
+      tabBad: auditTab === 'bad',
+      tabLosses: auditTab === 'losses',
+      tabErrors: auditTab === 'errors',
+      kpis: kpis,
+      segs: segs,
+      cats: cats,
+      barLabel: AL.bar(nOk, nGap, nBad, nExcl),
+      orientRows: orientRows,
+      badRows: badRows,
+      lossRows: lossRows,
+      errRows: errRows
+    };
+  }
+}
+DCLite.mount(Component, document.getElementById('dc-root'), document.getElementById('dc-template'));
+})();
+</script>
+</body>
+</html>

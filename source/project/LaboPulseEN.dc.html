@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lab — Pulse</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Syne:wght@800&amp;family=DM+Sans:wght@300&amp;family=Roboto:wght@400;500;600;700;800;900&amp;display=swap">
+<style>
+body{margin:0;background:#F2F2EE}
+a{color:#111412}a:hover{color:#474D49}
+</style>
+</helmet>
+<div style="container-type: inline-size; min-height: 100vh; background: #F2F2EE; color: #111412; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility">
+<header style="position: sticky; top: 0; z-index: 30; background: #F2F2EE; border-bottom: 1px solid #D5D7D1">
+<div style="max-width: 1312px; margin: 0 auto; padding: 8px clamp(20px, 4.5cqi, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px">
+<a href="MainEN.dc.html" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: #111412; text-decoration: none"><span aria-hidden="true" style="position: relative; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: #111412; color: #F2F2EE; font-weight: 800; font-stretch: 125%; font-size: 11.5px; letter-spacing: 0.02em">BR<span style="position: absolute; right: -4px; bottom: -4px; width: 9px; height: 9px; background: #FCCA21; border: 2px solid #F2F2EE"></span></span><span style="font-weight: 700; font-stretch: 108%; font-size: 16px; white-space: nowrap">Brice Rigourd</span><span style="font-size: 14px; font-weight: 500; color: #5C625E; white-space: nowrap">← Home</span></a>
+<div role="group" aria-label="Language" style="display: inline-flex; border: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em"><a href="LaboPulse.dc.html" hreflang="fr" lang="fr" aria-label="Version française" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #111412; text-decoration: none">FR</a><span aria-current="true" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; background: #111412; color: #F2F2EE">EN</span></div>
+</div>
+</header>
+<article id="labo-pulse" aria-labelledby="pulse-title" style="padding: clamp(56px, 6.5cqi, 96px) 0 clamp(64px, 6.5cqi, 96px)">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; padding-top: 16px; border-top: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #111412; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21; outline: 1.5px solid #111412"></span>Lab</span>
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; background: #111412; color: #F2F2EE; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FCCA21" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg>Since January 2026</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; color: #111412; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21; outline: 1.5px solid #111412"></span>In progress</span>
+<span>Personal project</span>
+<span style="margin-left: auto">Full-stack mobile app</span>
+</div>
+
+<h2 id="pulse-title" style="margin: 36px 0 0; max-width: 22ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2rem, 3.9cqi, 3.5rem); line-height: 1.03; letter-spacing: -0.03em; text-wrap: balance">Pulse, a dating app</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px 64px; margin-top: clamp(32px, 3.4cqi, 48px)">
+<div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">The idea</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">A complete Android dating app, built around two ideas of my own: Super Likes that actually say something, and a transparent profile that shows everyone's real activity.</p>
+</div>
+<div>
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">How I built it</p>
+<p style="margin: 10px 0 0; max-width: 58ch; font-size: clamp(19px, 1.5cqi, 22px); line-height: 1.5; text-wrap: pretty">I wrote the specification and steered a coding agent (Emergent) for the prototype, testing each step on my Android phone. Then I took the project over on my PC with Claude and Claude Code: migration to Supabase and S3 storage, Google and email sign-in, moderation, four languages and nine numbered versions.</p>
+</div>
+</div>
+<dl style="flex: 1 1 340px; max-width: 480px; margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); align-content: start; background: #FFFFFF; border: 1px solid #D5D7D1; border-top: 2px solid #111412; font-size: 15px; line-height: 1.45">
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">App</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Android, Expo SDK 54 and React Native 0.81, TypeScript</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Server</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">FastAPI (Python) and WebSocket</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Data</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">Supabase, migrated from MongoDB; photos in S3 storage</dd>
+<dt style="padding: 13px 16px; border-bottom: 1px solid #E4E5E0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Size</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; border-bottom: 1px solid #E4E5E0; font-weight: 500">≈ 70 API routes, ≈ 16,800 lines of TypeScript, ≈ 5,400 lines of server code</dd>
+<dt style="padding: 13px 16px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">History</dt>
+<dd style="margin: 0; padding: 13px 16px 13px 0; font-weight: 500">135 commits, versions 1.006 to 1.014</dd>
+</dl>
+</div>
+
+<section aria-label="Pulse, identity and screens" style="margin-top: clamp(48px, 4.4cqi, 64px); background: #0A0A0F; color: #FFFFFF; padding: clamp(32px, 4cqi, 56px) clamp(16px, 3cqi, 48px) clamp(28px, 3cqi, 40px)">
+
+<div role="img" aria-label="Pulse logo: an electrocardiogram trace that ends in a heart, and the name Pulse, Dating App." style="display: flex; flex-direction: column; align-items: center; gap: 14px">
+<div style="display: flex; align-items: center; max-width: 100%">
+<svg width="300" height="52" viewBox="0 0 300 52" aria-hidden="true" style="display: block; max-width: 70cqi; height: auto; overflow: visible">
+<defs>
+<filter id="pulseGlow" x="-20%" y="-100%" width="140%" height="300%"><feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur><feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+<filter id="pulseGlowBall" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="7" result="blur"></feGaussianBlur><feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+</defs>
+<path d="M0,26 L38,26 L50,26 L58,8 L66,46 L73,12 L79,32 L86,26 L148,26 L160,26 L170,5 L179,48 L186,10 L192,30 L198,26 L262,26 L274,26" fill="none" stroke="#FF2D6B" stroke-opacity="0.18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M0,26 L38,26 L50,26 L58,8 L66,46 L73,12 L79,32 L86,26 L148,26 L160,26 L170,5 L179,48 L186,10 L192,30 L198,26 L262,26 L274,26" fill="none" stroke="#FF2D6B" stroke-opacity="0.95" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="50 407" stroke-dashoffset="-140" filter="url(#pulseGlow)"><animate attributeName="stroke-dashoffset" values="50;-457" dur="1.7s" repeatCount="indefinite"></animate></path>
+<path d="M0,26 L38,26 L50,26 L58,8 L66,46 L73,12 L79,32 L86,26 L148,26 L160,26 L170,5 L179,48 L186,10 L192,30 L198,26 L262,26 L274,26" fill="none" stroke="#FF2D6B" stroke-opacity="0.9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 451" stroke-dashoffset="-188" filter="url(#pulseGlowBall)"><animate attributeName="stroke-dashoffset" values="2;-505" dur="1.7s" repeatCount="indefinite"></animate></path>
+</svg>
+<svg width="54" height="54" viewBox="0 0 52 52" aria-hidden="true" style="display: block; flex: none; margin-left: -1px; overflow: visible">
+<defs>
+<linearGradient id="pulseHeartFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF2D6B"></stop><stop offset="1" stop-color="#FF6B35"></stop></linearGradient>
+<radialGradient id="pulseHeartGlow" cx="50%" cy="50%" r="70%"><stop offset="0" stop-color="#FF2D6B" stop-opacity="0.7"></stop><stop offset="1" stop-color="#FF2D6B" stop-opacity="0"></stop></radialGradient>
+<filter id="pulseHeartBlur"><feGaussianBlur stdDeviation="4" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+</defs>
+<g transform="translate(26 26)"><g><animateTransform attributeName="transform" type="scale" values="0.88;1.22;0.96;1.14;1;0.88" keyTimes="0;0.104;0.191;0.278;0.435;1" dur="1.15s" repeatCount="indefinite"></animateTransform><g transform="translate(-26 -26)">
+<ellipse cx="26" cy="26" rx="22" ry="20" fill="url(#pulseHeartGlow)" opacity="0.55"></ellipse>
+<path d="M26 43 C26 43 7 30 7 18.5 C7 13 11.5 8 17.8 8 C21.4 8 24.6 10 26 12.8 C27.4 10 30.6 8 34.2 8 C40.5 8 45 13 45 18.5 C45 30 26 43 26 43 Z" fill="url(#pulseHeartFill)" filter="url(#pulseHeartBlur)"></path>
+</g></g></g>
+</svg>
+</div>
+<p style="margin: 0; font-family: 'Syne', 'Archivo', Arial, sans-serif; font-weight: 800; font-size: clamp(54px, 5cqi, 72px); line-height: 1; letter-spacing: -0.05em; color: #FF2D6B">Pulse</p>
+<p style="margin: 0; font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.5em; text-transform: uppercase; color: rgba(255,45,107,0.75)">Dating App</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 40px 48px; margin-top: clamp(36px, 3.6cqi, 52px)">
+
+<figure style="flex: 0 0 auto; width: 300px; max-width: 100%; margin: 0">
+<div style="width: 300px; max-width: 100%; height: 650px; box-sizing: border-box; padding: 10px; border-radius: 42px; background: #050507; box-shadow: inset 0 0 0 1.5px #2D2D3D, 0 40px 70px -40px rgba(255,107,53,0.35)">
+<div style="position: relative; display: flex; flex-direction: column; width: 100%; height: 100%; border-radius: 32px; overflow: hidden; background: #0A0A0F; font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; color: #FFFFFF">
+
+<div style="display: flex; align-items: center; gap: 9px; padding: 14px 14px 8px">
+<div aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 29px; height: 29px; border-radius: 9px; background: linear-gradient(90deg, #FF6B35, #7B2CBF)"><svg width="17" height="17" viewBox="0 0 24 24"><path d="M12 2.5c.6 3.2-1.9 5-3.3 7.3C7.5 11.7 7 13 7 14.7 7 18 9.3 21 12 21s5-2.6 5-6.1c0-2.6-1.4-4.3-2.6-5.6-.2 1.5-.9 2.5-1.9 3 .6-2.9-.2-6.2-.5-8.8z" fill="#FFFFFF"></path></svg></div>
+<span style="flex: 1 1 auto; font-size: 17px; font-weight: 700">Discover</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 14px; background: #141420; font-size: 11px; font-weight: 700"><span style="display: inline-flex; align-items: center; gap: 3px"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c.6 3.2-1.9 5-3.3 7.3C7.5 11.7 7 13 7 14.7 7 18 9.3 21 12 21s5-2.6 5-6.1c0-2.6-1.4-4.3-2.6-5.6-.2 1.5-.9 2.5-1.9 3 .6-2.9-.2-6.2-.5-8.8z" fill="#FF6B35"></path></svg>15</span><span aria-hidden="true" style="width: 1px; height: 12px; background: #2D2D3D"></span><span style="display: inline-flex; align-items: center; gap: 3px"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L14.39 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L9.61 8.26Z" fill="#3B82F6"></path></svg>1</span></span>
+<span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 29px; height: 29px; border-radius: 50%; background: #141420"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"></path><circle cx="15" cy="7" r="2"></circle><circle cx="9" cy="12" r="2"></circle><circle cx="17" cy="17" r="2"></circle></svg></span>
+</div>
+
+<div style="display: flex; justify-content: center; padding: 0 0 6px"><span style="display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 14px; background: #FF6B35; font-size: 10px; font-weight: 700"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#FFFFFF"></circle><path d="M10 8.5v7l5.5-3.5z" fill="#FF6B35"></path></svg>+5 free likes</span></div>
+
+<div style="flex: 1 1 auto; display: flex; align-items: center; justify-content: center; padding: 0 8px">
+<div style="position: relative; width: 100%; height: 352px; border-radius: 12px; overflow: hidden; background: #141420">
+<svg viewBox="0 0 263 352" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<defs>
+<linearGradient id="pPhotoA" x1="0" y1="0" x2="0.55" y2="1"><stop offset="0" stop-color="#4A2380"></stop><stop offset="0.55" stop-color="#22123F"></stop><stop offset="1" stop-color="#120A20"></stop></linearGradient>
+<radialGradient id="pPhotoB" cx="0.78" cy="0.16" r="0.62"><stop offset="0" stop-color="#FF6B35" stop-opacity="0.5"></stop><stop offset="1" stop-color="#FF6B35" stop-opacity="0"></stop></radialGradient>
+</defs>
+<rect width="263" height="352" fill="url(#pPhotoA)"></rect>
+<rect width="263" height="352" fill="url(#pPhotoB)"></rect>
+<circle cx="131" cy="122" r="44" fill="#FFFFFF" fill-opacity="0.14"></circle>
+<path d="M36 336c4-66 46-110 95-110s91 44 95 110z" fill="#FFFFFF" fill-opacity="0.14"></path>
+</svg>
+<div aria-hidden="true" style="position: absolute; top: 6px; left: 9px; right: 9px; display: flex; gap: 3px"><span style="flex: 1; height: 2px; border-radius: 2px; background: #FFFFFF"></span><span style="flex: 1; height: 2px; border-radius: 2px; background: rgba(255,255,255,0.4)"></span><span style="flex: 1; height: 2px; border-radius: 2px; background: rgba(255,255,255,0.4)"></span></div>
+<div style="position: absolute; top: 14px; right: 9px; display: flex; align-items: center; gap: 6px; padding: 4px 7px; border-radius: 9px; background: rgba(0,0,0,0.6); font-size: 8.5px; font-weight: 600"><span style="display: inline-flex; align-items: center; gap: 3px"><svg width="9" height="9" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C12 21 3 14 3 8C3 5.24 5.24 3 8 3C9.84 3 11.42 3.87 12 5.07C12.58 3.87 14.16 3 16 3C18.76 3 21 5.24 21 8C21 14 12 21 12 21Z" fill="#FF6B35"></path></svg>128</span><span aria-hidden="true" style="width: 1px; height: 9px; background: #6B7280"></span><span style="display: inline-flex; align-items: center; gap: 3px"><svg width="9" height="9" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#10B981"></circle><path d="M12 7v5l3 2" fill="none" stroke="#0A0A0F" stroke-width="2" stroke-linecap="round"></path></svg>2h ago</span></div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 43px 14px 12px; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 38%, rgba(0,0,0,0.95) 100%)">
+<div style="display: flex; align-items: center; gap: 6px"><span style="font-size: 20px; font-weight: 700">Camille, 27</span><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#3B82F6"></circle><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+<div style="display: flex; align-items: center; gap: 3px; margin-top: 3px; font-size: 10px; color: #9CA3AF"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12zm0-9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" fill="#9CA3AF"></path></svg>4 km</div>
+<div style="display: flex; align-items: center; gap: 3px; margin-top: 3px; font-size: 10px; font-weight: 600; color: #9CA3AF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M10 3l1.6 4.4L16 9l-4.4 1.6L10 15l-1.6-4.4L4 9l4.4-1.6z"></path><path d="M18 14l.8 2.2 2.2.8-2.2.8L18 20l-.8-2.2-2.2-.8 2.2-.8z"></path></svg>3 common interests</div>
+<p style="margin: 7px 0 0; font-size: 11px; line-height: 15px; opacity: 0.9">Looking for someone to laugh at TV shows with</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px"><span style="padding: 4px 9px; border-radius: 12px; background: rgba(255,255,255,0.2); font-size: 9px; font-weight: 600">Movies</span><span style="padding: 4px 9px; border-radius: 12px; background: rgba(255,255,255,0.2); font-size: 9px; font-weight: 600">Coffee</span><span style="padding: 4px 9px; border-radius: 12px; background: rgba(255,255,255,0.2); font-size: 9px; font-weight: 600">Concerts</span></div>
+<div style="display: flex; justify-content: space-between; margin-top: 9px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 8px; color: #9CA3AF">
+<span style="display: inline-flex; align-items: center; gap: 3px"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" aria-hidden="true"><path d="M12 21C12 21 3 14 3 8C3 5.24 5.24 3 8 3C9.84 3 11.42 3.87 12 5.07C12.58 3.87 14.16 3 16 3C18.76 3 21 5.24 21 8C21 14 12 21 12 21Z"></path></svg>128 received</span>
+<span style="display: inline-flex; align-items: center; gap: 3px"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 3L3 10.5l7 2.5 2.5 7z"></path><path d="M10 13L21 3"></path></svg>54 given</span>
+<span style="display: inline-flex; align-items: center; gap: 3px"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"></path></svg>24m/session</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: center; gap: 3px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 8.5px; font-weight: 500; color: #6B7280">Tap to view full profile<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"></path></svg></div>
+</div>
+</div>
+</div>
+
+<div aria-hidden="true" style="display: flex; align-items: center; justify-content: center; gap: 12px; padding: 12px 0">
+<span style="display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; box-sizing: border-box; border-radius: 50%; background: #141420; border: 1.5px solid rgba(245,158,11,0.21)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8C21 4 17 2 12 2C7 2 3 5 3 10"></path><path d="M7 7L3 10L7 13"></path></svg></span>
+<span style="display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; box-sizing: border-box; border-radius: 50%; background: #141420; border: 1.5px solid rgba(255,71,87,0.31)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FF4757" stroke-width="3.5" stroke-linecap="round"><path d="M6 6L18 18M18 6L6 18"></path></svg></span>
+<span style="display: flex; align-items: center; justify-content: center; width: 37px; height: 37px; box-sizing: border-box; border-radius: 50%; background: #141420; border: 1.5px solid rgba(0,196,255,0.31)"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M12 2L14.39 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L9.61 8.26Z" fill="#00C4FF"></path></svg></span>
+<span style="display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; box-sizing: border-box; border-radius: 50%; background: #141420; border: 1.5px solid rgba(255,45,107,0.31)"><svg width="26" height="26" viewBox="0 0 24 24"><path d="M12 21C12 21 3 14 3 8C3 5.24 5.24 3 8 3C9.84 3 11.42 3.87 12 5.07C12.58 3.87 14.16 3 16 3C18.76 3 21 5.24 21 8C21 14 12 21 12 21Z" fill="#FF2D6B"></path></svg></span>
+<span style="display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; box-sizing: border-box; border-radius: 50%; background: #141420; border: 1.5px solid rgba(191,95,255,0.21)"><svg width="17" height="17" viewBox="0 0 24 24"><path d="M13 2L5 13h6v9l8-11h-6z" fill="#BF5FFF"></path></svg></span>
+</div>
+
+<div aria-hidden="true" style="display: flex; justify-content: space-around; padding: 7px 6px 10px; background: #141420; border-top: 1px solid #2D2D3D; font-size: 8px; font-weight: 600; color: #6B7280">
+<span style="display: flex; flex-direction: column; align-items: center; gap: 3px; color: #FF6B35"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 2.5c.6 3.2-1.9 5-3.3 7.3C7.5 11.7 7 13 7 14.7 7 18 9.3 21 12 21s5-2.6 5-6.1c0-2.6-1.4-4.3-2.6-5.6-.2 1.5-.9 2.5-1.9 3 .6-2.9-.2-6.2-.5-8.8z" fill="#FF6B35"></path></svg>Discover</span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 3px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8"><path d="M12 21C12 21 3 14 3 8C3 5.24 5.24 3 8 3C9.84 3 11.42 3.87 12 5.07C12.58 3.87 14.16 3 16 3C18.76 3 21 5.24 21 8C21 14 12 21 12 21Z"></path></svg>Likes</span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 3px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5h11a2 2 0 012 2v6a2 2 0 01-2 2H9l-4 3v-3H4a2 2 0 01-2-2V7a2 2 0 012-2z"></path><path d="M19 9h1a2 2 0 012 2v5a2 2 0 01-2 2h-1v3l-4-3h-3"></path></svg>Messages</span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 3px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1-4.4 4.3-7 8-7s7 2.6 8 7"></path></svg>Profile</span>
+</div>
+</div>
+</div>
+<figcaption style="margin-top: 14px; font-size: 13px; line-height: 1.5; color: #9CA3AF"><strong style="color: #FFFFFF; font-weight: 700">Discover</strong>: the profile card with its transparency stats, the ember counter (15 likes, 1 Super Like) and the five actions.</figcaption>
+</figure>
+
+<figure style="flex: 0 0 auto; width: 300px; max-width: 100%; margin: 0">
+<div style="width: 300px; max-width: 100%; height: 650px; box-sizing: border-box; padding: 10px; border-radius: 42px; background: #050507; box-shadow: inset 0 0 0 1.5px #2D2D3D, 0 40px 70px -40px rgba(123,44,191,0.45)">
+<div style="position: relative; display: flex; flex-direction: column; justify-content: flex-end; width: 100%; height: 100%; border-radius: 32px; overflow: hidden; background: #060608; font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; color: #FFFFFF">
+<div aria-hidden="true" style="position: absolute; top: 58px; left: 8px; right: 8px; height: 352px; border-radius: 12px; background: #141420; opacity: 0.22"></div>
+<div style="position: relative; border-radius: 17px 17px 0 0; overflow: hidden; background: #141420">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 17px; background: linear-gradient(135deg, #7B2CBF, #FF6B35)">
+<span style="font-size: 19px; font-weight: 800">Send a Vibe</span>
+<span style="font-size: 10px; opacity: 0.8">Choose an icon to express yourself</span>
+</div>
+<div style="height: 315px; overflow: hidden; padding: 14px 14px 0">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px">
+<span style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 8px; border-radius: 12px; background: rgba(255,107,53,0.13); border: 2px solid #FF6B35"><span style="font-size: 25px; line-height: 1">🔥</span><span style="font-size: 9px; font-weight: 600; text-align: center; line-height: 1.25">You're on fire!</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 8px; border-radius: 12px; background: #1E1E2E; border: 2px solid #2D2D3D"><span style="font-size: 25px; line-height: 1">💀</span><span style="font-size: 9px; font-weight: 600; text-align: center; line-height: 1.25">I'm dead... you're too hot</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 8px; border-radius: 12px; background: #1E1E2E; border: 2px solid #2D2D3D"><span style="font-size: 25px; line-height: 1">✨</span><span style="font-size: 9px; font-weight: 600; text-align: center; line-height: 1.25">POV: You're my crush</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 8px; border-radius: 12px; background: #1E1E2E; border: 2px solid #2D2D3D"><span style="font-size: 25px; line-height: 1">😍</span><span style="font-size: 9px; font-weight: 600; text-align: center; line-height: 1.25">Can't stop staring</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 8px; border-radius: 12px; background: #1E1E2E; border: 2px solid #2D2D3D"><span style="font-size: 25px; line-height: 1">🚩</span><span style="font-size: 9px; font-weight: 600; text-align: center; line-height: 1.25">Red flag but I like it</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 8px; border-radius: 12px; background: #1E1E2E; border: 2px solid #2D2D3D"><span style="font-size: 25px; line-height: 1">👑</span><span style="font-size: 9px; font-weight: 600; text-align: center; line-height: 1.25">Main character energy</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 8px; border-radius: 12px; background: #1E1E2E; border: 2px solid #2D2D3D"><span style="font-size: 25px; line-height: 1">🚀</span><span style="font-size: 9px; font-weight: 600; text-align: center; line-height: 1.25">Take me to the moon</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 8px; border-radius: 12px; background: #1E1E2E; border: 2px solid #2D2D3D"><span style="font-size: 25px; line-height: 1">🦋</span><span style="font-size: 9px; font-weight: 600; text-align: center; line-height: 1.25">Giving me butterflies</span></span>
+</div>
+</div>
+<div style="display: flex; gap: 9px; padding: 14px 14px 21px; border-top: 1px solid #2D2D3D">
+<span style="flex: 1 1 0; display: flex; align-items: center; justify-content: center; padding: 11px; border-radius: 10px; background: #1E1E2E; font-size: 11.5px; font-weight: 600; color: #9CA3AF">Cancel</span>
+<span style="flex: 2 1 0; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 11px; border-radius: 10px; background: linear-gradient(90deg, #FF6B35, #7B2CBF); font-size: 11.5px; font-weight: 700"><span style="font-size: 14px; line-height: 1">🔥</span>Send Vibe</span>
+</div>
+</div>
+</div>
+</div>
+<figcaption style="margin-top: 14px; font-size: 13px; line-height: 1.5; color: #9CA3AF"><strong style="color: #FFFFFF; font-weight: 700">Send a Vibe</strong>: the Super Like is picked from 10 icons, each with its own line, plus an optional Crush Note.</figcaption>
+</figure>
+
+<figure style="flex: 0 0 auto; width: 300px; max-width: 100%; margin: 0">
+<div style="width: 300px; max-width: 100%; height: 650px; box-sizing: border-box; padding: 10px; border-radius: 42px; background: #050507; box-shadow: inset 0 0 0 1.5px #2D2D3D, 0 40px 70px -40px rgba(255,45,107,0.4)">
+<div style="position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; border-radius: 32px; overflow: hidden; background: #060608; font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; color: #FFFFFF">
+<div style="display: flex; flex-direction: column; align-items: center; width: 252px; box-sizing: border-box; padding: 23px; border-radius: 17px; background: linear-gradient(135deg, #7B2CBF, #FF6B35)">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 3px; opacity: 0.8">IT'S A</span>
+<span style="font-size: 35px; font-weight: 900; line-height: 1.15">MATCH!</span>
+<span style="margin-top: 4px; font-size: 11.5px; text-align: center; opacity: 0.9">You and Camille liked each other</span>
+<div aria-hidden="true" style="width: 100px; height: 100px; margin: 23px 0; box-sizing: border-box; border-radius: 50%; border: 3px solid #FFFFFF; overflow: hidden">
+<svg viewBox="0 0 100 100" style="display: block; width: 100%; height: 100%">
+<defs><linearGradient id="pPhotoC" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#4A2380"></stop><stop offset="1" stop-color="#120A20"></stop></linearGradient></defs>
+<rect width="100" height="100" fill="url(#pPhotoC)"></rect>
+<circle cx="50" cy="40" r="17" fill="#FFFFFF" fill-opacity="0.18"></circle>
+<path d="M16 100c2-24 16-40 34-40s32 16 34 40z" fill="#FFFFFF" fill-opacity="0.18"></path>
+</svg>
+</div>
+<span style="display: block; width: 100%; box-sizing: border-box; padding: 11px; border-radius: 22px; border: 1.5px solid #FFFFFF; text-align: center; font-size: 11.5px; font-weight: 600">Keep Swiping</span>
+<span style="display: block; width: 100%; box-sizing: border-box; margin-top: 9px; padding: 11px; border-radius: 22px; background: #FFFFFF; text-align: center; font-size: 11.5px; font-weight: 600; color: #0A0A0F">Send Message</span>
+</div>
+</div>
+</div>
+<figcaption style="margin-top: 14px; font-size: 13px; line-height: 1.5; color: #9CA3AF"><strong style="color: #FFFFFF; font-weight: 700">Mutual match</strong>: the conversation opens right away, synced in real time.</figcaption>
+</figure>
+
+</div>
+<p style="margin: clamp(28px, 3cqi, 40px) auto 0; max-width: 78ch; text-align: center; font-size: 13px; line-height: 1.55; color: #9CA3AF">Screens recreated from the app's code (theme colors, component sizes and copy), with a demo profile. A few labels are still hard-coded in French in the app; they are shown here in English.</p>
+</section>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Architecture</p>
+<ol aria-label="Architecture" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 28px 0">
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">01</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Mobile app</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Expo Router (one screen per file), Zustand global state, Reanimated and gestures for the swipe.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">02</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">API</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">FastAPI, ≈ 70 routes, token-based sessions, daily limits checked on the server.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">03</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Data</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Supabase, migrated from MongoDB through a compatibility layer.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">04</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Photos</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">S3 storage, direct uploads through presigned URLs, SigV4 signing written by hand.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #111412; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">05</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Real time</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">WebSocket for messages and instant match sync.</p>
+</li>
+</ol>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Six key features</p>
+<div style="margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 1px; background: #D5D7D1; border: 1px solid #D5D7D1">
+<section aria-labelledby="pfA" style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">A</span><h4 id="pfA" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2">Discovery and matching</h4></div>
+<p style="margin: 14px 0 0; font-size: 15px; line-height: 1.55; color: #474D49">Swipe to like or pass, a match on a mutual like, undo, “smart” discovery by shared interests, and detailed filters down to the city.</p>
+</section>
+<section aria-labelledby="pfB" style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">B</span><h4 id="pfB" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2">“Send a Vibe” Super Like</h4></div>
+<p style="margin: 14px 0 0; font-size: 15px; line-height: 1.55; color: #474D49">10 trending icons, each with its own line, and an optional 150-character Crush Note. On the receiving side, a tab separates the likes received from those sent.</p>
+</section>
+<section aria-labelledby="pfC" style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">C</span><h4 id="pfC" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2">Transparent profile</h4></div>
+<p style="margin: 14px 0 0; font-size: 15px; line-height: 1.55; color: #474D49">Likes received and given, last seen, average session length and a profile type: very selective, popular, balanced or explorer.</p>
+</section>
+<section aria-labelledby="pfD" style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">D</span><h4 id="pfD" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2">Messaging and moderation</h4></div>
+<p style="margin: 14px 0 0; font-size: 15px; line-height: 1.55; color: #474D49">Real-time messages, blocking and reporting from the chat, and an internal moderation queue with its case files.</p>
+</section>
+<section aria-labelledby="pfE" style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">E</span><h4 id="pfE" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2">Daily Burn and shop</h4></div>
+<p style="margin: 14px 0 0; font-size: 15px; line-height: 1.55; color: #474D49">15 likes and 1 Super Like free every day, +5 likes per ad watched (3 per day), visibility boost, ghost mode and subscriptions.</p>
+</section>
+<section aria-labelledby="pfF" style="min-width: 0; background: #FFFFFF; padding: 26px 28px 28px">
+<div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: #111412; color: #FCCA21; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 14px; font-weight: 700">F</span><h4 id="pfF" style="margin: 0; font-weight: 700; font-stretch: 105%; font-size: 20px; line-height: 1.2">AI and trust</h4></div>
+<p style="margin: 14px 0 0; font-size: 15px; line-height: 1.55; color: #474D49">Bio suggestions and a compatibility score from an LLM. Google or email sign-in, tokens in secure storage, account deletion and a privacy policy.</p>
+</section>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 1px; margin-top: clamp(56px, 5cqi, 72px); background: #D5D7D1; border: 1px solid #D5D7D1">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 16px; background: #0A0A0F; padding: clamp(24px, 2.6cqi, 36px); color: #FFFFFF">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9CA3AF">TransparencyCard component</p>
+<div style="border-radius: 16px; overflow: hidden; background: linear-gradient(135deg, rgba(123,44,191,0.15), rgba(255,107,53,0.15)); padding: 16px; font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif">
+<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"></path><path d="M6 16l4-5 3 3 5-7"></path></svg>
+<span style="flex: 1 1 auto; font-size: 14px; font-weight: 600">Transparency</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 12px; background: rgba(255,107,53,0.19); font-size: 11px; font-weight: 600; color: #FF6B35"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 50%; background: #FF6B35"></span>Active</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 4px">
+<div style="display: flex; flex-direction: column; align-items: center; padding: 8px 0"><span aria-hidden="true" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #141420; margin-bottom: 6px"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 21C12 21 3 14 3 8C3 5.24 5.24 3 8 3C9.84 3 11.42 3.87 12 5.07C12.58 3.87 14.16 3 16 3C18.76 3 21 5.24 21 8C21 14 12 21 12 21Z" fill="#FF6B35"></path></svg></span><span style="font-size: 16px; font-weight: 700">128</span><span style="margin-top: 2px; font-size: 11px; color: #9CA3AF">Likes received</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; padding: 8px 0"><span aria-hidden="true" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #141420; margin-bottom: 6px"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M21 3L3 10.5l7 2.5 2.5 7z" fill="#7B2CBF"></path></svg></span><span style="font-size: 16px; font-weight: 700">54</span><span style="margin-top: 2px; font-size: 11px; color: #9CA3AF">Likes given</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; padding: 8px 0"><span aria-hidden="true" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #141420; margin-bottom: 6px"><svg width="18" height="18" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#10B981"></circle><path d="M12 7v5l3 2" fill="none" stroke="#141420" stroke-width="2" stroke-linecap="round"></path></svg></span><span style="font-size: 16px; font-weight: 700">about 2 hours ago</span><span style="margin-top: 2px; font-size: 11px; color: #9CA3AF">Last seen</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; padding: 8px 0"><span aria-hidden="true" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #141420; margin-bottom: 6px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"><path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"></path></svg></span><span style="font-size: 16px; font-weight: 700">24m</span><span style="margin-top: 2px; font-size: 11px; color: #9CA3AF">Avg. session</span></div>
+</div>
+<div style="display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #2D2D3D; font-size: 12px; font-weight: 500; color: #9CA3AF"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12l3 6-9 12L3 9z"></path><path d="M3 9h18"></path></svg>Very selective</div>
+</div>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #9CA3AF">The profile type is computed from the ratio of likes received to likes given; the activity level, from the average session length.</p>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; padding: clamp(24px, 2.6cqi, 36px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Synthwave identity</p>
+<div style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px">
+<div><div aria-hidden="true" style="height: 64px; background: #FF6B35"></div><p style="margin: 8px 0 0; font-size: 13.5px; font-weight: 700">Sunset Orange</p><p style="margin: 2px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; color: #5C625E">#FF6B35</p></div>
+<div><div aria-hidden="true" style="height: 64px; background: #7B2CBF"></div><p style="margin: 8px 0 0; font-size: 13.5px; font-weight: 700">Deep Purple</p><p style="margin: 2px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; color: #5C625E">#7B2CBF</p></div>
+<div><div aria-hidden="true" style="height: 64px; background: #FF2D6B"></div><p style="margin: 8px 0 0; font-size: 13.5px; font-weight: 700">Logo pink</p><p style="margin: 2px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; color: #5C625E">#FF2D6B</p></div>
+<div><div aria-hidden="true" style="height: 64px; background: #0A0A0F"></div><p style="margin: 8px 0 0; font-size: 13.5px; font-weight: 700">Background</p><p style="margin: 2px 0 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; color: #5C625E">#0A0A0F</p></div>
+</div>
+<div style="margin-top: 22px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 28px; padding-top: 16px; border-top: 1px solid #E4E5E0">
+<span style="font-family: 'Syne', 'Archivo', Arial, sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.04em; color: #FF2D6B">Pulse</span>
+<span style="font-size: 14.5px; line-height: 1.5; color: #474D49">Syne ExtraBold for the name, DM Sans Light for the subtitle; an animated logo: an electrocardiogram trace that ends in a beating heart.</span>
+</div>
+</div>
+</div>
+
+<div style="margin-top: clamp(56px, 5cqi, 72px)">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">From prototype to version 1.014</p>
+<ol aria-label="Versions" style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)); gap: 28px 0">
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FFFFFF; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">Late January</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Prototype</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Generated with Emergent from my specification, tested on my phone with profiles around Toulouse.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">Feb 19 · 1.006 – 1.007</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Languages and chat</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Four languages, actions in the chat, instant match sync.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">Feb 22 · 1.008</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Account and profile</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Profile editing, preview, session stats, sign-out and account deletion.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #FCCA21; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">Feb 27 · 1.0010</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Moving to the cloud</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Supabase, cloud photo storage and Google sign-in.</p>
+</li>
+<li style="min-width: 0; padding-right: 28px; border-top: 4px solid #111412">
+<div aria-hidden="true" style="width: 2px; height: 14px; margin-left: 6px; background: #111412"></div>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: none; width: 14px; height: 14px; box-sizing: border-box; border-radius: 50%; background: #111412; border: 2px solid #111412"></span><span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 700; color: #5C625E">March 1 – 8 · 1.011 – 1.013</span></div>
+<h3 style="margin: 14px 0 0; font-weight: 700; font-stretch: 105%; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em">Design and safety</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #474D49">Custom action icons, boost, reporting, security, a new design and animated icons.</p>
+</li>
+</ol>
+</div>
+
+<div style="margin-top: 48px">
+<p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Technologies</p>
+<ul aria-label="Technologies" style="list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; color: #111412">
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Expo</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">React Native</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">TypeScript</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Expo Router</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Zustand</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Reanimated</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">WebSocket</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">FastAPI</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Pydantic</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Supabase</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">S3 (SigV4)</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Emergent</li>
+<li style="padding: 6px 10px; background: #FFFFFF; border: 1px solid #D5D7D1">Claude Code</li>
+</ul>
+</div>
+
+</div>
+</article>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4200}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

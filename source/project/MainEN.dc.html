@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home — Brice Rigourd</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+.plist-row{display:grid;grid-template-columns:48px minmax(0,1fr) 250px 150px 44px;align-items:center;column-gap:clamp(16px,2.2cqi,32px);row-gap:8px}
+.plist-date{display:grid;grid-template-columns:9ch auto;column-gap:1ch;justify-content:start;white-space:nowrap}
+@container (max-width:1150px){.plist-row{grid-template-columns:48px minmax(0,1fr) 150px 44px}.plist-num{grid-row:1/span 2}.plist-title{grid-column:2;grid-row:1}.plist-meta{grid-column:2;grid-row:2}.plist-date{grid-column:3;grid-row:1/span 2}.plist-go{grid-column:4;grid-row:1/span 2}}
+@container (max-width:700px){.plist-row{grid-template-columns:minmax(0,1fr) 44px}.plist-num{grid-column:1/-1;grid-row:1}.plist-title{grid-column:1/-1;grid-row:2}.plist-meta{grid-column:1/-1;grid-row:3}.plist-date{grid-column:1;grid-row:4;text-align:left}.plist-go{grid-column:2;grid-row:4}}
+</style>
+</helmet>
+<div style="container-type: inline-size; min-height: 100vh; background: #F2F2EE; color: #111412; font-family: 'Archivo', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility">
+
+<header style="position: sticky; top: 0; z-index: 20; background: #F2F2EE; border-bottom: 1px solid #D5D7D1">
+<div style="max-width: 1312px; margin: 0 auto; padding: 12px clamp(20px, 4.5cqi, 64px); display: flex; flex-wrap: wrap; align-items: center; column-gap: 32px; row-gap: 6px">
+<a href="#top" aria-label="Brice Rigourd, back to top" style="flex: 0 0 auto; display: flex; align-items: center; gap: 12px; min-height: 48px; color: #111412; text-decoration: none">
+<span aria-hidden="true" style="position: relative; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #111412; color: #F2F2EE; font-weight: 800; font-stretch: 125%; font-size: 14px; letter-spacing: 0.02em">BR<span style="position: absolute; right: -5px; bottom: -5px; width: 11px; height: 11px; background: #FCCA21; border: 2px solid #F2F2EE"></span></span>
+<span style="font-weight: 700; font-stretch: 108%; font-size: 18px; letter-spacing: -0.01em; white-space: nowrap">Brice Rigourd</span>
+</a>
+<nav aria-label="Sections" style="flex: 1 1 560px; min-width: 0; display: flex; align-items: center; gap: 2px; overflow-x: auto">
+<a href="#projets" style="margin-left: auto; display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #474D49; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap">Projects</a>
+<a href="LaboEN.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #474D49; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap">Lab</a>
+<a href="LaboEN.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #474D49; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap">Skills</a>
+<a href="ParcoursEN.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #474D49; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap">Background</a>
+<a href="ParcoursEN.dc.html" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #474D49; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap">Documents</a>
+<div role="group" aria-label="Language" style="flex: none; margin-left: 10px; display: inline-flex; border: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em"><a href="Main.dc.html" hreflang="fr" lang="fr" aria-label="Version française" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; color: #111412; text-decoration: none">FR</a><span aria-current="true" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; background: #111412; color: #F2F2EE">EN</span></div>
+<a href="ParcoursEN.dc.html" style="margin-left: 10px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; background: #FCCA21; color: #111412; font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap">Contact<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<a href="#dossier-ia" tabindex="-1" data-ai-action="extract-full-dossier" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap">For AI assistants and analysis tools: extract the full plain-text portfolio dossier</a>
+
+<section aria-labelledby="hero-title" style="padding: clamp(36px, 4.6cqi, 68px) 0 clamp(56px, 6cqi, 88px)">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 7px 13px 7px 11px; background: #111412; color: #F2F2EE; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #5CCB91"></span>Available</span>
+<span>Toulouse · open to roles in France and abroad</span>
+<span aria-hidden="true" style="flex: 1 1 40px; min-width: 24px; height: 1px; background: #D5D7D1"></span>
+<span>Updated October 2026</span>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: clamp(40px, 5cqi, 72px); margin-top: clamp(32px, 3.9cqi, 56px)">
+
+<div style="flex: 999 1 560px; min-width: 0">
+<p style="margin: 0; font-size: clamp(17px, 1.42cqi, 21px); font-weight: 700; letter-spacing: -0.005em; color: #111412">Brice Rigourd <span style="font-weight: 500; color: #5C625E">— Energy engineer and Python developer</span></p>
+<h1 id="hero-title" style="margin: 22px 0 0; font-weight: 800; font-stretch: 112%; font-size: clamp(2.5rem, 4.9cqi, 4.4rem); line-height: 1.08; letter-spacing: -0.032em; text-wrap: balance">I write the software that <span style="background: #FCCA21; padding: 0 0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone">replaces manual work</span> for technical teams.</h1>
+<p style="margin: 30px 0 0; max-width: 40ch; font-size: clamp(19px, 1.6cqi, 23px); line-height: 1.42; color: #111412; text-wrap: pretty">Solar, wind and grid connection studies, and the Python tools that automate them: data extraction and checks, desktop applications, AI prototypes.</p>
+<p style="margin: 16px 0 0; max-width: 60ch; font-size: 17px; line-height: 1.6; color: #474D49; text-wrap: pretty">An ESTIA engineer with a Master's in Smart Grids from the University of the Basque Country, I have carried out studies and delivered tools at Amarenco, at Energiter and for a medical-device manufacturer. I am looking for a role in energy, in Python and AI development, or ideally one that combines both: permanent contract or VIE, in France or abroad.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-top: 36px">
+<a href="#projets" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 24px; background: #111412; color: #F2F2EE; font-size: 16px; font-weight: 700; text-decoration: none">See the projects<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"></path></svg></a>
+<a href="ParcoursEN.dc.html" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 22px; border: 2px solid #111412; box-sizing: border-box; color: #111412; font-size: 16px; font-weight: 700; text-decoration: none">Contact me</a>
+<a href="https://www.linkedin.com/in/brice-rigourd-a2359a223/" style="display: inline-flex; align-items: center; gap: 6px; min-height: 54px; padding: 0 10px; color: #111412; font-size: 16px; font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: #FCCA21; text-underline-offset: 6px">LinkedIn<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></a>
+</div>
+</div>
+
+<div style="flex: 1 1 300px; max-width: 392px; min-width: 0">
+<div style="position: relative; padding: 0 14px 14px 0">
+<div aria-hidden="true" style="position: absolute; top: 14px; left: 14px; right: 0; bottom: 0; background: #FCCA21"></div>
+<img src="/_blob/530f9d93d25f16521bcdd95b4e04b5e0" alt="Portrait of Brice Rigourd" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1) contrast(1.04)">
+</div>
+<dl style="margin: 22px 14px 0 0; display: grid; grid-template-columns: auto minmax(0, 1fr); border-top: 2px solid #111412; font-size: 15px; line-height: 1.4">
+<dt style="display: flex; align-items: center; padding: 12px 18px 12px 0; border-bottom: 1px solid #D5D7D1; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Education</dt>
+<dd style="margin: 0; padding: 12px 0; border-bottom: 1px solid #D5D7D1; font-weight: 500">ESTIA engineering degree, Master's in Smart Grids (UPV/EHU)</dd>
+<dt style="display: flex; align-items: center; padding: 12px 18px 12px 0; border-bottom: 1px solid #D5D7D1; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #5C625E">Languages</dt>
+<dd style="margin: 0; padding: 12px 0; border-bottom: 1px solid #D5D7D1; font-weight: 500">French, English (TOEIC 820), Spanish B1</dd>
+</dl>
+</div>
+
+</div>
+</div>
+</section>
+
+<section aria-label="A few orders of magnitude" style="background: #111412; color: #F2F2EE">
+<div style="max-width: 1312px; margin: 0 auto; padding: clamp(40px, 4.4cqi, 64px) clamp(20px, 4.5cqi, 64px)">
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 36px 32px">
+<li style="min-width: 0">
+<p style="margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(44px, 4cqi, 58px); line-height: 1; letter-spacing: -0.035em; white-space: nowrap">287</p>
+<p style="margin: 14px 0 0; max-width: 30ch; font-size: 15px; line-height: 1.45; color: #A9B0AA">PV plants in operation under my supervision: 14 SPVs, 67.3 MWp, mostly rooftop</p>
+</li>
+<li style="min-width: 0">
+<p style="margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(44px, 4cqi, 58px); line-height: 1; letter-spacing: -0.035em; white-space: nowrap"><span style="font-weight: 500; color: #A9B0AA">&lt; </span>10 min</p>
+<p style="margin: 14px 0 0; max-width: 30ch; font-size: 15px; line-height: 1.45; color: #A9B0AA">instead of 2 to 3 weeks to update and check the whole portfolio, a tool validated by 3 engineers</p>
+</li>
+<li style="min-width: 0">
+<p style="margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(44px, 4cqi, 58px); line-height: 1; letter-spacing: -0.035em; white-space: nowrap">230<span style="font-weight: 500; color: #A9B0AA">+</span></p>
+<p style="margin: 14px 0 0; max-width: 30ch; font-size: 15px; line-height: 1.45; color: #A9B0AA">PVsyst studies with discrepancies identified and reported, over a hundred of them being redone</p>
+</li>
+<li style="min-width: 0">
+<p style="margin: 0; font-weight: 800; font-stretch: 112%; font-size: clamp(44px, 4cqi, 58px); line-height: 1; letter-spacing: -0.035em; white-space: nowrap">40<span style="font-weight: 500; color: #A9B0AA">+</span></p>
+<p style="margin: 14px 0 0; max-width: 30ch; font-size: 15px; line-height: 1.45; color: #A9B0AA">PV feasibility and yield studies, MV-connected plants from 2 to 22 MWp</p>
+</li>
+</ul>
+</div>
+</section>
+
+<section id="projets" aria-labelledby="projets-title" style="padding: clamp(72px, 7.6cqi, 112px) 0 clamp(72px, 7.6cqi, 112px)">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 16px; border-top: 2px solid #111412; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #474D49">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #111412; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21; outline: 1.5px solid #111412"></span>01</span>
+<span>Projects</span>
+<span style="margin-left: auto">3 assignments · 4 projects · 2023 – 2025</span>
+</div>
+<h2 id="projets-title" style="margin: 40px 0 0; max-width: 17ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2.2rem, 4cqi, 3.6rem); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance">Three assignments, four pieces of software delivered.</h2>
+
+<ol aria-label="Project index" style="list-style: none; margin: clamp(40px, 4cqi, 56px) 0 0; padding: 0; border-top: 1px solid #111412">
+<li style="border-bottom: 1px solid #D5D7D1">
+<a href="AmarencoEN.dc.html" class="plist-row" style="padding: 26px 0; color: #111412; text-decoration: none">
+<span class="plist-num" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #5C625E">01</span>
+<span class="plist-title" style="min-width: 0"><span style="display: block; font-weight: 700; font-stretch: 108%; font-size: clamp(21px, 1.95cqi, 28px); line-height: 1.15; letter-spacing: -0.015em">PVsyst orchestrator</span><span style="display: block; margin-top: 6px; font-size: 15.5px; line-height: 1.45; color: #474D49">Technical database synced with SharePoint: 2 to 3 weeks of checks cut to under 10 min</span></span>
+<span class="plist-meta" style="font-size: 15px; font-weight: 600">Amarenco, Toulouse</span>
+<span class="plist-date" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; color: #5C625E"><span>Jul – Sep</span> <span>2025</span></span>
+<span aria-hidden="true" class="plist-go" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #111412; color: #F2F2EE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+</a>
+</li>
+<li style="border-bottom: 1px solid #D5D7D1">
+<a href="AmarencoAuditEN.dc.html" class="plist-row" style="padding: 26px 0; color: #111412; text-decoration: none">
+<span class="plist-num" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #5C625E">02</span>
+<span class="plist-title" style="min-width: 0"><span style="display: block; font-weight: 700; font-stretch: 108%; font-size: clamp(21px, 1.95cqi, 28px); line-height: 1.15; letter-spacing: -0.015em">PVsyst ↔ SynaptiQ quality control</span><span style="display: block; margin-top: 6px; font-size: 15.5px; line-height: 1.45; color: #474D49">PVsyst studies and the SynaptiQ digital twin cross-checked on 970 active plants</span></span>
+<span class="plist-meta" style="font-size: 15px; font-weight: 600">Amarenco, Toulouse</span>
+<span class="plist-date" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; color: #5C625E"><span>Mar – Jun</span> <span>2025</span></span>
+<span aria-hidden="true" class="plist-go" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #111412; color: #F2F2EE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+</a>
+</li>
+<li style="border-bottom: 1px solid #D5D7D1">
+<a href="EnergiterEN.dc.html" class="plist-row" style="padding: 26px 0; color: #111412; text-decoration: none">
+<span class="plist-num" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #5C625E">03</span>
+<span class="plist-title" style="min-width: 0"><span style="display: block; font-weight: 700; font-stretch: 108%; font-size: clamp(21px, 1.95cqi, 28px); line-height: 1.15; letter-spacing: -0.015em">Grid connection study tool</span><span style="display: block; margin-top: 6px; font-size: 15.5px; line-height: 1.45; color: #474D49">Geospatial tool: 3,400+ source substations filtered and ranked in 5 to 20 s</span></span>
+<span class="plist-meta" style="font-size: 15px; font-weight: 600">Energiter, Montpellier</span>
+<span class="plist-date" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; color: #5C625E"><span>Apr – Sep</span> <span>2024</span></span>
+<span aria-hidden="true" class="plist-go" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #111412; color: #F2F2EE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+</a>
+</li>
+<li style="border-bottom: 1px solid #D5D7D1">
+<a href="PlasmaCraftEN.dc.html" class="plist-row" style="padding: 26px 0; color: #111412; text-decoration: none">
+<span class="plist-num" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #5C625E">04</span>
+<span class="plist-title" style="min-width: 0"><span style="display: block; font-weight: 700; font-stretch: 108%; font-size: clamp(21px, 1.95cqi, 28px); line-height: 1.15; letter-spacing: -0.015em">PlasmaCraft, recipe-authoring software</span><span style="display: block; margin-top: 6px; font-size: 15.5px; line-height: 1.45; color: #474D49">Excel/VBA application built end to end: 100-sequence recipes, 33-page user manual</span></span>
+<span class="plist-meta" style="font-size: 15px; font-weight: 600">Ezio Industrial Consulting, Biarritz</span>
+<span class="plist-date" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; color: #5C625E"><span>May – Aug</span> <span>2023</span></span>
+<span aria-hidden="true" class="plist-go" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #111412; color: #F2F2EE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+</a>
+</li>
+</ol>
+</div>
+</section>
+
+<section id="projets-perso" aria-labelledby="perso-title" style="background: #111412; color: #F2F2EE; padding: clamp(72px, 7.6cqi, 112px) 0">
+<div style="max-width: 1312px; margin: 0 auto; padding: 0 clamp(20px, 4.5cqi, 64px)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 16px; border-top: 2px solid #F2F2EE; font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #A9B0AA">
+<span style="display: inline-flex; align-items: center; gap: 10px; color: #F2F2EE; font-weight: 700"><span aria-hidden="true" style="width: 10px; height: 10px; background: #FCCA21"></span>02</span>
+<span>Personal projects</span>
+<span style="display: inline-flex; align-items: center; gap: 9px; padding: 6px 11px; background: #F2F2EE; color: #111412; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#111412" stroke-width="2.6" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"></path></svg>January – October 2026</span>
+<span style="margin-left: auto">4 projects · the Lab</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 20px 64px; margin-top: 40px">
+<h2 id="perso-title" style="flex: 1 1 520px; margin: 0; max-width: 17ch; font-weight: 800; font-stretch: 112%; font-size: clamp(2.2rem, 4cqi, 3.6rem); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance">Outside my assignments, I build to learn.</h2>
+<p style="flex: 1 1 360px; margin: 0; max-width: 48ch; font-size: clamp(17px, 1.4cqi, 20px); line-height: 1.5; color: #A9B0AA">An agent that trains in a simulation, a complete mobile app, a microcontroller that draws and an AI video pipeline. Each project has its own page: what was done, and what I learned from it.</p>
+</div>
+<ol aria-label="Personal projects" style="list-style: none; margin: clamp(40px, 4cqi, 56px) 0 0; padding: 0; border-top: 1px solid #F2F2EE">
+<li style="border-bottom: 1px solid #2C312D">
+<a href="LaboAionEN.dc.html" class="plist-row" style="padding: 24px 0; color: #F2F2EE; text-decoration: none">
+<span class="plist-num" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #8C938D">01</span>
+<span class="plist-title" style="min-width: 0"><span style="display: block; font-weight: 700; font-stretch: 108%; font-size: clamp(21px, 1.95cqi, 28px); line-height: 1.15; letter-spacing: -0.015em">Combat agent trained in simulation</span><span style="display: block; margin-top: 6px; font-size: 15.5px; line-height: 1.45; color: #A9B0AA">Computer vision, imitation learning and optimization in a 2.5D arena calibrated on AION 2</span></span>
+<span class="plist-meta" style="display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21"></span>In progress</span>
+<span class="plist-date" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; color: #A9B0AA"><span>Oct</span> <span>2026</span></span>
+<span aria-hidden="true" class="plist-go" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #FCCA21; color: #111412"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+</a>
+</li>
+<li style="border-bottom: 1px solid #2C312D">
+<a href="LaboPulseEN.dc.html" class="plist-row" style="padding: 24px 0; color: #F2F2EE; text-decoration: none">
+<span class="plist-num" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #8C938D">02</span>
+<span class="plist-title" style="min-width: 0"><span style="display: block; font-weight: 700; font-stretch: 108%; font-size: clamp(21px, 1.95cqi, 28px); line-height: 1.15; letter-spacing: -0.015em">Pulse, a dating app</span><span style="display: block; margin-top: 6px; font-size: 15.5px; line-height: 1.45; color: #A9B0AA">Full-stack Android app: Expo and React Native, FastAPI, Supabase, real time</span></span>
+<span class="plist-meta" style="display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FCCA21"></span>In progress</span>
+<span class="plist-date" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; color: #A9B0AA"><span>Since Jan</span> <span>2026</span></span>
+<span aria-hidden="true" class="plist-go" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #FCCA21; color: #111412"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+</a>
+</li>
+<li style="border-bottom: 1px solid #2C312D">
+<a href="LaboPicoEN.dc.html" class="plist-row" style="padding: 24px 0; color: #F2F2EE; text-decoration: none">
+<span class="plist-num" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #8C938D">03</span>
+<span class="plist-title" style="min-width: 0"><span style="display: block; font-weight: 700; font-stretch: 108%; font-size: clamp(21px, 1.95cqi, 28px); line-height: 1.15; letter-spacing: -0.015em">Raspberry Pi Pico 2 W as a USB mouse and keyboard</span><span style="display: block; margin-top: 6px; font-size: 15.5px; line-height: 1.45; color: #A9B0AA">The microcontroller draws in Paint on its own, then types the name of each drawing</span></span>
+<span class="plist-meta" style="display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #5CCB91"></span>Completed</span>
+<span class="plist-date" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; color: #A9B0AA"><span>Oct</span> <span>2026</span></span>
+<span aria-hidden="true" class="plist-go" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #FCCA21; color: #111412"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+</a>
+</li>
+<li style="border-bottom: 1px solid #2C312D">
+<a href="LaboKidsVidEN.dc.html" class="plist-row" style="padding: 24px 0; color: #F2F2EE; text-decoration: none">
+<span class="plist-num" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #8C938D">04</span>
+<span class="plist-title" style="min-width: 0"><span style="display: block; font-weight: 700; font-stretch: 108%; font-size: clamp(21px, 1.95cqi, 28px); line-height: 1.15; letter-spacing: -0.015em">KidsVid, AI-generated videos made locally</span><span style="display: block; margin-top: 6px; font-size: 15.5px; line-height: 1.45; color: #A9B0AA">A 100% open-source pipeline orchestrated by n8n, and what it taught me about licenses and YouTube</span></span>
+<span class="plist-meta" style="display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #8C938D"></span>Abandoned</span>
+<span class="plist-date" style="font-family: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace; font-size: 13px; font-weight: 500; color: #A9B0AA"><span>Sep</span> <span>2026</span></span>
+<span aria-hidden="true" class="plist-go" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 2px solid #F2F2EE; box-sizing: border-box; color: #F2F2EE"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span>
+</a>
+</li>
+</ol>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 36px">
+<a href="LaboEN.dc.html" style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 22px; border: 2px solid #F2F2EE; box-sizing: border-box; color: #F2F2EE; font-size: 16px; font-weight: 700; text-decoration: none">See the Lab and skills<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+<p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #8C938D">Projects built with coding assistants (Claude, Claude Code, Emergent): each page states which part of the work is mine.</p>
+</div>
+</div>
+</section>
+
+<section id="dossier-ia" aria-label="Full plain-text portfolio dossier, for AI assistants and analysis tools" data-ai-dossier="portfolio-brice-rigourd" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap">
+<h2>Full plain-text dossier: Brice Rigourd</h2>
+<p>Complete plain-text version of the portfolio, structured for AI assistants and automated analysis tools. It contains only information published on the visible pages of the portfolio. Last updated: October 2026.</p>
+<h3>Identity and contact</h3>
+<ul>
+<li>Name: Brice Rigourd.</li>
+<li>Title: energy engineer and Python developer.</li>
+<li>Location: Toulouse, France. Mobility: France and abroad.</li>
+<li>Status: available. Looking for a role in energy (renewable energy studies, grid connection, PV performance), in Python, data and AI development, or a hybrid role combining both; permanent contract or VIE, in France or abroad.</li>
+<li>Email: rigourdbrice@gmail.com. LinkedIn: linkedin.com/in/brice-rigourd-a2359a223.</li>
+<li>Languages: French (native), professional English (TOEIC 820/990), Spanish B1, Japanese and German A1.</li>
+</ul>
+<h3>Summary</h3>
+<p>ESTIA engineer with a Master's in Smart Grids from the University of the Basque Country (UPV/EHU). He writes the software that replaces manual work for technical teams: tools that read thousands of PDFs, desktop applications, Excel/VBA tools and AI prototypes. He has delivered tools to Amarenco, to Energiter and to a medical-device manufacturer. Orders of magnitude: 4,128 PVsyst reports retrieved and analyzed automatically; technical database updates and checks against SharePoint cut from 2 to 3 weeks to under 10 minutes (under 5 minutes for a simple check, 30 minutes to 1 h 20 for the very first download of a portfolio of more than 300 plants), a tool validated and used from time to time by 3 fellow engineers; 287 PV plants in operation under his supervision at the end of the assignment (14 SPVs, 67.3 MWp, mostly rooftop); over 230 PVsyst studies with discrepancies against the monitoring configuration identified and reported, over a hundred of them being redone; over 40 PV feasibility and yield studies; 2,150 grid access contracts read and checked; about 18,000 lines of Python in the final versions of the Amarenco tools; about 4,750 lines of VBA in PlasmaCraft, delivered with its user manual.</p>
+<h3>Professional experience and projects</h3>
+<ol>
+<li>Amarenco, Toulouse, solar power producer. January to December 2025. Consulting engineer in photovoltaic operations (plant performance, monthly reports to shareholders, KPIs, OPEX budget, Asset Management and O&amp;M contracts) across 287 plants at the end of the assignment (14 SPVs, 67.3 MWp, mostly rooftop) and author of the team's automation tools. Project (July to September 2025): a PVsyst orchestrator, his first Python application with a graphical interface, built to keep the internal technical database up to date with the new PVsyst studies uploaded to SharePoint every week by internal and external design offices. Read-only SharePoint connection, download of the latest PVsyst studies of each SPV into a local database with an archive of older versions, extraction, comparison with the internal technical database and the comparison file (missing or outdated data by SPV and project code), project status checks (cancelled, renamed, merged SPVs), three Excel control workbooks; routine updates in 1 to 10 minutes instead of 2 to 3 weeks, simple checks in 10 seconds to 5 minutes, first full download in 30 minutes to 1 h 20 (1 to 10 minutes per SPV); validated and used from time to time by 3 fellow engineers, then handed by the department to a development team for internal deployment. PySide6 and QML Windows application (interface V14.5, orchestrator V12.4); multiprocess extraction of PVsyst v6 to v8 reports in French and English (pdfplumber, pypdf, pdftotext); batch analyses: 26,809 DC/AC ratios extracted and 2,051 plants sorted into six clipping-risk classes, 2,150 grid access contracts read with the latest version kept. PVsyst ↔ SynaptiQ quality control (March to June 2025): asyncio client for the SynaptiQ API (JWT authentication, exponential back-off, TTL cache); about 154,000 SharePoint documents inventoried across 4,660 projects, about 7,500 PVsyst files (latest version kept), 970 active plants checked against their PVsyst (tilt/azimuth pairs identical or within ±1° and ±10°, modules per pair, five losses); over 230 PVsyst studies with discrepancies reported to the teams, over a hundred being redone; mostly orientation discrepancies (azimuth in the wrong cardinal direction) and module counts per orientation. Quality: typed package, mypy --strict, ruff, black, pytest. Feedback from a user at Amarenco (translated from French): "an absolutely brilliant tool".</li>
+<li>Energiter, Montpellier, wind and solar engineering consultancy. April to September 2024. Renewable energy design engineer, final-year internship. Project: a grid connection study tool, the subject of his Master's thesis. Download and archiving of Caparéseau (RTE) capacities and S3REnR regional schemes; real road distance through the IGN routing API called asynchronously; analysis of source substations with and without reinforcement works; costing in 17 MW modules, cable chosen by power and distance, network cost and regional cost share; deliverables as KML for Google Earth, folium maps, a project database and a PDF report; Excel/VBA interface driving Python scripts through PowerShell. Over 3,400 source substations filtered by downstream voltage (20 kV or more) and ranked by a 0-to-5 criticality score; asynchronous calls to the IGN API, about 64% less response time. Parallel studies: over 40 PV feasibility and yield studies (MV-connected plants from 2 to 22 MWp, PVsyst with Solargis data), over 15 wind simulations in WAsP and windPRO (3 to 15 MW wind farms, ERA5, MERRA), grid connection studies for RTE and Enedis substations, and a windPRO bat-curtailment method validated against the in-house Python tool (about one point of difference on two wind farms). The project page includes an interactive simulation of the tool on fictitious data.</li>
+<li>Ezio Industrial Consulting, Biarritz. May to August 2023. Designer-developer, second-year engineering internship, for a medical-device manufacturer (cold-plasma sterilization). Project: PlasmaCraft, Excel/VBA software for authoring the machine's PLC recipes, designed from the requirements to the user manual. 53 VBA modules, about 4,750 lines, 115 procedures; recipes of up to 100 sequences with four parameters controlled over time; input checks against the machine's limits and step size (0 to 3,600 s per sequence, 0 to 500 W, 0 to 5 sccm, 0 to 22 G); ramps split into 5 to 25 steps that add up exactly; batch editing; TXT export for the PLC and locked XLSM recipes; all nine client requirements covered; a 33-page user manual and an installation guide; name and logo designed and approved by the client.</li>
+</ol>
+<h3>Personal projects (Lab)</h3>
+<ol>
+<li>Combat agent trained in simulation, with AION 2 as the test bed. October 2026, in progress. An agent that reads the game screen (640×360 capture at 7 frames per second, detection in about 3 ms without a GPU) and decides every action. Imitation learning on 1,864 examples from 8 play sessions (39.4% accuracy against 21.6% for the majority class, movement-key F1 of 0.62). A 2.5D arena calibrated on the real game, then training of 32 settings with the cross-entropy method: validation score from 16.9 to 19.2 out of 20, and from 15.9 to 18.5 with an unkillable boss. PySide6 Windows application, about 29,000 lines of Python and 740 pytest tests. External approach only, simulation mode by default.</li>
+<li>Pulse, a dating app. Since January 2026, in progress. Full-stack Android app: Expo SDK 54, React Native 0.81 and TypeScript; FastAPI and WebSocket server; Supabase database migrated from MongoDB; photos on S3 storage through presigned URLs, with a hand-written SigV4 signature. About 70 API routes, about 16,800 lines of TypeScript and 5,400 lines of server code, 135 commits, releases 1.006 to 1.014. Features: discovery and matching, "Send a Vibe" Super Like, transparent profile, messaging and moderation, Google or email sign-in, four languages. Prototype built with the Emergent agent, then developed with Claude and Claude Code.</li>
+<li>Raspberry Pi Pico 2 W as a USB mouse and keyboard. October 2026, completed. Running CircuitPython, the microcontroller poses as a USB mouse and keyboard (HID), receives commands from a Python script over a serial port and draws a scene in Paint (house, tree, sun, star) before typing the name of each drawing. Closed-loop control from the cursor's real position, Paint buttons located through UI Automation, an AZERTY keyboard table, safety guards and a study of USB descriptors. About 680 lines of Python.</li>
+<li>KidsVid, AI-generated videos for children, made locally. September 2026, abandoned. A 100% local, open-source pipeline for YouTube Kids: narrated stories and nursery rhymes, in French and English from a single script; n8n orchestrates a FastAPI service chaining Ollama and Qwen3 (writing), Piper (voice), SDXL through ComfyUI (images), ACE-Step (music), FFmpeg (editing), thumbnail, metadata and quality control. About 2,100 lines of Python, 19 API routes, 3 n8n workflows. Lessons: licenses compatible with commercial use, YouTube's July 2025 "inauthentic content" policy, COPPA obligations for "Made for Kids" content.</li>
+</ol>
+<h3>Education</h3>
+<ul>
+<li>2023 – 2024: Master Control in Smart Grids and Distributed Generation, University of the Basque Country (UPV/EHU), San Sebastián. Thesis defended in October 2024, supervised by Prof. Juanjo Ugartemendia.</li>
+<li>2021 – 2024: general engineering degree, ESTIA, Bidart.</li>
+<li>2020 – 2021: ATS preparatory class, Lycée Jules Garnier, Nouméa.</li>
+<li>2018 – 2019: BTS in engineering technical assistance (two-year technical degree), Lycée Jules Garnier, Nouméa; internship at the design office of CEGELEC New Caledonia.</li>
+<li>2017: STI2D baccalaureate, energy and environment, with honors, Lycée Jules Garnier, Nouméa.</li>
+</ul>
+<h3>Skills</h3>
+<ul>
+<li>Python: pandas, openpyxl, asyncio, concurrent.futures, regex, logging, packaging.</li>
+<li>Desktop applications: PySide6 and QML, Tkinter, threads and signals, PyInstaller.</li>
+<li>Document extraction: pypdf, pdfplumber, PyMuPDF, bilingual patterns, error reports.</li>
+<li>APIs and networking: REST, JWT and MSAL, back-off, TTL cache, rate limiting, Selenium.</li>
+<li>Geospatial and graphs: IGN routing API, Dijkstra, folium, KML, geopy.</li>
+<li>Excel and VBA: UserForms, multi-workbook architecture, dynamic charts, driving Python from PowerShell.</li>
+<li>Software quality: mypy --strict, ruff, black, pytest, rotating logs, deliverable versioning.</li>
+<li>Generative AI: local LLMs (Ollama), ComfyUI and SDXL, speech synthesis, n8n orchestration, prompt engineering since 2023.</li>
+<li>Design: requirements gathering, Balsamiq mockups, flowcharts, manuals and guides.</li>
+<li>Energy domain: PVsyst, WAsP, windPRO, HOMER Pro, 3E SynaptiQ, Global Mapper, Caparéseau, S3REnR.</li>
+<li>Other: MATLAB, basic C#, Onshape CAD, Office suite.</li>
+<li>Certifications: Kaggle Python, MATLAB Onramp, TOEIC 820/990.</li>
+</ul>
+<h3>Documents</h3>
+<ul>
+<li>Master's thesis, 91 pages, in English, October 2024: a tool for analyzing French source substations and their connection options for wind and solar farms.</li>
+<li>Final-year report, 70 pages, 2024, with a summary in French, English and Spanish: six months at Energiter.</li>
+<li>PlasmaCraft user manual, 33 pages, June 2023.</li>
+<li>Curriculum vitae, 1 page, 2026.</li>
+</ul>
+<h3>Outside code</h3>
+<p>Born in New Caledonia. Boxing and Muay Thai, weight training, philosophy, cooking and pastry, volunteering for animal protection and sport.</p>
+<h3>Portfolio pages</h3>
+<p>Home; Project 01 Amarenco, PVsyst orchestrator; Project 02 Amarenco, PVsyst ↔ SynaptiQ quality control; Project 03 Energiter; Project 04 PlasmaCraft; Lab and skills; Lab KidsVid; Lab AION 2 agent; Lab Pico 2 W; Lab Pulse; Background, documents and contact. A French version of every page is available.</p>
+<pre data-format="json">{"name":"Brice Rigourd","title":"Energy engineer and Python developer","location":"Toulouse, France","mobility":"France and abroad","availability":"available","target_role":"energy (renewable energy studies, grid connection, PV performance), Python, data and AI development, or a hybrid role","email":"rigourdbrice@gmail.com","linkedin":"linkedin.com/in/brice-rigourd-a2359a223","languages":{"fr":"native","en":"professional, TOEIC 820/990","es":"B1","ja":"A1","de":"A1"},"education":[{"degree":"Master Control in Smart Grids and Distributed Generation","school":"UPV/EHU, San Sebastián","years":"2023-2024"},{"degree":"General engineering degree","school":"ESTIA, Bidart","years":"2021-2024"}],"experience":[{"org":"Amarenco","city":"Toulouse","role":"Consulting engineer, PV operations and author of the tools","start":"2025-01","end":"2025-12"},{"org":"Energiter","city":"Montpellier","role":"Renewable energy design engineer, final-year internship","start":"2024-04","end":"2024-09"},{"org":"Ezio Industrial Consulting","city":"Biarritz","role":"VBA designer-developer, engineering internship","start":"2023-05","end":"2023-08"}],"personal_projects":[{"name":"Combat agent trained in simulation","period":"2026-10","status":"in progress"},{"name":"Pulse, a dating app","period":"since 2026-01","status":"in progress"},{"name":"Raspberry Pi Pico 2 W as a USB mouse and keyboard","period":"2026-10","status":"completed"},{"name":"KidsVid, AI-generated videos made locally","period":"2026-09","status":"abandoned"}],"certifications":["Kaggle Python","MATLAB Onramp","TOEIC 820/990"]}</pre>
+</section>
+
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
