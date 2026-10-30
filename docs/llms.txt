@@ -1,0 +1,36 @@
+# Brice Rigourd
+
+> Ingénieur énergie (photovoltaïque, éolien, raccordement au réseau) qui développe en Python les outils qui remplacent le travail manuel des équipes techniques. Basé à Toulouse, disponible, mobilité France et international. Energy engineer and Python developer based in Toulouse, available.
+
+Portfolio bilingue (français et anglais). Le profil complet existe en Markdown, en JSON Resume et en page HTML structurée ; toutes les informations proviennent des pages publiées du portfolio. Bilingual portfolio: the full profile is available in Markdown, JSON Resume and structured HTML.
+
+## Profil complet / Full profile
+
+- [Profil complet en Markdown (français)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/llms-full.txt) : CV détaillé, expériences, projets, compétences, formation
+- [Full profile in Markdown (English)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/llms-full.txt): detailed résumé, experience, projects, skills, education
+- [Page IA et ATS (français)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/ia.html) : même contenu en HTML sémantique, avec données schema.org
+- [AI and ATS page (English)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/ia.html): same content as semantic HTML, with schema.org data
+- [JSON Resume (français)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/resume.json) : profil au format JSON Resume v1.0.0
+- [JSON Resume (English)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/resume.json): profile in JSON Resume v1.0.0 format
+
+## Projets professionnels
+
+- [Contrôle qualité PVsyst ↔ SynaptiQ](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/controle-qualite.html) : Confronter les études PVsyst au jumeau numérique de chaque centrale dans SynaptiQ, pour expliquer des performance ratio incohérents : jumeau mal configuré, simulation PVsyst erronée, ou les deux.
+- [Orchestrateur PVsyst](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/amarenco.html) : Première application Python avec interface graphique, construite pour tenir à jour la base technique interne face aux nouveaux PVsyst déposés chaque semaine sur SharePoint par les bureaux d'études internes et externes.
+- [Outil d'étude de raccordement au réseau (sujet du mémoire de Master)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/energiter.html) : Trouver le poste source le plus intéressant pour raccorder un parc éolien ou solaire, à partir des données publiques du réseau.
+- [PlasmaCraft, logiciel de création de recettes](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/plasmacraft.html) : Logiciel Excel/VBA de création de recettes pour l'automate de la machine, conçu de A à Z.
+
+## Contact
+
+- E-mail : rigourdbrice@gmail.com
+- LinkedIn : https://www.linkedin.com/in/brice-rigourd-a2359a223/
+- Toulouse, France · CDI ou VIE · Ingénieur études énergies renouvelables (photovoltaïque, éolien) ; Ingénieur raccordement au réseau ; Ingénieur performance et exploitation photovoltaïque ; Développeur Python : data, automatisation, outils métier ; Poste hybride énergie et développement Python ou IA
+
+## Optional
+
+- [Agent de combat entraîné en simulation (terrain d'étude : AION 2)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/labo-aion.html) : Agent qui lit l'écran du jeu et décide de chaque action, entraîné d'abord par imitation puis dans une arène simulée.
+- [Pulse, application de rencontre](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/labo-pulse.html) : Application Android full-stack, du prototype à la version 1.014.
+- [Raspberry Pi Pico 2 W en souris et clavier USB](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/labo-pico.html) : Microcontrôleur qui se fait passer pour une souris et un clavier USB et dessine dans Paint, piloté par un script Python.
+- [KidsVid, vidéos pour enfants générées par IA en local](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/labo-kidsvid.html) : Pipeline 100 % local et open source pour produire des histoires narrées et des comptines, en français et en anglais.
+- [Parcours, documents et contact](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/parcours.html) : formation, langues, documents et histoire personnelle
+- [Accueil du portfolio](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/index.html) : vue d'ensemble

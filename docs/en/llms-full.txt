@@ -1,0 +1,229 @@
+# Brice Rigourd — Energy engineer and Python developer
+
+> Energy engineer (solar PV, wind, grid connection) who builds the Python tools that replace manual work for technical teams.
+
+Last updated: October 2026 · Version française: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/llms-full.txt · Portfolio: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/
+
+## Contact and availability
+
+- Email: rigourdbrice@gmail.com
+- LinkedIn: https://www.linkedin.com/in/brice-rigourd-a2359a223/
+- Location: Toulouse, France
+- Mobility: France and abroad
+- Availability: Available
+- Contract: Permanent contract (CDI) or VIE
+- Target roles: Renewable energy study engineer (solar PV, wind) ; Grid connection engineer ; PV performance and operations engineer ; Python developer: data, automation, business tools ; Hybrid role combining energy and Python or AI development
+
+## Summary
+
+ESTIA engineer with a Master's in Smart Grids from the University of the Basque Country (UPV/EHU). I write the software that replaces manual work for technical teams: tools that read thousands of PDFs, desktop applications, Excel/VBA tools and AI prototypes. I have delivered tools to Amarenco (solar power producer), to Energiter (wind and solar engineering consultancy) and for a medical-device manufacturer.
+
+## Key figures
+
+- 287 PV plants in operation under my supervision at the end of the assignment (14 SPVs, 67.3 MWp, mostly rooftop).
+- Over 230 PVsyst studies with discrepancies against the monitoring configuration identified and reported, over a hundred of them being redone.
+- Technical database updates and checks against SharePoint cut from 2 to 3 weeks to under 10 minutes.
+- 4,128 PVsyst reports retrieved and analyzed automatically; 2,150 grid access contracts read and checked.
+- Over 40 PV feasibility and yield studies, over 15 wind simulations.
+- Over 3,400 French source substations filtered and ranked in 5 to 20 seconds.
+- About 18,000 lines of Python in the Amarenco tools; about 4,750 lines of VBA in PlasmaCraft.
+
+## Professional experience
+
+### Consulting engineer, PV operations — Amarenco (Toulouse, France)
+
+January 2025 – December 2025 · Solar power producer
+
+Operations of a portfolio of 287 PV plants at the end of the assignment (14 SPVs, 67.3 MWp, mostly rooftop) and development of the team's automation tools.
+
+- Plant performance monitoring (performance ratio, expected yield) in the 3E SynaptiQ monitoring platform.
+- Monthly reports to shareholders, KPI and OPEX budget tracking, Asset Management and O&M contracts.
+- About 18,000 lines of Python in the final versions of the team's tools; typed package (mypy --strict, ruff, black, pytest).
+- Feedback from a user about the automated analysis of maintenance reports (translated from French): "an absolutely brilliant tool".
+
+#### Project: PVsyst ↔ SynaptiQ quality control (March – June 2025)
+
+Check PVsyst studies against each plant's digital twin in SynaptiQ to explain inconsistent performance ratios: misconfigured twin, wrong PVsyst simulation, or both.
+
+- About 154,000 SharePoint documents inventoried across 4,660 projects; about 7,500 PVsyst files kept (latest version of each project).
+- Full extraction of the SynaptiQ API: 970 active plants, 1,794 module groups, 4,383 inverters.
+- Automated comparison: tilt/azimuth pairs (identical, within ±1° or ±10°), module count per pair and five losses; matching by project code or by name.
+- Over 230 PVsyst studies with discrepancies reported to the teams, over a hundred being redone; mostly orientation discrepancies (azimuth in the wrong cardinal direction) and module counts per orientation.
+
+Technologies: Python, asyncio, SynaptiQ REST API (JWT), SharePoint, MSAL, requests, pandas, openpyxl, pdfplumber, pypdf, regex, fuzzywuzzy
+
+Detailed page: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/controle-qualite.html
+
+#### Project: PVsyst orchestrator (July – September 2025)
+
+My first Python application with a graphical interface, built to keep the internal technical database up to date with the new PVsyst studies uploaded to SharePoint every week by internal and external design offices.
+
+- Read-only SharePoint connection; the latest PVsyst studies of each SPV are located and downloaded into a local database, with an archive of older versions.
+- Multiprocess extraction of PVsyst v6 to v8 reports, in French and English, then comparison with the internal technical database: missing or outdated data, by SPV and project code.
+- Project status checks (cancelled, renamed, merged SPVs) and three Excel control workbooks to verify the tool's work.
+- Full update in 1 to 10 minutes instead of 2 to 3 weeks by hand; simple check in 10 seconds to 5 minutes; first download of a portfolio of more than 300 plants in 30 minutes to 1 h 20.
+- Validated and used from time to time by 3 fellow engineers, then handed by the department to a development team for internal deployment.
+- Batch analyses: 26,809 DC/AC ratios extracted and 2,051 plants sorted into six clipping-risk classes; 2,150 grid access contracts read.
+
+Technologies: Python, PySide6, QML, PyInstaller, concurrent.futures, requests, MSAL, pandas, openpyxl, pypdf, pdfplumber, PyMuPDF, regex, mypy, pytest
+
+Detailed page: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/amarenco.html
+
+### Renewable energy design engineer (final-year internship) — Energiter (Montpellier, France)
+
+April 2024 – September 2024 · Wind and solar engineering consultancy
+
+Wind and solar feasibility studies, yield referent, and development of a grid connection study tool.
+
+- Over 40 PV feasibility and yield studies: MV-connected plants from 2 to 22 MWp, PVsyst with Solargis data.
+- Over 15 wind simulations in WAsP and windPRO: 3 to 15 MW wind farms, ERA5 and MERRA data.
+- Grid connection studies for RTE and Enedis source substations.
+- Bat-curtailment method in windPRO, validated against the in-house Python tool (about one point of difference on two wind farms).
+
+#### Project: Grid connection study tool (Master's thesis subject) (April – September 2024)
+
+Find the best source substation to connect a wind or solar farm, from public grid data.
+
+- Over 3,400 source substations filtered by downstream voltage (20 kV or more) and ranked by a 0-to-5 criticality score, in 5 to 20 seconds.
+- Real road distance through the IGN routing API called asynchronously: about 64% less response time.
+- Caparéseau (RTE) capacities and S3REnR regional schemes downloaded and archived; analysis with and without reinforcement works; costing in 17 MW modules, cable choice, network cost and regional cost share.
+- Deliverables: KML for Google Earth, folium maps, a project database and a PDF report; Excel/VBA interface driving the Python scripts through PowerShell.
+
+Technologies: Python, asyncio, IGN routing API, folium, KML, geopy, Dijkstra, Excel, VBA, PowerShell
+
+Detailed page: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/energiter.html
+
+### VBA designer-developer (second-year engineering internship) — Ezio Industrial Consulting (Biarritz, France)
+
+May 2023 – August 2023 · Industrial consulting
+
+Assignment for a medical-device manufacturer (cold-plasma sterilization): design and delivery of a complete application, from requirements to user manual.
+
+- Training documents on machine capability, qualifications and ISO 13485.
+
+#### Project: PlasmaCraft, recipe-authoring software (May – August 2023)
+
+Excel/VBA software for authoring the machine's PLC recipes, designed from scratch.
+
+- 53 VBA modules, about 4,750 lines, 115 procedures.
+- Recipes of up to 100 sequences with four parameters controlled over time; input checks against the machine's limits and step size (0 to 3,600 s per sequence, 0 to 500 W, 0 to 5 sccm, 0 to 22 G).
+- Ramps split into 5 to 25 steps that add up exactly; batch editing; TXT export for the PLC and locked XLSM recipes.
+- All nine client requirements covered; a 33-page user manual and an installation guide; name and logo designed and approved by the client.
+
+Technologies: Excel, VBA, UserForms, Balsamiq
+
+Detailed page: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/plasmacraft.html
+
+## Personal projects (Lab)
+
+### Combat agent trained in simulation (test bed: AION 2) (October 2026, in progress)
+
+An agent that reads the game screen and decides every action, trained first by imitation, then in a simulated arena.
+
+- 640×360 capture at 7 frames per second, detection in about 3 ms without a GPU.
+- Imitation learning on 1,864 examples: 39.4% accuracy against 21.6% for the majority class.
+- 2.5D arena calibrated on the real game; 32 settings trained with the cross-entropy method, validation score from 16.9 to 19.2 out of 20.
+- PySide6 Windows application, about 29,000 lines of Python and 740 pytest tests; external approach only, simulation mode by default.
+
+Technologies: Python, PySide6, computer vision, imitation learning, cross-entropy method, pytest
+
+Detailed page: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-aion.html
+
+### Pulse, a dating app (Since January 2026, in progress)
+
+Full-stack Android app, from prototype to release 1.014.
+
+- Expo SDK 54, React Native 0.81 and TypeScript; FastAPI and WebSocket server; Supabase database migrated from MongoDB.
+- Photos on S3 storage through presigned URLs, with a hand-written SigV4 signature.
+- About 70 API routes, 16,800 lines of TypeScript and 5,400 lines of server code, 135 commits.
+- Developed with Claude and Claude Code after a prototype built with the Emergent agent.
+
+Technologies: TypeScript, React Native, Expo, FastAPI, WebSocket, Supabase, S3
+
+Detailed page: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-pulse.html
+
+### Raspberry Pi Pico 2 W as a USB mouse and keyboard (October 2026, completed)
+
+A microcontroller that poses as a USB mouse and keyboard and draws in Paint, driven by a Python script.
+
+- CircuitPython and USB HID; commands received over a serial port.
+- Closed-loop control from the cursor's real position; Paint buttons located through UI Automation.
+- About 680 lines of Python.
+
+Technologies: CircuitPython, Python, USB HID, UI Automation
+
+Detailed page: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-pico.html
+
+### KidsVid, AI-generated videos for children, made locally (September 2026, abandoned)
+
+A 100% local, open-source pipeline producing narrated stories and nursery rhymes, in French and English.
+
+- n8n orchestrates a FastAPI service chaining Ollama and Qwen3, Piper, SDXL through ComfyUI, ACE-Step and FFmpeg.
+- About 2,100 lines of Python, 19 API routes, 3 n8n workflows.
+- Lessons: licenses compatible with commercial use, YouTube's "inauthentic content" policy, COPPA obligations.
+
+Technologies: Python, FastAPI, n8n, Ollama, ComfyUI, SDXL, FFmpeg
+
+Detailed page: https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-kidsvid.html
+
+## Education
+
+- 2023 – 2024: Master Control in Smart Grids and Distributed Generation, University of the Basque Country (UPV/EHU) (San Sebastián, Spain). Double degree. 91-page thesis in English, defended in October 2024: a grid connection study tool for wind and solar farms on French source substations.
+- 2021 – 2024: General engineering degree (Diplôme d'ingénieur), ESTIA (Bidart, France)
+- 2020 – 2021: ATS preparatory class, Lycée Jules Garnier (Nouméa, New Caledonia)
+- 2018 – 2019: BTS in engineering technical assistance (two-year technical degree), Lycée Jules Garnier (Nouméa, New Caledonia). Internship at the design office of CEGELEC New Caledonia: drawings, diagrams and tenders.
+- 2017: STI2D baccalaureate, energy and environment, with honors, Lycée Jules Garnier (Nouméa, New Caledonia)
+
+## Skills
+
+- **Energy**: PVsyst, PV yield assessment, WAsP, windPRO, bat curtailment, grid connection, Caparéseau, S3REnR, 3E SynaptiQ, performance ratio, Global Mapper, HOMER Pro
+- **Python**: pandas, openpyxl, asyncio, concurrent.futures, regex, logging, packaging
+- **Desktop applications**: PySide6, QML, Tkinter, threads and signals, PyInstaller
+- **Document extraction**: pypdf, pdfplumber, PyMuPDF, bilingual patterns, error reports
+- **APIs and networking**: REST, JWT, MSAL, exponential back-off, TTL cache, rate limiting, Selenium
+- **Geospatial and graphs**: IGN routing API, Dijkstra, folium, KML, geopy
+- **Excel and VBA**: UserForms, multi-workbook architecture, dynamic charts, driving Python from PowerShell
+- **Software quality**: mypy --strict, ruff, black, pytest, rotating logs, deliverable versioning
+- **Generative AI**: local LLMs (Ollama), ComfyUI, SDXL, speech synthesis, n8n, prompt engineering, Claude Code
+- **Web and mobile development**: TypeScript, React Native, Expo, FastAPI, WebSocket, Supabase
+- **Design**: requirements gathering, Balsamiq mockups, flowcharts, manuals and guides
+- **Other**: MATLAB, basic C#, Onshape CAD, Office suite
+
+## Languages
+
+- French: Native
+- English: Professional (TOEIC 820/990)
+- Spanish: B1
+- Japanese: A1
+- German: A1
+
+## Certifications
+
+- Kaggle Python
+- MATLAB Onramp
+- TOEIC 820/990
+
+## Documents
+
+- Master's thesis: 91 pages, in English, October 2024: a tool for analyzing French source substations and their connection options for wind and solar farms.
+- Final-year report: 70 pages, 2024, with a summary in French, English and Spanish: six months at Energiter.
+- PlasmaCraft user manual: 33 pages, June 2023.
+- Curriculum vitae: 1 page, 2026.
+
+## Interests
+
+Born in New Caledonia. Boxing and Muay Thai, weight training, philosophy, cooking and pastry, volunteering for animal protection and sport.
+
+## Portfolio pages
+
+- [Home](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/index.html)
+- [Project 01 · PVsyst orchestrator (Amarenco)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/amarenco.html)
+- [Project 02 · PVsyst ↔ SynaptiQ quality control (Amarenco)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/controle-qualite.html)
+- [Project 03 · Grid connection study tool (Energiter)](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/energiter.html)
+- [Project 04 · PlasmaCraft](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/plasmacraft.html)
+- [Lab and skills](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo.html)
+- [Lab · AION 2 agent](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-aion.html)
+- [Lab · Pulse](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-pulse.html)
+- [Lab · Pico 2 W](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-pico.html)
+- [Lab · KidsVid](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-kidsvid.html)
+- [Background, documents and contact](https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/parcours.html)

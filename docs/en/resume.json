@@ -1,0 +1,507 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Brice Rigourd",
+    "label": "Energy engineer and Python developer",
+    "email": "rigourdbrice@gmail.com",
+    "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/",
+    "summary": "Energy engineer (solar PV, wind, grid connection) who builds the Python tools that replace manual work for technical teams. ESTIA engineer with a Master's in Smart Grids from the University of the Basque Country (UPV/EHU). I write the software that replaces manual work for technical teams: tools that read thousands of PDFs, desktop applications, Excel/VBA tools and AI prototypes. I have delivered tools to Amarenco (solar power producer), to Energiter (wind and solar engineering consultancy) and for a medical-device manufacturer.",
+    "location": {
+      "city": "Toulouse",
+      "region": "Occitanie",
+      "countryCode": "FR"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "brice-rigourd-a2359a223",
+        "url": "https://www.linkedin.com/in/brice-rigourd-a2359a223/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Amarenco",
+      "description": "Solar power producer",
+      "location": "Toulouse, France",
+      "position": "Consulting engineer, PV operations",
+      "startDate": "2025-01",
+      "endDate": "2025-12",
+      "summary": "Operations of a portfolio of 287 PV plants at the end of the assignment (14 SPVs, 67.3 MWp, mostly rooftop) and development of the team's automation tools.",
+      "highlights": [
+        "Plant performance monitoring (performance ratio, expected yield) in the 3E SynaptiQ monitoring platform.",
+        "Monthly reports to shareholders, KPI and OPEX budget tracking, Asset Management and O&M contracts.",
+        "About 18,000 lines of Python in the final versions of the team's tools; typed package (mypy --strict, ruff, black, pytest).",
+        "Feedback from a user about the automated analysis of maintenance reports (translated from French): \"an absolutely brilliant tool\".",
+        "PVsyst ↔ SynaptiQ quality control (March – June 2025) : Check PVsyst studies against each plant's digital twin in SynaptiQ to explain inconsistent performance ratios: misconfigured twin, wrong PVsyst simulation, or both.",
+        "PVsyst orchestrator (July – September 2025) : My first Python application with a graphical interface, built to keep the internal technical database up to date with the new PVsyst studies uploaded to SharePoint every week by internal and external design offices."
+      ]
+    },
+    {
+      "name": "Energiter",
+      "description": "Wind and solar engineering consultancy",
+      "location": "Montpellier, France",
+      "position": "Renewable energy design engineer (final-year internship)",
+      "startDate": "2024-04",
+      "endDate": "2024-09",
+      "summary": "Wind and solar feasibility studies, yield referent, and development of a grid connection study tool.",
+      "highlights": [
+        "Over 40 PV feasibility and yield studies: MV-connected plants from 2 to 22 MWp, PVsyst with Solargis data.",
+        "Over 15 wind simulations in WAsP and windPRO: 3 to 15 MW wind farms, ERA5 and MERRA data.",
+        "Grid connection studies for RTE and Enedis source substations.",
+        "Bat-curtailment method in windPRO, validated against the in-house Python tool (about one point of difference on two wind farms).",
+        "Grid connection study tool (Master's thesis subject) (April – September 2024) : Find the best source substation to connect a wind or solar farm, from public grid data."
+      ]
+    },
+    {
+      "name": "Ezio Industrial Consulting",
+      "description": "Industrial consulting",
+      "location": "Biarritz, France",
+      "position": "VBA designer-developer (second-year engineering internship)",
+      "startDate": "2023-05",
+      "endDate": "2023-08",
+      "summary": "Assignment for a medical-device manufacturer (cold-plasma sterilization): design and delivery of a complete application, from requirements to user manual.",
+      "highlights": [
+        "Training documents on machine capability, qualifications and ISO 13485.",
+        "PlasmaCraft, recipe-authoring software (May – August 2023) : Excel/VBA software for authoring the machine's PLC recipes, designed from scratch."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of the Basque Country (UPV/EHU)",
+      "area": "Master Control in Smart Grids and Distributed Generation",
+      "studyType": "Master Control in Smart Grids and Distributed Generation",
+      "startDate": "2023",
+      "endDate": "2024",
+      "courses": [
+        "Double degree. 91-page thesis in English, defended in October 2024: a grid connection study tool for wind and solar farms on French source substations."
+      ]
+    },
+    {
+      "institution": "ESTIA",
+      "area": "General engineering degree (Diplôme d'ingénieur)",
+      "studyType": "General engineering degree (Diplôme d'ingénieur)",
+      "startDate": "2021",
+      "endDate": "2024"
+    },
+    {
+      "institution": "Lycée Jules Garnier",
+      "area": "ATS preparatory class",
+      "studyType": "ATS preparatory class",
+      "startDate": "2020",
+      "endDate": "2021"
+    },
+    {
+      "institution": "Lycée Jules Garnier",
+      "area": "BTS in engineering technical assistance (two-year technical degree)",
+      "studyType": "BTS in engineering technical assistance (two-year technical degree)",
+      "startDate": "2018",
+      "endDate": "2019",
+      "courses": [
+        "Internship at the design office of CEGELEC New Caledonia: drawings, diagrams and tenders."
+      ]
+    },
+    {
+      "institution": "Lycée Jules Garnier",
+      "area": "STI2D baccalaureate, energy and environment, with honors",
+      "studyType": "STI2D baccalaureate, energy and environment, with honors",
+      "startDate": "2017",
+      "endDate": "2017"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Kaggle Python"
+    },
+    {
+      "name": "MATLAB Onramp"
+    },
+    {
+      "name": "TOEIC 820/990"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Energy",
+      "keywords": [
+        "PVsyst",
+        "PV yield assessment",
+        "WAsP",
+        "windPRO",
+        "bat curtailment",
+        "grid connection",
+        "Caparéseau",
+        "S3REnR",
+        "3E SynaptiQ",
+        "performance ratio",
+        "Global Mapper",
+        "HOMER Pro"
+      ]
+    },
+    {
+      "name": "Python",
+      "keywords": [
+        "pandas",
+        "openpyxl",
+        "asyncio",
+        "concurrent.futures",
+        "regex",
+        "logging",
+        "packaging"
+      ]
+    },
+    {
+      "name": "Desktop applications",
+      "keywords": [
+        "PySide6",
+        "QML",
+        "Tkinter",
+        "threads and signals",
+        "PyInstaller"
+      ]
+    },
+    {
+      "name": "Document extraction",
+      "keywords": [
+        "pypdf",
+        "pdfplumber",
+        "PyMuPDF",
+        "bilingual patterns",
+        "error reports"
+      ]
+    },
+    {
+      "name": "APIs and networking",
+      "keywords": [
+        "REST",
+        "JWT",
+        "MSAL",
+        "exponential back-off",
+        "TTL cache",
+        "rate limiting",
+        "Selenium"
+      ]
+    },
+    {
+      "name": "Geospatial and graphs",
+      "keywords": [
+        "IGN routing API",
+        "Dijkstra",
+        "folium",
+        "KML",
+        "geopy"
+      ]
+    },
+    {
+      "name": "Excel and VBA",
+      "keywords": [
+        "UserForms",
+        "multi-workbook architecture",
+        "dynamic charts",
+        "driving Python from PowerShell"
+      ]
+    },
+    {
+      "name": "Software quality",
+      "keywords": [
+        "mypy --strict",
+        "ruff",
+        "black",
+        "pytest",
+        "rotating logs",
+        "deliverable versioning"
+      ]
+    },
+    {
+      "name": "Generative AI",
+      "keywords": [
+        "local LLMs (Ollama)",
+        "ComfyUI",
+        "SDXL",
+        "speech synthesis",
+        "n8n",
+        "prompt engineering",
+        "Claude Code"
+      ]
+    },
+    {
+      "name": "Web and mobile development",
+      "keywords": [
+        "TypeScript",
+        "React Native",
+        "Expo",
+        "FastAPI",
+        "WebSocket",
+        "Supabase"
+      ]
+    },
+    {
+      "name": "Design",
+      "keywords": [
+        "requirements gathering",
+        "Balsamiq mockups",
+        "flowcharts",
+        "manuals and guides"
+      ]
+    },
+    {
+      "name": "Other",
+      "keywords": [
+        "MATLAB",
+        "basic C#",
+        "Onshape CAD",
+        "Office suite"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "French",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional (TOEIC 820/990)"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "B1"
+    },
+    {
+      "language": "Japanese",
+      "fluency": "A1"
+    },
+    {
+      "language": "German",
+      "fluency": "A1"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Interests",
+      "keywords": [
+        "Born in New Caledonia. Boxing and Muay Thai, weight training, philosophy, cooking and pastry, volunteering for animal protection and sport."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "PVsyst ↔ SynaptiQ quality control",
+      "description": "Check PVsyst studies against each plant's digital twin in SynaptiQ to explain inconsistent performance ratios: misconfigured twin, wrong PVsyst simulation, or both.",
+      "highlights": [
+        "About 154,000 SharePoint documents inventoried across 4,660 projects; about 7,500 PVsyst files kept (latest version of each project).",
+        "Full extraction of the SynaptiQ API: 970 active plants, 1,794 module groups, 4,383 inverters.",
+        "Automated comparison: tilt/azimuth pairs (identical, within ±1° or ±10°), module count per pair and five losses; matching by project code or by name.",
+        "Over 230 PVsyst studies with discrepancies reported to the teams, over a hundred being redone; mostly orientation discrepancies (azimuth in the wrong cardinal direction) and module counts per orientation."
+      ],
+      "keywords": [
+        "Python",
+        "asyncio",
+        "SynaptiQ REST API (JWT)",
+        "SharePoint",
+        "MSAL",
+        "requests",
+        "pandas",
+        "openpyxl",
+        "pdfplumber",
+        "pypdf",
+        "regex",
+        "fuzzywuzzy"
+      ],
+      "startDate": "2025-03",
+      "endDate": "2025-06",
+      "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/controle-qualite.html",
+      "entity": "Amarenco",
+      "type": "professional"
+    },
+    {
+      "name": "PVsyst orchestrator",
+      "description": "My first Python application with a graphical interface, built to keep the internal technical database up to date with the new PVsyst studies uploaded to SharePoint every week by internal and external design offices.",
+      "highlights": [
+        "Read-only SharePoint connection; the latest PVsyst studies of each SPV are located and downloaded into a local database, with an archive of older versions.",
+        "Multiprocess extraction of PVsyst v6 to v8 reports, in French and English, then comparison with the internal technical database: missing or outdated data, by SPV and project code.",
+        "Project status checks (cancelled, renamed, merged SPVs) and three Excel control workbooks to verify the tool's work.",
+        "Full update in 1 to 10 minutes instead of 2 to 3 weeks by hand; simple check in 10 seconds to 5 minutes; first download of a portfolio of more than 300 plants in 30 minutes to 1 h 20.",
+        "Validated and used from time to time by 3 fellow engineers, then handed by the department to a development team for internal deployment.",
+        "Batch analyses: 26,809 DC/AC ratios extracted and 2,051 plants sorted into six clipping-risk classes; 2,150 grid access contracts read."
+      ],
+      "keywords": [
+        "Python",
+        "PySide6",
+        "QML",
+        "PyInstaller",
+        "concurrent.futures",
+        "requests",
+        "MSAL",
+        "pandas",
+        "openpyxl",
+        "pypdf",
+        "pdfplumber",
+        "PyMuPDF",
+        "regex",
+        "mypy",
+        "pytest"
+      ],
+      "startDate": "2025-07",
+      "endDate": "2025-09",
+      "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/amarenco.html",
+      "entity": "Amarenco",
+      "type": "professional"
+    },
+    {
+      "name": "Grid connection study tool (Master's thesis subject)",
+      "description": "Find the best source substation to connect a wind or solar farm, from public grid data.",
+      "highlights": [
+        "Over 3,400 source substations filtered by downstream voltage (20 kV or more) and ranked by a 0-to-5 criticality score, in 5 to 20 seconds.",
+        "Real road distance through the IGN routing API called asynchronously: about 64% less response time.",
+        "Caparéseau (RTE) capacities and S3REnR regional schemes downloaded and archived; analysis with and without reinforcement works; costing in 17 MW modules, cable choice, network cost and regional cost share.",
+        "Deliverables: KML for Google Earth, folium maps, a project database and a PDF report; Excel/VBA interface driving the Python scripts through PowerShell."
+      ],
+      "keywords": [
+        "Python",
+        "asyncio",
+        "IGN routing API",
+        "folium",
+        "KML",
+        "geopy",
+        "Dijkstra",
+        "Excel",
+        "VBA",
+        "PowerShell"
+      ],
+      "startDate": "2024-04",
+      "endDate": "2024-09",
+      "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/energiter.html",
+      "entity": "Energiter",
+      "type": "professional"
+    },
+    {
+      "name": "PlasmaCraft, recipe-authoring software",
+      "description": "Excel/VBA software for authoring the machine's PLC recipes, designed from scratch.",
+      "highlights": [
+        "53 VBA modules, about 4,750 lines, 115 procedures.",
+        "Recipes of up to 100 sequences with four parameters controlled over time; input checks against the machine's limits and step size (0 to 3,600 s per sequence, 0 to 500 W, 0 to 5 sccm, 0 to 22 G).",
+        "Ramps split into 5 to 25 steps that add up exactly; batch editing; TXT export for the PLC and locked XLSM recipes.",
+        "All nine client requirements covered; a 33-page user manual and an installation guide; name and logo designed and approved by the client."
+      ],
+      "keywords": [
+        "Excel",
+        "VBA",
+        "UserForms",
+        "Balsamiq"
+      ],
+      "startDate": "2023-05",
+      "endDate": "2023-08",
+      "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/plasmacraft.html",
+      "entity": "Ezio Industrial Consulting",
+      "type": "professional"
+    },
+    {
+      "name": "Combat agent trained in simulation (test bed: AION 2)",
+      "description": "An agent that reads the game screen and decides every action, trained first by imitation, then in a simulated arena.",
+      "highlights": [
+        "640×360 capture at 7 frames per second, detection in about 3 ms without a GPU.",
+        "Imitation learning on 1,864 examples: 39.4% accuracy against 21.6% for the majority class.",
+        "2.5D arena calibrated on the real game; 32 settings trained with the cross-entropy method, validation score from 16.9 to 19.2 out of 20.",
+        "PySide6 Windows application, about 29,000 lines of Python and 740 pytest tests; external approach only, simulation mode by default."
+      ],
+      "keywords": [
+        "Python",
+        "PySide6",
+        "computer vision",
+        "imitation learning",
+        "cross-entropy method",
+        "pytest"
+      ],
+      "startDate": "2026-10",
+      "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-aion.html",
+      "type": "personal"
+    },
+    {
+      "name": "Pulse, a dating app",
+      "description": "Full-stack Android app, from prototype to release 1.014.",
+      "highlights": [
+        "Expo SDK 54, React Native 0.81 and TypeScript; FastAPI and WebSocket server; Supabase database migrated from MongoDB.",
+        "Photos on S3 storage through presigned URLs, with a hand-written SigV4 signature.",
+        "About 70 API routes, 16,800 lines of TypeScript and 5,400 lines of server code, 135 commits.",
+        "Developed with Claude and Claude Code after a prototype built with the Emergent agent."
+      ],
+      "keywords": [
+        "TypeScript",
+        "React Native",
+        "Expo",
+        "FastAPI",
+        "WebSocket",
+        "Supabase",
+        "S3"
+      ],
+      "startDate": "2026-01",
+      "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-pulse.html",
+      "type": "personal"
+    },
+    {
+      "name": "Raspberry Pi Pico 2 W as a USB mouse and keyboard",
+      "description": "A microcontroller that poses as a USB mouse and keyboard and draws in Paint, driven by a Python script.",
+      "highlights": [
+        "CircuitPython and USB HID; commands received over a serial port.",
+        "Closed-loop control from the cursor's real position; Paint buttons located through UI Automation.",
+        "About 680 lines of Python."
+      ],
+      "keywords": [
+        "CircuitPython",
+        "Python",
+        "USB HID",
+        "UI Automation"
+      ],
+      "startDate": "2026-10",
+      "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-pico.html",
+      "type": "personal"
+    },
+    {
+      "name": "KidsVid, AI-generated videos for children, made locally",
+      "description": "A 100% local, open-source pipeline producing narrated stories and nursery rhymes, in French and English.",
+      "highlights": [
+        "n8n orchestrates a FastAPI service chaining Ollama and Qwen3, Piper, SDXL through ComfyUI, ACE-Step and FFmpeg.",
+        "About 2,100 lines of Python, 19 API routes, 3 n8n workflows.",
+        "Lessons: licenses compatible with commercial use, YouTube's \"inauthentic content\" policy, COPPA obligations."
+      ],
+      "keywords": [
+        "Python",
+        "FastAPI",
+        "n8n",
+        "Ollama",
+        "ComfyUI",
+        "SDXL",
+        "FFmpeg"
+      ],
+      "startDate": "2026-09",
+      "url": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/labo-kidsvid.html",
+      "type": "personal"
+    }
+  ],
+  "meta": {
+    "canonical": "https://bricerigourd.github.io/Portfolio-Rigourd-Brice/en/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2026-10-30",
+    "availability": "Available",
+    "contract": "Permanent contract (CDI) or VIE",
+    "mobility": "France and abroad",
+    "targetRoles": [
+      "Renewable energy study engineer (solar PV, wind)",
+      "Grid connection engineer",
+      "PV performance and operations engineer",
+      "Python developer: data, automation, business tools",
+      "Hybrid role combining energy and Python or AI development"
+    ],
+    "keyFigures": [
+      "287 PV plants in operation under my supervision at the end of the assignment (14 SPVs, 67.3 MWp, mostly rooftop).",
+      "Over 230 PVsyst studies with discrepancies against the monitoring configuration identified and reported, over a hundred of them being redone.",
+      "Technical database updates and checks against SharePoint cut from 2 to 3 weeks to under 10 minutes.",
+      "4,128 PVsyst reports retrieved and analyzed automatically; 2,150 grid access contracts read and checked.",
+      "Over 40 PV feasibility and yield studies, over 15 wind simulations.",
+      "Over 3,400 French source substations filtered and ranked in 5 to 20 seconds.",
+      "About 18,000 lines of Python in the Amarenco tools; about 4,750 lines of VBA in PlasmaCraft."
+    ]
+  }
+}

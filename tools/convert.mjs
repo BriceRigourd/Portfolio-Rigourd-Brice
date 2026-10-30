@@ -15,17 +15,21 @@
  *   docs/en/<slug>.html             pages anglaises
  *   docs/assets/img/                images renommées
  *   docs/assets/js/                 dc-lite.js (démos) et site.js (petits comportements)
+ *   docs/ia.html, llms.txt, llms-full.txt, resume.json (+ en/)  profil pour les IA et les ATS,
+ *                                   généré par tools/ia.mjs depuis source/ia/profil.json
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
+import { loadProfile, headExtras, writeIA } from './ia.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'source');
 const OUT = path.join(ROOT, 'docs');
 const STATIC = path.join(ROOT, 'tools', 'static');
 const PRERENDER = !process.argv.includes('--no-prerender');
+const PROFILE = loadProfile(ROOT);
 
 // Nom de planche (sans suffixe EN) → nom de page.
 const SLUGS = {
@@ -143,6 +147,7 @@ function pageHtml(page) {
     `<meta name="viewport" content="width=device-width, initial-scale=1">\n` +
     `<title>${page.title}</title>\n` +
     alternates(page) +
+    headExtras(PROFILE, page) +
     `<link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">\n` +
     rewrite(page.helmet, page) + '\n</head>\n<body>\n';
   const body = rewrite(page.body, page);
@@ -178,6 +183,7 @@ for (const page of boards) {
   console.log(`✓ ${page.file.padEnd(24)} → docs/${page.out}${page.interactive ? '  (démo interactive)' : ''}`);
 }
 console.log(`✓ ${images.size} images → docs/assets/img/`);
+writeIA(ROOT, OUT);
 
 // --- Pré-rendu des démos ---------------------------------------------------
 // Les pages interactives sont rendues une fois dans Chromium et le résultat est écrit
